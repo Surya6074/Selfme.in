@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-Login Page - Selfme
+Register Page - Selfme
 @endsection
 @section('content')
 <div class="h-full w-full flex md:flex-row flex-col-reverse bg-neutral-800">
@@ -38,13 +38,13 @@ Login Page - Selfme
         <div class="h-full w-full bg-neutral-950 opacity-35 absolute -z-10">s</div>
         <div class="flex flex-col justify-center p-10 h-full z-30">
             <h1 class="text-neutral-800 text-4xl pl-1">Hello!</h1>
-            <h1 class="text-8xl z-30 text-white">Make Your Own <br><span class="text-neutral-800 font-semibold">Portfolio<span class="text-8xl text-gray-50">.</span></span></h1>
+            <h1 class="md:text-8xl text-6xl z-30 text-white">Make Your Own <br><span class="text-neutral-800 font-semibold">Portfolio<span class="text-8xl text-gray-50">.</span></span></h1>
             <div class="mt-1 w-full pl-2 z-30">
                 <p class="mb-10 text-xl text-neutral-800">Empower Your Online Presence for Free!</p>
                 <a href="/login" class="py-3 px-8 mt-10 bg-neutral-900 text-emerald-300 rounded-lg">Login</a>
             </div>
         </div>
-        <div class="absolute bottom-8 left-1/3 ml-14 block lg:hidden z-40 text-neurtal-900">Scroll down <i class="fa-solid fa-arrow-down-long"></i></div>
+        <div class="absolute bottom-8 left-1/3 lg:ml-14 block lg:hidden z-40 text-neurtal-900">Scroll down <i class="fa-solid fa-arrow-down-long"></i></div>
 
     </div>
 </div>
