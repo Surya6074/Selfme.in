@@ -6,16 +6,19 @@
     font-family: "Poppins", sans-serif;
 }
 body {
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 .info {
-    background-image: repeating-linear-gradient(
-        -214deg,
-        rgba(255, 255, 255, 0.25),
-        rgba(255, 255, 255, 0.25) 1px,
-        transparent 0px,
-        transparent 13px
-    );
-    background-size: 9px;
+    background-image: url("../assets/css-pattern-by-magicpattern5.png");
+    object-fit: cover;
+    opacity: 0.9;
+}
+.form-page {
+    height: 100vh;
+}
+::-webkit-scrollbar {
+    display: none;
 }
