@@ -5,9 +5,12 @@ New updates - Selfme
 @section('content')
 <body class="flex">
     @include('components.sidebar')
-    <section class="w-full md:ml-80 h-full ml-4 overflow-y-scroll p-4">
+    <section class="w-full h-full ml-4 overflow-y-scroll p-4">
         <div class="flex justify-between items-center px-5 py-3 bg-neutral-900 rounded-xl">
-            <h1 class="text-xl text-white">New Updates</h1>
+           <div class="flex itemes-center">
+                <button class="md:hidden block"  onclick="OpenSlidebar()"><i class="bx bx-menu-alt-left text-white text-4xl mr-5" id="sidebaricon"></i></button>
+                <h1 class="text-xl text-white">New Updates</h1>
+            </div>
             <div class="h-14 rounded-full flex justify-center items-center w-14 bg-white cursor-pointer">
                 <h1 class="text-3xl ">S</h1>
             </div>

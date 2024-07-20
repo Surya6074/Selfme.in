@@ -5,17 +5,17 @@ Portfolio Templates - Selfme
 @section('content')
 <body class="flex">
     @include('components.sidebar')
-    <section class="w-full min-h-min md:ml-80 overflow-y-scroll p-4 mb-10">
+    <section class="w-full min-h-min overflow-y-scroll p-4 mb-10">
         <div class="flex justify-between items-center px-5 py-3 bg-neutral-900 rounded-xl">
-            <div class="flex">
-                <button class="md:hidden block"><i class="fa-solid fa-bars text-white text-2xl mr-3"></i></button>
+            <div class="flex itemes-center">
+                <button class="md:hidden block"  onclick="OpenSlidebar()"><i class="bx bx-menu-alt-left text-white text-4xl mr-5" id="sidebaricon"></i></button>
                 <h1 class="text-xl text-white">Designs</h1>
             </div>
             <div class="h-14 rounded-full flex justify-center items-center w-14 bg-white cursor-pointer">
                 <h1 class="text-3xl ">S</h1>
             </div>
         </div>
-        <div class="h-full mt-10 grid lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-4 justify-center ">
+        <div class="h-full mt-10 grid lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-6 justify-center ">
             <div class="h-5/6 flex flex-col w-72 bg-neutral-800 rounded-xl test relative place-self-center">
                 <div class="flex-1 justify-center items-center opacity-70">
                     <img src="{{asset('assets/temp.png')}}" class=" h-3/4 w-full rounded-xl" alt="">

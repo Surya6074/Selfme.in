@@ -5,10 +5,10 @@ Home Page - SelfMe
 @section('content')
 <body class="flex">
     @include('components.sidebar')
-    <section class="w-full min-h-min md:ml-80 overflow-y-scroll p-4">
+    <section class="w-full min-h-min overflow-y-scroll p-4">
         <div class="flex justify-between items-center px-5 py-3 bg-neutral-900 rounded-xl">
-            <div class="flex">
-                <button class="md:hidden block"><i class="fa-solid fa-bars text-white text-2xl mr-3"></i></button>
+            <div class="flex itemes-center">
+                <button class="md:hidden block"  onclick="OpenSlidebar()"><i class="bx bx-menu-alt-left text-white text-4xl mr-5" id="sidebaricon"></i></button>
                 <h1 class="text-xl text-white">Home</h1>
             </div>
             <div class="h-14 rounded-full flex justify-center items-center w-14 bg-white cursor-pointer">
@@ -25,7 +25,25 @@ Home Page - SelfMe
             </div>
         </div>
         <div class="w-full h-3/4 bg-neutral-900 p-3 mt-7 rounded-xl">
-
+            {{-- <div class="flex justify-center items-center h-full w-full">
+                <a href="/data" class=" px-5 py-3 bg-emerald-300 text-neutral-900 font-semibold rounded-lg">Create a Portfolio</a>
+            </div> --}}
+            <div class="flex justify-center items-center h-full w-full">
+                <div class=" h-full flex flex-col justify-center items-center px-10">
+                    <div class="">
+                        <label for="" class=" mb-4 text-emerald-300 font-semibold">Your Template</label>
+                    </div>
+                    <div class=" relative">
+                        <img src="{{asset('assets/temp.png')}}" class="mt-4" alt="">
+                        <a href="/template" class=" absolute bottom-1 right-1 p-2 px-4 bg-emerald-300 text-neutral-900 font-semibold rounded-lg"><i class='bx bxs-edit'></i></a>
+                    </div>
+                </div>
+                <div class="h-full flex-1 px-5 p-5">
+                    <div class=" h-full w-full">
+                        <h1 class="text-emerald-300 text-center">Information </h1>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </body>

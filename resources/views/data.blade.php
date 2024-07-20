@@ -5,11 +5,11 @@ Data Insert Page - SelfMe
 @section('content')
 <body class="flex">
     @include('components.sidebar')
-    <section class="w-full min-h-min md:ml-80 overflow-y-scroll p-4">
+    <section class="w-full min-h-min  overflow-y-scroll p-4">
         <div class="flex justify-between items-center px-5 py-3 bg-neutral-900 rounded-xl">
-            <div class="flex">
-                <button class="md:hidden block"><i class="fa-solid fa-bars text-white text-2xl mr-3"></i></button>
-                <h1 class="text-xl text-white">Home</h1>
+           <div class="flex itemes-center">
+                <button class="md:hidden block"  onclick="OpenSlidebar()"><i class="bx bx-menu-alt-left text-white text-4xl mr-5" id="sidebaricon"></i></button>
+                <h1 class="text-xl text-white">Data Update</h1>
             </div>
             <div class="h-14 rounded-full flex justify-center items-center w-14 bg-white cursor-pointer">
                 <h1 class="text-3xl ">S</h1>
@@ -35,16 +35,16 @@ Data Insert Page - SelfMe
                 <button class="flex mx-5 items-center justify-center flex-col tablinks" onclick="openCity(event, 'Contact',this)">
                     <i class="fa-solid fa-id-badge text-xl mb-1"></i>
                     <h1 class="text-sm">Contact</h1>
-                </button>
+                {{-- </button>
                 <span class="h-1 bg-emerald-300 w-32 rounded-xl"></span>
                 <button class="flex mx-5 items-center justify-center flex-col tablinks" onclick="openCity(event, 'Home',this)">
                     <i class="fa-solid fa-wifi text-xl mb-1"></i>
                     <h1 class="text-sm">temaplate</h1>
-                </button>
+                </button> --}}
             </div>
             <div class="tabcontent" id="About">
-                <div class="w-full flex">
-                    <div class="w-1/2">
+                <div class="w-full flex-col">
+                    <div class="w-full">
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Enter a Name</label>
                             <input type="text" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Name">
@@ -63,7 +63,7 @@ Data Insert Page - SelfMe
                         </div>
 
                     </div>
-                    <div class="w-1/2" id="skills">
+                    <div class="w-full" id="skills">
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Enter a Skills</label>
                             <div class="" id="Role-input">
@@ -81,8 +81,8 @@ Data Insert Page - SelfMe
                 </div>
             </div>
             <div class="tabcontent" id="Home">
-                <div class="w-full flex">
-                    <div class="w-1/2">
+                <div class="w-full  flex-col">
+                    <div class="w-full">
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Enter a Name</label>
                             <input type="text" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Name">
@@ -138,7 +138,7 @@ Data Insert Page - SelfMe
                             </div>
                         </div>
                     </div>
-                    <div class="w-1/2">
+                    <div class="w-full">
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Choose a Image <span class="text-netural-600 text-sm">(.png)</span></label>
                             <input type="file" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Name">
@@ -275,7 +275,6 @@ Data Insert Page - SelfMe
 <style>
     body{
         width: 100vw;
-
         background-color: #050406;
     }
     section{
