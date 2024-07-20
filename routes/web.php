@@ -20,3 +20,6 @@ Route::get('/new', function () {
 Route::get('/data', function () {
     return view('data');
 });
+Route::get('/', function () {
+    return view('index');
+});
