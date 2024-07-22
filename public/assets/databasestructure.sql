@@ -6,6 +6,13 @@ CREATE TABLE Users (
     password VARCHAR(255) NOT NULL
 );
 
+CREATE TABLE Portfolio(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    template VARCHAR(50) NOT NULL,
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES Users(id)
+);
+
 -- Create HomePage table
 CREATE TABLE HomePage (
     id INT AUTO_INCREMENT PRIMARY KEY,
