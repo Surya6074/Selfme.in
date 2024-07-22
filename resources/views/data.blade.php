@@ -17,26 +17,26 @@ Data Insert Page - SelfMe
         </div>
         <div class="w-full bg-neutral-900 p-3 mt-7 rounded-xl">
             <div class="h-20 flex justify-center items-center mt-10 text-white">
-                <button class="flex mx-5 items-center justify-center flex-col text-emerald-300 tablinks" onclick="openCity(event, 'Home')">
+                <button class="flex mx-5 items-center justify-center flex-col text-emerald-300 tablinks" > {{--onclick="openCity(event, 'Home')"--}}
                     <i class="fa-solid fa-house text-xl mb-1"></i>
                     <h1 class="text-sm">Home</h1>
                 </button>
                 <span class="h-1 bg-emerald-300 w-32 rounded-xl"></span>
-                <button class="flex mx-5 items-center justify-center flex-col tablinks"  onclick="openCity(event, 'About',this)">
+                <button class="flex mx-5 items-center justify-center flex-col tablinks" id="Aboutbtn">
                     <i class="fa-regular fa-address-card text-xl mb-1"></i>
                     <h1 class="text-sm">About Me</h1>
                 </button>
                 <span class="h-1 bg-emerald-300 w-32 rounded-xl"></span>
-                <button class="flex mx-5 items-center justify-center flex-col tablinks" onclick="openCity(event, 'Ownpage',this)">
+                <button class="flex mx-5 items-center justify-center flex-col tablinks" id="Ownpagebtn">
                     <i class="fa-solid fa-pager text-xl mb-1"></i>
                     <h1 class="text-sm">Exp</h1>
                 </button>
                 <span class="h-1 bg-emerald-300 w-32 rounded-xl"></span>
-                <button class="flex mx-5 items-center justify-center flex-col tablinks" onclick="openCity(event, 'Contact',this)">
+                <button class="flex mx-5 items-center justify-center flex-col tablinks" id="Contactbtn">
                     <i class="fa-solid fa-id-badge text-xl mb-1"></i>
                     <h1 class="text-sm">Contact</h1>
-                {{-- </button>
-                <span class="h-1 bg-emerald-300 w-32 rounded-xl"></span>
+                </button>
+                {{-- <span class="h-1 bg-emerald-300 w-32 rounded-xl"></span>
                 <button class="flex mx-5 items-center justify-center flex-col tablinks" onclick="openCity(event, 'Home',this)">
                     <i class="fa-solid fa-wifi text-xl mb-1"></i>
                     <h1 class="text-sm">temaplate</h1>
@@ -77,7 +77,8 @@ Data Insert Page - SelfMe
                     </div>
                 </div>
                 <div class="w-full flex justify-center">
-                    <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details">Next</button>
+                    <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" onclick="openCity(event, 'Home',this)" placeholder="Details">Prev</button>
+                    <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" onclick="openCity(event, 'Ownpage',this)" placeholder="Details">Next</button>
                 </div>
             </div>
             <div class="tabcontent" id="Home">
@@ -155,7 +156,7 @@ Data Insert Page - SelfMe
                     </div>
                 </div>
                 <div class="w-full flex justify-center">
-                    <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details">Next</button>
+                    <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details"  onclick="openCity(event, 'About',this)">Next</button>
                 </div>
             </div>
             <div class="tabcontent" id="Ownpage">
@@ -182,7 +183,8 @@ Data Insert Page - SelfMe
                         </div>
                     </div>
                     <div class="w-full flex justify-center">
-                        <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details">Next</button>
+                        <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" onclick="openCity(event, 'About',this)" placeholder="Details">Prev</button>
+                        <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" onclick="openCity(event, 'Contact',this)" placeholder="Details">Next</button>
                     </div>
                 </div>
             </div>
@@ -206,6 +208,7 @@ Data Insert Page - SelfMe
                         </div>
                     </div>
                     <div class="w-full flex justify-center">
+                        <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" onclick="openCity(event, 'Ownpage',this)" placeholder="Details">Prev</button>
                         <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details">Next</button>
                     </div>
                 </div>
@@ -253,7 +256,7 @@ Data Insert Page - SelfMe
                 </div>`;
         }
     }
-    function openCity(evt, cityName,e,index) {
+    function openCity(evt, tabName,e,index) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
         for (i = 0; i < tabcontent.length; i++) {
@@ -263,14 +266,28 @@ Data Insert Page - SelfMe
         for (i = 0; i < tablinks.length; i++) {
             tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
-        document.getElementById(cityName).style.display = "block";
+        document.getElementById(tabName).style.display = "block";
         evt.currentTarget.className += " actives";
-        console.log(e.classList.add('text-emerald-300'));
-        // var length=e.parentNode.children.length;
-        // for(var j=0;j<index;j++){
-        //     e.parentNode.children[j].classList.add('text-emerald-300')
-        // }
+        document.getElementById(tabName+'btn').classList.add('text-emerald-300');
     }
+
+
+    function validateForm(tabname) {
+        var  i, valid = true;
+        y = x[tabname].getElementsByTagName("input");
+        for (i = 0; i < y.length; i++) {
+            if (y[i].value == "") {
+            y[i].className += " invalid";
+            valid = false;
+            }
+        }
+        if (valid) {
+            document.getElementsByClassName("step")[currentTab].className += " finish";
+        }
+        return valid;
+    }
+
+
 </script>
 <style>
     body{
