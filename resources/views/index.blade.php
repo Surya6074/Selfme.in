@@ -1,21 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Selfme</title>
-</head>
+@extends('layouts.app1')
+@section('title')
+Data Insert Page - SelfMe
+@endsection
+@section('content')
 <body class="bg-neutral-900">
 <div class="bg-neutral-900 h-full w-full">
     <div class="lg:p-10 p-5 lg:px-32 pl-10 w-full">
         <nav class="w-full flex justify-between md:h-24 h-16 mt-4 bg-emerald-300 rounded-3xl">
            <div class="w-1/3 relative">
-                <h1 class=" rounded-full absolute -top-4 -left-4 flex justify-center items-center text-emerald-300 md:h-32 md:w-32 h-24 w-24 bg-white text-5xl">Sm</h1>
+                <h1 class=" rounded-full absolute md:-top-4 md:-left-4 -top-2 -left-2 flex justify-center items-center text-emerald-300 md:h-32 md:w-32 h-20 w-20 bg-white text-5xl">Sm</h1>
            </div>
            <div class="flex-1 md:hidden flex justify-between px-2 items-center">
                 <h1 class="text-2xl pl-10">SelfMe</h1>
@@ -31,11 +24,11 @@
            </div>
         </nav>
     </div>
-     <div class="md:h-[80vh] h-full md:pt-20 pt-10 w-full flex lg:flex-row flex-col">
+     <div class="md:h-[100vh] h-full md:pt-20 pt-10 w-full flex lg:flex-row flex-col">
         <div class="lg:w-1/2 lg:pl-32 md:pl-14 pl-8 pr-3 pt-10 pb-32 w-full h-full flex justify-center items-center">
             <div class="flex flex-col justify-center ">
-                <h1 class="md:text-8xl text-6xl text-white font-semibold">Make Your Own</h1>
-                <h1 class="md:text-9xl text-7xl mb-4 text-emerald-300 font-bold mt-4">Portfolio<span class="text-white">.</span></h1>
+                <h1 class="lg:text-7xl md:text-8xl text-6xl text-white font-semibold">Make Your Own</h1>
+                <h1 class="md:text-8xl text-7xl mb-4 text-emerald-300 font-bold mt-4">Portfolio<span class="text-white">.</span></h1>
                 <p class="text-white text-start text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. At consequuntur reiciendis et blanditiis vero, aperiam excepturi iste magnam, dolorum amet officia porro tenetur minima consequatur sit culpa perspiciatis, eaque fugit!</p>
                 <div class="mt-10 flex">
                     <div class=" bg-neutral-100 lg:w-2/4 w-5/6 px-4 py-2 rounded-xl flex items-center border-2 border-emerald-300">
@@ -55,10 +48,10 @@
      </div>
 </div>
 {{-- templates --}}
-<div class="bg-neutral-800 h-screen w-full flex flex-col items-center p-10">
+<div class="bg-neutral-800 md:h-screen h-full w-full flex flex-col items-center p-10">
     <div class="pt-10 text-center">
-        <h1 class="text-6xl font-bold tracking-wide text-white">TEMPLATES</h1>
-        <h3 class="text-xl text-emerald-300 mt-2">We provide be better... we are be better</h3>
+        <h1 class="md:text-6xl text-4xl font-bold tracking-wide text-white">TEMPLATES</h1>
+        <h3 class="md:text-xl text-sm mb-10 text-emerald-300 mt-2">We provide be better... we are be better</h3>
     </div>
     <div class="flex-1 flex gap-10 justify-center items-center h-full w-full">
         <div class="md:flex hidden flex-col w-96 h-[500px] bg-neutral-900 p-5 rounded-xl">
@@ -114,8 +107,8 @@
 {{-- Abouts --}}
 <div class="bg-neutral-900 md:h-screen h-full w-full flex flex-col items-center md:p-10 p-4">
     <div class="pt-10 text-center">
-        <h1 class="text-6xl font-bold tracking-wide text-white">About Us</h1>
-        <h3 class="text-xl text-emerald-300 mt-2">We provide be better... we are be better</h3>
+        <h1 class="md:text-6xl text-4xl  font-bold tracking-wide text-white">About Us</h1>
+        <h3 class="md:text-xl text-sm  text-emerald-300 mt-2">We provide be better... we are be better</h3>
     </div>
     <div class="flex-1 h-full w-full mt-10 lg:px-20 px-8 flex lg:flex-row flex-col justify-center items-center">
         <img src="" class="lg:w-2/4 lg:h-3/4 w-[400px] h-[300px] mb-10 bg-slate-200 " alt="">
@@ -131,7 +124,7 @@
 <div class="bg-neutral-900 md:h-screen h-full w-full pb-20 flex flex-col lg:mt-0 mt-10 items-center md:p-10 p-4">
     <div class="pt-10 text-center flex justify-center flex-col items-center">
         <h1 class="md:text-6xl text-4xl font-bold tracking-wide text-white">Why You Choose Us</h1>
-        <h3 class="text-sm lg:w-2/4 w-full text-emerald-300 mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi distinctio veritatis ex adipisci dolores maxime perspiciatis, numquam unde laudantium aspernatur et beatae nostrum consequuntur laboriosam, voluptatum illum reiciendis quam necessitatibus.</h3>
+        <h3 class="md:text-xl text-sm  lg:w-2/4 w-full text-emerald-300 mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi distinctio veritatis ex adipisci dolores maxime perspiciatis, numquam unde laudantium aspernatur et beatae nostrum consequuntur laboriosam, voluptatum illum reiciendis quam necessitatibus.</h3>
     </div>
     <div class="flex-1 h-full w-full mt-10 lg:gap-10 lg:px-20 pb-20 px-8 flex lg:flex-row flex-col justify-center items-center">
         <div class="">
@@ -193,7 +186,7 @@
     </div>
 </div>
 {{--  Us --}}
-<div class="bg-neutral-900 h-full w-full  flex flex-col gap-20 lg:flex-row justify-around lg:mt-0 mt-10 items-center md:p-10 p-4">
+<div class="bg-neutral-900 h-64 w-full  flex flex-col gap-20 lg:flex-row  justify-around lg:mt-0 mt-10 items-center md:p-10 p-4">
     <div class="flex flex-col items-center justify-center">
         <h4 class="h-16 w-16 flex justify-center items-center rounded-full text-white bg-emerald-300">Sm</h4>
         <p class="text-white">Get in Touch</p>
@@ -220,5 +213,10 @@
     </div>
 </div>
 </body>
-</html>
-
+<style>
+    body{
+        overflow-y: scroll;
+        height: 100%;
+    }
+</style>
+@endsection
