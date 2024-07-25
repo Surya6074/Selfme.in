@@ -1,25 +1,24 @@
 <?php
 
+use App\Http\Controllers\Auth\Authcontroller;
+use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\UiController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/register', function () {
-    return view('auth.register');
-});
-Route::get('/login', function () {
-    return view('auth.login');
-});
-Route::get('/home', function () {
-    return view('home');
-});
-Route::get('/template', function () {
-    return view('template');
-});
-Route::get('/new', function () {
-    return view('new');
-});
-Route::get('/data', function () {
-    return view('data');
-});
-Route::get('/', function () {
-    return view('index');
-});
+
+
+// Get routes
+Route::get('/register', [UiController::class, 'loginui'])->name('loginui');
+Route::get('/login', [UiController::class, 'registerui'])->name('registerui');
+Route::get('/home', [UiController::class, 'homeui'])->name('homeui');
+Route::get('/template', [UiController::class, 'templatesui'])->name('templatesui');
+Route::get('/new', [UiController::class, 'newupdatesui'])->name('newupdatesui');
+Route::get('/data', [UiController::class, 'dataui'])->name('dataui');
+Route::get('/', [UiController::class, 'indexui'])->name('indexui');
+
+// Auth Login
+Route::post('/user-log', [Authcontroller::class, 'Login'])->name('Login');
+Route::post('/user-reg', [Authcontroller::class, 'Register'])->name('Register');
+
+//update Data
+Route::post('/data-update', [PortfolioController::class, 'Storedata'])->name('storedata');

@@ -4,6 +4,9 @@ Data Insert Page - SelfMe
 @endsection
 @section('content')
 <body class="flex">
+    @if($errors->any())
+        <p>{{$errors    }}</p>
+    @endif
     @include('components.sidebar')
     <section class="w-full min-h-min  overflow-y-scroll p-4">
         <div class="flex justify-between items-center px-5 py-3 bg-neutral-900 rounded-xl">
@@ -42,6 +45,8 @@ Data Insert Page - SelfMe
                     <h1 class="text-sm">temaplate</h1>
                 </button> --}}
             </div>
+        <form action="{{route('storedata')}}" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="tabcontent" id="About">
                 <div class="w-full flex-col">
                     <div class="w-full">
@@ -70,15 +75,15 @@ Data Insert Page - SelfMe
                                 <div class="flex w-full my-2">
                                     <input type="text" name="skill[]" class="flex-1 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="Skill">
                                     <input type="number" name="percentage[]" class="ml-2 w-24 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="100%">
-                                    <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details" onclick="addskill(this)">Add</button>
+                                    <button type="button" class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details" onclick="addskill(this)">Add</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="w-full flex justify-center">
-                    <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" onclick="openCity(event, 'Home',this)" placeholder="Details">Prev</button>
-                    <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" onclick="openCity(event, 'Ownpage',this)" placeholder="Details">Next</button>
+                <div class="w-full flex justify-center mb-4">
+                    <button type="button"  class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" onclick="openCity(event, 'Home',this)" placeholder="Details">Prev</button>
+                    <button type="button"  class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" onclick="openCity(event, 'Ownpage',this)" placeholder="Details">Next</button>
                 </div>
             </div>
             <div class="tabcontent" id="Home">
@@ -142,21 +147,21 @@ Data Insert Page - SelfMe
                     <div class="w-full">
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Choose a Image <span class="text-netural-600 text-sm">(.png)</span></label>
-                            <input type="file"   name="hp_img" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Name">
+                            <input type="file" name="hp_img" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Name">
                         </div>
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Enter a Roles</label>
                             <div class="" id="Role-input">
                                 <div class="flex w-full my-2">
                                     <input type="text" name="roles[]" class="flex-1 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="Role..">
-                                    <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details" onclick="addRole(this)">Add</button>
+                                    <button type="button"  class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details" onclick="addRole(this)">Add</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="w-full flex justify-center">
-                    <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details"  onclick="openCity(event, 'About',this)">Next</button>
+                <div class="w-full flex justify-center mb-4">
+                    <button type="button"  class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details"  onclick="openCity(event, 'About',this)">Next</button>
                 </div>
             </div>
             <div class="tabcontent" id="Ownpage">
@@ -179,12 +184,12 @@ Data Insert Page - SelfMe
                                 <label class="text-emerald-300">Enter a desc</label>
                                 <textarea name="w_desc[]" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="description"></textarea>
                             </div>
-                            <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details" onclick="addexp(this)">Add</button>
+                            <button type="button"  class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details" onclick="addexp(this)">Add</button>
                         </div>
                     </div>
-                    <div class="w-full flex justify-center">
-                        <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" onclick="openCity(event, 'About',this)" placeholder="Details">Prev</button>
-                        <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" onclick="openCity(event, 'Contact',this)" placeholder="Details">Next</button>
+                    <div class="w-full flex justify-center mb-4">
+                        <button type="button"  class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" onclick="openCity(event, 'About',this)" placeholder="Details">Prev</button>
+                        <button type="button"  class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" onclick="openCity(event, 'Contact',this)" placeholder="Details">Next</button>
                     </div>
                 </div>
             </div>
@@ -207,12 +212,13 @@ Data Insert Page - SelfMe
                             <textarea rows="4"  name="cp_address" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Address"></textarea>
                         </div>
                     </div>
-                    <div class="w-full flex justify-center">
-                        <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" onclick="openCity(event, 'Ownpage',this)" placeholder="Details">Prev</button>
-                        <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details">Next</button>
+                    <div class="w-full flex justify-center mb-4">
+                        <button type="button" class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" onclick="openCity(event, 'Ownpage',this)" placeholder="Details">Prev</button>
+                        <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details">Submit</button>
                     </div>
                 </div>
             </div>
+        </form>
         </div>
     </section>
 </body>
@@ -243,7 +249,7 @@ Data Insert Page - SelfMe
                                 <label class="text-emerald-300">Enter a desc</label>
                                 <textarea name="w_desc[]" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="description"></textarea>
                             </div>
-                <button class=" w-28 px-4 py-3 mx-2 rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)">Remove</button>
+                <button type="button"  class=" w-28 px-4 py-3 mx-2 rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)">Remove</button>
                 </div>`;
         }
     }
@@ -252,7 +258,7 @@ Data Insert Page - SelfMe
             e.parentNode.parentNode.innerHTML+=`<div class="flex w-full my-2">
                 <input type="text"  name="skill[]" class="flex-1 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="Skill">
                 <input type="number" name="percentage[]" class="ml-2 w-24 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="100%">
-                <button class=" w-28 px-4 py-3 mx-2 rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)">Remove</button>
+                <button type="button"  class=" w-28 px-4 py-3 mx-2 rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)">Remove</button>
                 </div>`;
         }
     }

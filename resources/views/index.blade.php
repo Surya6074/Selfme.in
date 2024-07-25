@@ -12,7 +12,7 @@ Data Insert Page - SelfMe
            </div>
            <div class="flex-1 md:hidden flex justify-between px-2 items-center">
                 <h1 class="text-2xl pl-10">SelfMe</h1>
-                <a href=""><i class='bx bx-menu text-neutral-900 text-3xl'></i></a>
+                <a href=""><i class='bx bx-menu text-neutral-900 text-3xl mr-4'></i></a>
            </div>
            <div class="md:block hidden flex-1 h-full ">
                <ul class="flex h-full items-center justify-around">
@@ -105,13 +105,13 @@ Data Insert Page - SelfMe
     </div>
 </div>
 {{-- Abouts --}}
-<div class="bg-neutral-900 md:h-screen h-full w-full flex flex-col items-center md:p-10 p-4">
+<div class="bg-neutral-900 h-full w-full flex flex-col items-center md:p-10 p-4">
     <div class="pt-10 text-center">
         <h1 class="md:text-6xl text-4xl  font-bold tracking-wide text-white">About Us</h1>
         <h3 class="md:text-xl text-sm  text-emerald-300 mt-2">We provide be better... we are be better</h3>
     </div>
     <div class="flex-1 h-full w-full mt-10 lg:px-20 px-8 flex lg:flex-row flex-col justify-center items-center">
-        <img src="" class="lg:w-2/4 lg:h-3/4 w-[400px] h-[300px] mb-10 bg-slate-200 " alt="">
+        <img src="" class="lg:w-2/4  w-[400px] h-[500px] mb-10 bg-slate-200 " alt="">
         <div class="flex-1 flex flex-col lg:pl-20 p-0 text-center">
             <p class="lg:text-lg text-sm mb-10 text-center text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, laboriosam explicabo! Dignissimos recusandae at est, vel debitis beatae officiis obcaecati incidunt blanditiis, quibusdam architecto suscipit doloribus assumenda, nisi saepe quis?Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora odit architecto delectus, incidunt officiis ipsam veniam provident. Quia magni officiis, nostrum obcaecati eaque esse maxime accusamus, suscipit provident, aliquid fugit! <br><br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, laboriosam explicabo! Dignissimos recusandae at est, vel debitis beatae officiis obcaecati incidunt blanditiis, quibusdam architecto suscipit doloribus assumenda, nisi saepe quis?Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora odit architecto delectus, incidunt officiis ipsam veniam provident. Quia magni officiis, nostrum obcaecati eaque esse maxime accusamus, suscipit provident, aliquid fugit!</p>
             <div class="w-full">
@@ -121,7 +121,7 @@ Data Insert Page - SelfMe
     </div>
 </div>
 {{-- choose Us --}}
-<div class="bg-neutral-900 md:h-screen h-full w-full pb-20 flex flex-col lg:mt-0 mt-10 items-center md:p-10 p-4">
+<div class="bg-neutral-900  h-full w-full pb-20 flex flex-col lg:mt-0 mt-10 items-center md:p-10 p-4">
     <div class="pt-10 text-center flex justify-center flex-col items-center">
         <h1 class="md:text-6xl text-4xl font-bold tracking-wide text-white">Why You Choose Us</h1>
         <h3 class="md:text-xl text-sm  lg:w-2/4 w-full text-emerald-300 mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi distinctio veritatis ex adipisci dolores maxime perspiciatis, numquam unde laudantium aspernatur et beatae nostrum consequuntur laboriosam, voluptatum illum reiciendis quam necessitatibus.</h3>

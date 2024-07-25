@@ -5,8 +5,9 @@ Login Page - Selfme
 @section('content')
 <div class="h-full w-full flex md:flex-row flex-col-reverse bg-neutral-800">
     <div class="lg:w-1/2 w-full h-full flex justify-center items-center form-page">
-        <form class="flex flex-col lg:w-2/4 w-5/6">
+        <form action="{{route('Login')}}" method="POST" class="flex flex-col lg:w-2/4 w-5/6">
             <h1 class="text-4xl text-center font-bold mb-6 text-emerald-300">Login</h1>
+            @csrf
             <div class="flex flex-col mb-5">
                 <label for="" class="text-gray-100">Enter a Email</label>
                 <input type="email" name="email" class="p-4 mt-1 rounded-md bg-neutral-900 outline-none text-neutral-300" placeholder="Email Address">
