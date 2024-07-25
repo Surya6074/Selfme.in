@@ -1,1 +1,25 @@
-Hiii
+    $('#name').on('keyup',function(){
+        var data={
+            name:$('#name').val(),
+        };
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        console.log(data);
+        $.ajax({
+            url:'/username',
+            method:'POST',
+            data:data,
+            success:function(res){
+                var err = document.getElementById('err');
+                if(res.data>0){
+                    err.innerHTML  =`<p>username was already taken</p>`;
+                }else{
+
+                    err.innerHTML  =`<p></p>`;
+                }
+            }
+        });
+    });
