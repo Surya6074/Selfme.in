@@ -13,11 +13,11 @@ Login Page - Selfme
             </div>
             <div class="flex flex-col">
                 <label for="" class="text-gray-100">Enter a Password</label>
-                <input type="password" class="p-3 mt-1 rounded-md outline-none bg-neutral-900 text-neutral-300"  placeholder="Password">
+                <input type="password" name="password" class="p-3 mt-1 rounded-md outline-none bg-neutral-900 text-neutral-300"  placeholder="Password">
             </div>
             <div class="flex mt-5 justify-between">
                 <div class="">
-                    <input type="checkbox" class="mr-2 w-4 h-4" name="" id=""><label for="" class="text-gray-50">Remeber me</label>
+                    <input type="checkbox" class="mr-2 w-4 h-4" name="rememberme" id=""><label for="" class="text-gray-50">Remeber me</label>
                 </div>
                 <div class="">
                     <a href="" class="text-emerald-200">Forgot password?</a>

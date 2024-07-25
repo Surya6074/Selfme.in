@@ -47,19 +47,19 @@ Data Insert Page - SelfMe
                     <div class="w-full">
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Enter a Name</label>
-                            <input type="text" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Name">
+                            <input type="text" name="ap_name" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Name">
                         </div>
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Enter a Role</label>
-                            <input type="text" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Role">
+                            <input type="text" name="ap_role" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Role">
                         </div>
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Choose a Resume<span class="text-netural-600 text-sm">(.pdf)</span></label>
-                            <input type="file" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Resume.pdf">
+                            <input type="file"  name="ap_resume" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Resume.pdf">
                         </div>
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Enter a About you</label>
-                            <textarea rows="12" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Details"></textarea>
+                            <textarea rows="12" name="ap_desc" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Details"></textarea>
                         </div>
 
                     </div>
@@ -68,8 +68,8 @@ Data Insert Page - SelfMe
                             <label class="text-emerald-300">Enter a Skills</label>
                             <div class="" id="Role-input">
                                 <div class="flex w-full my-2">
-                                    <input type="text" class="flex-1 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="Skill">
-                                    <input type="number" class="ml-2 w-24 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="100%">
+                                    <input type="text" name="skill[]" class="flex-1 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="Skill">
+                                    <input type="number" name="percentage[]" class="ml-2 w-24 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="100%">
                                     <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details" onclick="addskill(this)">Add</button>
                                 </div>
                             </div>
@@ -86,55 +86,55 @@ Data Insert Page - SelfMe
                     <div class="w-full">
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Enter a Name</label>
-                            <input type="text" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Name">
+                            <input type="text"  name="hp_name" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Name">
                         </div>
 
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Enter a About you</label>
-                            <textarea class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Details"></textarea>
+                            <textarea  name="hp_desc" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Details"></textarea>
                         </div>
                         <div class="flex flex-col w-full m-5 pr-10">
                             <label class="text-emerald-300">Links</label>
                             <div class="w-full" id="links">
                                 <div class="flex w-full my-3">
-                                    <select name="logo" id="" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Details">
+                                    <select  name="linkname[]"id="" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Details">
                                         <option value="Instagram" selected>Instagram</option>
                                         <option value="Github">Github</option>
                                         <option value="Facebook">Facebook</option>
                                         <option value="Twitter">Twitter</option>
                                         <option value="Discord">Discord</option>
                                     </select>
-                                    <input type="url" class="ml-2 bg-neutral-950 flex-1  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Link">
+                                    <input type="url" name="link[]" class="ml-2 bg-neutral-950 flex-1  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Link">
                                 </div>
                                 <div class="flex w-full my-3">
-                                    <select name="logo" id="" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Details">
+                                    <select   name="linkname[]" id="" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Details">
                                         <option value="Instagram">Instagram</option>
                                         <option value="Github" selected>Github</option>
                                         <option value="Facebook">Facebook</option>
                                         <option value="Twitter">Twitter</option>
                                         <option value="Discord">Discord</option>
                                     </select>
-                                    <input type="url" class="ml-2 bg-neutral-950 flex-1  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Link">
+                                    <input type="url" name="link[]" class="ml-2 bg-neutral-950 flex-1  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Link">
                                 </div>
                                 <div class="flex w-full my-3">
-                                    <select name="logo" id="" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Details">
+                                    <select  name="linkname[]" id="" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Details">
                                         <option value="Instagram">Instagram</option>
                                         <option value="Github">Github</option>
                                         <option value="Facebook" selected>Facebook</option>
                                         <option value="Twitter">Twitter</option>
                                         <option value="Discord">Discord</option>
                                     </select>
-                                    <input type="url" class="ml-2 bg-neutral-950 flex-1  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Link">
+                                    <input type="url" name="link[]" class="ml-2 bg-neutral-950 flex-1  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Link">
                                 </div>
                                 <div class="flex w-full my-3">
-                                    <select name="logo" id="" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Details">
+                                    <select   name="linkname[]"id="" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Details">
                                         <option value="Instagram">Instagram</option>
                                         <option value="Github">Github</option>
                                         <option value="Facebook">Facebook</option>
                                         <option value="Twitter" selected>Twitter</option>
                                         <option value="Discord">Discord</option>
                                     </select>
-                                    <input type="url" class="ml-2 bg-neutral-950 flex-1  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Link">
+                                    <input type="url" name="link[]" class="ml-2 bg-neutral-950 flex-1  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Link">
                                 </div>
                             </div>
                         </div>
@@ -142,13 +142,13 @@ Data Insert Page - SelfMe
                     <div class="w-full">
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Choose a Image <span class="text-netural-600 text-sm">(.png)</span></label>
-                            <input type="file" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Name">
+                            <input type="file"   name="hp_img" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Name">
                         </div>
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Enter a Roles</label>
                             <div class="" id="Role-input">
                                 <div class="flex w-full my-2">
-                                    <input type="text" class="flex-1 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="Role..">
+                                    <input type="text" name="roles[]" class="flex-1 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="Role..">
                                     <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details" onclick="addRole(this)">Add</button>
                                 </div>
                             </div>
@@ -163,21 +163,21 @@ Data Insert Page - SelfMe
                 <div class="w-full flex flex-col">
                     <div class="flex flex-col m-5">
                         <label class="text-emerald-300">Enter a Page Name</label>
-                        <input type="text" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="eg: Experience,projects">
+                        <input type="text" name="op_name" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="eg: Experience,projects">
                     </div>
                     <div class="mx-4 " id="Role-input">
                         <div class="flex flex-col w-full my-1">
                             <div class="flex flex-col m-2">
                                 <label class="text-emerald-300">Enter a primary title</label>
-                                <input type="text" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="eg: title 1">
+                                <input type="text" name="w_title1[]" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="eg: title 1">
                             </div>
                             <div class="flex flex-col m-2">
                                 <label class="text-emerald-300">Enter a secondary title</label>
-                                <input type="text" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="eg: title 2 ,year">
+                                <input type="text" name="w_title2[]" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="eg: title 2 ,year">
                             </div>
                             <div class="flex flex-col m-2">
                                 <label class="text-emerald-300">Enter a desc</label>
-                                <textarea class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="description"></textarea>
+                                <textarea name="w_desc[]" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="description"></textarea>
                             </div>
                             <button class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details" onclick="addexp(this)">Add</button>
                         </div>
@@ -192,19 +192,19 @@ Data Insert Page - SelfMe
                     <div class="w-full flex flex-col">
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Enter a Name</label>
-                            <input type="text" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Name">
+                            <input type="text" name="cp_name" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Name">
                         </div>
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Enter a Phone number</label>
-                            <input type="text" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Phono no">
+                            <input type="text"  name="cp_phone" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Phono no">
                         </div>
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Enter a Email Address</label>
-                            <input type="text" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Email Address">
+                            <input type="text"  name="cp_email" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Email Address">
                         </div>
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Enter a Address</label>
-                            <textarea rows="4" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Address"></textarea>
+                            <textarea rows="4"  name="cp_address" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Address"></textarea>
                         </div>
                     </div>
                     <div class="w-full flex justify-center">
@@ -220,7 +220,7 @@ Data Insert Page - SelfMe
     function addRole(e){
     if(e.parentNode.parentNode.children.length<5){
         e.parentNode.parentNode.innerHTML+=`<div class="flex w-full my-2">
-                <input type="text" class="flex-1 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="Role..">
+                <input type="text" name="roles[]" class="flex-1 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="Role..">
                 <button class=" w-28 px-4 py-3 mx-2 rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)">Remove</button>
                 </div>`;
         }
@@ -233,15 +233,15 @@ Data Insert Page - SelfMe
             e.parentNode.parentNode.innerHTML+=`<div class="flex flex-col w-full my-2">
                             <div class="flex flex-col m-2">
                                 <label class="text-emerald-300">Enter a primary title</label>
-                                <input type="text" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="eg: title 1">
+                                <input type="text" name="w_title1[]" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="eg: title 1">
                             </div>
                             <div class="flex flex-col m-2">
                                 <label class="text-emerald-300">Enter a secondary title</label>
-                                <input type="text" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="eg: title 2 ,year">
+                                <input type="text" name="w_title2[]" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="eg: title 2 ,year">
                             </div>
                             <div class="flex flex-col m-2">
                                 <label class="text-emerald-300">Enter a desc</label>
-                                <textarea class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="description"></textarea>
+                                <textarea name="w_desc[]" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="description"></textarea>
                             </div>
                 <button class=" w-28 px-4 py-3 mx-2 rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)">Remove</button>
                 </div>`;
@@ -250,8 +250,8 @@ Data Insert Page - SelfMe
     function addskill(e){
         if(e.parentNode.parentNode.children.length<10){
             e.parentNode.parentNode.innerHTML+=`<div class="flex w-full my-2">
-                <input type="text" class="flex-1 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="Skill">
-                <input type="number" class="ml-2 w-24 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="100%">
+                <input type="text"  name="skill[]" class="flex-1 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="Skill">
+                <input type="number" name="percentage[]" class="ml-2 w-24 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="100%">
                 <button class=" w-28 px-4 py-3 mx-2 rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)">Remove</button>
                 </div>`;
         }

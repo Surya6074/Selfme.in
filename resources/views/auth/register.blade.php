@@ -9,7 +9,7 @@ Register Page - Selfme
             <h1 class="text-4xl text-center font-bold mb-6 text-emerald-300">Register</h1>
             <div class="flex flex-col mb-5">
                 <label for="" class="text-gray-100">Enter a Username</label>
-                <input type="text" name="email" class="p-3 mt-1 rounded-md bg-neutral-900 outline-none text-neutral-300" placeholder="username">
+                <input type="text" name="username" class="p-3 mt-1 rounded-md bg-neutral-900 outline-none text-neutral-300" placeholder="username">
             </div>
              <div class="flex flex-col mb-5">
                 <label for="" class="text-gray-100">Enter a Email</label>
@@ -17,15 +17,15 @@ Register Page - Selfme
             </div>
             <div class="flex flex-col mb-5">
                 <label for="" class="text-gray-100">Enter a Password</label>
-                <input type="password" class="p-3 mt-1 rounded-md outline-none bg-neutral-900 text-neutral-300"  placeholder="Password">
+                <input type="password" name="password" class="p-3 mt-1 rounded-md outline-none bg-neutral-900 text-neutral-300"  placeholder="Password">
             </div>
             <div class="flex flex-col mb-5">
                 <label for="" class="text-gray-100">Confirm Password</label>
-                <input type="password_confirmation" class="p-3 mt-1 rounded-md outline-none bg-neutral-900 text-neutral-300"  placeholder="confirm Password">
+                <input type="password_confirmation" password="confirm_password" class="p-3 mt-1 rounded-md outline-none bg-neutral-900 text-neutral-300"  placeholder="confirm Password">
             </div>
             <div class="flex mt-5 justify-between">
                 <div class="">
-                    <input type="checkbox" class="mr-2 w-4 h-4 bg-neutral-900" name="" id=""><label for="" class="text-gray-50">I agree the <a href="" class="text-emerald-300">Terms and condition</a></label>
+                    <input type="checkbox" class="mr-2 w-4 h-4 bg-neutral-900" name="agree" id=""><label for="" class="text-gray-50">I agree the <a href="" class="text-emerald-300">Terms and condition</a></label>
                 </div>
             </div>
             <button class="py-3 px-5 bg-emerald-300 rounded-lg mt-10">Register  </button>
