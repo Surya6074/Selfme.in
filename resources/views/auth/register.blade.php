@@ -14,7 +14,8 @@ Register Page - Selfme
             <h1 class="text-4xl text-center font-bold mb-6 text-emerald-300">Register</h1>
             <div class="flex flex-col mb-5">
                 <label for="" class="text-gray-100">Enter a Username</label>
-                <input type="text" name="username" class="p-3 mt-1 rounded-md bg-neutral-900 outline-none text-neutral-300" placeholder="username">
+                <input type="text" name="username" id="username" class="p-3 mt-1 rounded-md bg-neutral-900 outline-none text-neutral-300" placeholder="username">
+                <div id="err"></div>
             </div>
              <div class="flex flex-col mb-5">
                 <label for="" class="text-gray-100">Enter a Email</label>
@@ -54,5 +55,30 @@ Register Page - Selfme
 
     </div>
 </div>
-
+<script>
+    $('#username').on('keyup',function(){
+        var data={
+            username:$('#username').val(),
+        };
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        console.log(data);
+        $.ajax({
+            url:'/username',
+            method:'POST',
+            data:data,
+            success:function(res){
+                var err = document.getElementById('err');
+                if(res.data>0){
+                    err.innerHTML  =`<p>username was already taken</p>`;
+                }else{
+                    err.innerHTML  =`<p></p>`;
+                }
+            }
+        });
+    });
+</script>
 @endsection
