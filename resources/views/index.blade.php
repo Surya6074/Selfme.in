@@ -32,7 +32,7 @@ Data Insert Page - SelfMe
                 <p class="text-white text-start text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. At consequuntur reiciendis et blanditiis vero, aperiam excepturi iste magnam, dolorum amet officia porro tenetur minima consequatur sit culpa perspiciatis, eaque fugit!</p>
                 <div class="mt-10 flex">
                     <div class=" bg-neutral-100 lg:w-2/4 w-5/6 px-4 py-2 rounded-xl flex items-center border-2 border-emerald-300">
-                        <span class=" text-xl text-neutral-600">https://selfme.in/</span><input type="text" class=" bg-transparent h-full w-full py-2 pr-2 outline-none">
+                        <span class=" text-xl text-neutral-600">https://selfme.in/</span><input type="text" name="username" id="username" class=" bg-transparent h-full w-full py-2 pr-2 outline-none"><div id="err"></div>
                     </div>
                     <button class="px-5 py-2 ml-2 bg-emerald-300 text-neutral-900 rounded-lg">Check</button>
                 </div>
@@ -219,4 +219,30 @@ Data Insert Page - SelfMe
         height: 100%;
     }
 </style>
+<script>
+    $('#username').on('keyup',function(){
+        var data={
+            username:$('#username').val(),
+        };
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        console.log(data);
+        $.ajax({
+            url:'/username',
+            method:'POST',
+            data:data,
+            success:function(res){
+                var err = document.getElementById('err');
+                if(res.data>0){
+                    err.innerHTML  =`<p>username was already taken</p>`;
+                }else{
+                    err.innerHTML  =`<p></p>`;
+                }
+            }
+        });
+    });
+</script>
 @endsection
