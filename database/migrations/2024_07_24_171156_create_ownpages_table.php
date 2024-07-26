@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::create('ownpages', function (Blueprint $table) {
             $table->id();
-            $table->string('op_name');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('work_id');
+            $table->string('w_title1');
+            $table->string('w_title2');
+            $table->string('w_desc');
+            $table->string('op_name');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('work_id')->references('id')->on('works')->onDelete('cascade');
         });
     }
 

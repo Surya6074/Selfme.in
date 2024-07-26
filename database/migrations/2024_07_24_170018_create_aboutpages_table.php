@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('aboutpages', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('ap_name');
             $table->string('ap_role');
             $table->string('ap_resume');
             $table->string('ap_desc');
-            $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\Route;
 
 
 // Get routes
-Route::get('/register', [UiController::class, 'loginui'])->name('loginui');
-Route::get('/login', [UiController::class, 'registerui'])->name('registerui');
+Route::get('/login', [UiController::class, 'loginui'])->name('loginui');
+Route::get('/register', [UiController::class, 'registerui'])->name('registerui');
 Route::get('/home', [UiController::class, 'homeui'])->name('homeui');
 Route::get('/template', [UiController::class, 'templatesui'])->name('templatesui');
 Route::get('/new', [UiController::class, 'newupdatesui'])->name('newupdatesui');
@@ -22,3 +22,7 @@ Route::post('/user-reg', [Authcontroller::class, 'Register'])->name('Register');
 
 //update Data
 Route::post('/data-update', [PortfolioController::class, 'Storedata'])->name('storedata');
+
+
+//Api for validation
+Route::post('/username', [PortfolioController::class, 'ValidateUsername']);
