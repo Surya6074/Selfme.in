@@ -60,4 +60,10 @@ class PortfolioController extends Controller
         $cp_email = $request->input('cp_email');
         $cp_address = $request->input('cp_address');
     }
+
+     public function ValidateUsername(Request $request){
+       $name=$request->input('name');
+       $data=Count(User::where('name',$name)->select('name')->get());
+       return response()->json(['msg'=>'success','data'=>$data]);
+    }
 }
