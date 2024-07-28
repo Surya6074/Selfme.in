@@ -116,6 +116,25 @@ class PortfolioController extends Controller
         return redirect('/home');
     }
 
+    public function Getdataui()
+    {
+        // $id = auth()->user()->id;
+        $id = 1;
+        $homepages = Homepage::where('user_id', $id)->get();
+        $aboutpages = Aboutpage::where('user_id', $id)->get();
+        $contactpages = Contactpage::where('user_id', $id)->get();
+        $ownpages = Ownpage::where('user_id', $id)->get();
+        $skills = Skill::where('user_id', $id)->get();
+        $links = Link::where('user_id', $id)->get();
+
+        $ownpagetitle = Ownpage::where('user_id', $id)->select('op_name')->first();
+
+        // dd($links);
+
+        return view('editdata', compact('homepages', 'aboutpages', 'contactpages', 'ownpages', 'ownpagetitle', 'skills', 'links'));
+    }
+
+
     public function ValidateUsername(Request $request)
     {
         $name = $request->input('name');

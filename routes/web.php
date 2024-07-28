@@ -16,6 +16,8 @@ Route::get('/new', [UiController::class, 'newupdatesui'])->name('newupdatesui');
 Route::get('/data', [UiController::class, 'dataui'])->name('dataui');
 Route::get('/', [UiController::class, 'indexui'])->name('indexui');
 
+Route::get('/edit-data', [PortfolioController::class, 'Getdataui'])->name('getdataui');
+
 // Auth Login
 Route::post('/user-log', [Authcontroller::class, 'Login'])->name('Login');
 Route::post('/user-reg', [Authcontroller::class, 'Register'])->name('Register');
