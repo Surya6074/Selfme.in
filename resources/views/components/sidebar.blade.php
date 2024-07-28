@@ -15,9 +15,15 @@
         <li class="w-full h-16 my-2 relative">
             <a href="/template" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300 {{($url[3]=="template")?'text-emerald-300 active':''}} rounded-lg side-menu"><i class="fa-solid fa-cube w-10"></i>Design</a>
         </li>
+        @if (auth()->user())
+        <li class="w-full h-16 my-2 relative">
+            <a href="/edit-data" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300 {{($url[3]=="edit-data")?'text-emerald-300 active':''}} rounded-lg side-menu"><i class="fa-solid fa-database w-10"></i>Edit Data</a>
+        </li>
+        @else
         <li class="w-full h-16 my-2 relative">
             <a href="/data" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300 {{($url[3]=="data")?'text-emerald-300 active':''}} rounded-lg side-menu"><i class="fa-solid fa-database w-10"></i>Datas</a>
         </li>
+        @endif
         <li class="w-full h-16 my-2 relative">
             <a href="/new" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300 {{($url[3]=="new")?'text-emerald-300 active':''}} rounded-lg side-menu"><i class="fa-solid fa-wand-magic-sparkles w-10"></i></i>New</a>
         </li>

@@ -45,8 +45,9 @@ Data Insert Page - SelfMe
                     <h1 class="text-sm">temaplate</h1>
                 </button> --}}
             </div>
-        <form action="{{route('storedata')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('updatedata')}}" method="POST" enctype="multipart/form-data">
             @csrf
+            <input type="hidden" name="selfme_user_id" value="1">
             <div class="tabcontent" id="About">
                 <div class="w-full flex-col">
                     <div class="w-full">
@@ -61,11 +62,12 @@ Data Insert Page - SelfMe
                         </div>
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Choose a Resume<span class="text-netural-600 text-sm">(.pdf)</span></label>
+                            <input type="hidden" name="ap_resume_name" value="{{$ap->ap_resume}}">
                             <input type="file" value="{{$ap->ap_resume}}"  name="ap_resume" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Resume.pdf">
                         </div>
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Enter a About you</label>
-                            <textarea rows="12" name="ap_desc" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Details">{{$ap->ap_desc}}</textarea>
+                            <textarea rows="4" name="ap_desc" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Details">{{$ap->ap_desc}}</textarea>
                         </div>
                         @endforeach
                     </div>
@@ -115,7 +117,6 @@ Data Insert Page - SelfMe
                             <label class="text-emerald-300">Enter a About you</label>
                             <textarea  name="hp_desc" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Details">{{$hp->hp_desc}}</textarea>
                         </div>
-
                         <div class="flex flex-col w-full m-5 pr-10">
                             <label class="text-emerald-300">Links</label>
                             <div class="w-full" id="links">
@@ -163,12 +164,15 @@ Data Insert Page - SelfMe
                                 </div> --}}
                             </div>
                         </div>
-
                     </div>
                     <div class="w-full">
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Choose a Image <span class="text-netural-600 text-sm">(.png)</span></label>
-                            <input type="file" name="hp_img" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Name">
+                            <div class="flex">
+                                <input type="hidden" name="hp_img_name" value="{{$hp->hp_img}}">
+                                <img src="{{asset('assets/dbdesign.png')}}" height="50px" width="50px" class="mx-2" alt="">
+                                <input type="file" name="hp_img"  class=" w-full bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Name">
+                            </div>
                         </div>
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Enter a Roles</label>

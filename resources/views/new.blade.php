@@ -15,67 +15,69 @@ New updates - Selfme
                 <h1 class="text-3xl ">S</h1>
             </div>
         </div>
-        <div class="mt-5 p-4 bg-neutral-900 rounded-xl w-full">
-            <div class="">
-                <p class="text-emerald-300 font-semibold">Surya</p>
+        <div class="">
+            <div class="mt-5 p-4 bg-neutral-900 rounded-xl w-full">
+                <div class="">
+                    <p class="text-emerald-300 font-semibold">Surya</p>
+                </div>
+                <p class="text-md text-gray-100 my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
+                <div class="mt-2">
+                    <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
+                </div>
             </div>
-            <p class="text-md text-gray-100 my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
-            <div class="mt-2">
-                <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
+            <div class="mt-5 p-4 bg-neutral-900 rounded-xl w-full">
+                <div class="">
+                    <p class="text-emerald-300 font-semibold">Surya</p>
+                </div>
+                <p class="text-md text-gray-100 my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
+                <div class="mt-2">
+                    <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
+                </div>
             </div>
-        </div>
-        <div class="mt-5 p-4 bg-neutral-900 rounded-xl w-full">
-            <div class="">
-                <p class="text-emerald-300 font-semibold">Surya</p>
+            <div class="mt-5 p-4 bg-neutral-900 rounded-xl w-full">
+                <div class="">
+                    <p class="text-emerald-300 font-semibold">Surya</p>
+                </div>
+                <p class="text-md text-gray-100 my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
+                <div class="mt-2">
+                    <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
+                </div>
             </div>
-            <p class="text-md text-gray-100 my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
-            <div class="mt-2">
-                <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
+            <div class="mt-5 p-4 bg-neutral-900 rounded-xl w-full">
+                <div class="">
+                    <p class="text-emerald-300 font-semibold">Surya</p>
+                </div>
+                <p class="text-md text-gray-100 my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
+                <div class="mt-2">
+                    <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
+                </div>
             </div>
-        </div>
-        <div class="mt-5 p-4 bg-neutral-900 rounded-xl w-full">
-            <div class="">
-                <p class="text-emerald-300 font-semibold">Surya</p>
+            <div class="mt-5 p-4 bg-neutral-900 rounded-xl w-full">
+                <div class="">
+                    <p class="text-emerald-300 font-semibold">Surya</p>
+                </div>
+                <p class="text-md text-gray-100 my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
+                <div class="mt-2">
+                    <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
+                </div>
             </div>
-            <p class="text-md text-gray-100 my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
-            <div class="mt-2">
-                <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
+            <div class="mt-5 p-4 bg-neutral-900 rounded-xl w-full">
+                <div class="">
+                    <p class="text-emerald-300 font-semibold">Surya</p>
+                </div>
+                <p class="text-md text-gray-100 my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
+                <div class="mt-2">
+                    <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
+                </div>
             </div>
-        </div>
-        <div class="mt-5 p-4 bg-neutral-900 rounded-xl w-full">
-            <div class="">
-                <p class="text-emerald-300 font-semibold">Surya</p>
-            </div>
-            <p class="text-md text-gray-100 my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
-            <div class="mt-2">
-                <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
-            </div>
-        </div>
-        <div class="mt-5 p-4 bg-neutral-900 rounded-xl w-full">
-            <div class="">
-                <p class="text-emerald-300 font-semibold">Surya</p>
-            </div>
-            <p class="text-md text-gray-100 my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
-            <div class="mt-2">
-                <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
-            </div>
-        </div>
-        <div class="mt-5 p-4 bg-neutral-900 rounded-xl w-full">
-            <div class="">
-                <p class="text-emerald-300 font-semibold">Surya</p>
-            </div>
-            <p class="text-md text-gray-100 my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
-            <div class="mt-2">
-                <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
-            </div>
-        </div>
-        <div class="mt-5 p-4 bg-neutral-900 rounded-xl w-full">
-            <div class="">
-                <p class="text-emerald-300 font-semibold">Surya</p>
-            </div>
-            <p class="text-md text-gray-100 my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
-            <div class="mt-2">
-                <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
+            <div class="mt-5 p-4 bg-neutral-900 rounded-xl w-full">
+                <div class="">
+                    <p class="text-emerald-300 font-semibold">Surya</p>
+                </div>
+                <p class="text-md text-gray-100 my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
+                <div class="mt-2">
+                    <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
+                </div>
             </div>
         </div>
     </section>

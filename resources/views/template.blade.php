@@ -15,10 +15,10 @@ Portfolio Templates - Selfme
                 <h1 class="text-3xl ">S</h1>
             </div>
         </div>
-        <div class="h-full mt-10 grid lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-6 justify-center ">
-            <div class="h-5/6 flex flex-col w-72 bg-neutral-800 rounded-xl test relative place-self-center">
+        <div class=" mt-10 grid lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-6 justify-center ">
+            <div class=" flex flex-col w-72 bg-neutral-800 rounded-xl template-size relative place-self-center">
                 <div class="flex-1 justify-center items-center opacity-70">
-                    <img src="{{asset('assets/temp.png')}}" class=" h-3/4 w-full rounded-xl" alt="">
+                    <img src="{{asset('assets/temp.png')}}" class=" h-96 w-full rounded-xl" alt="">
                 </div>
                 <div class="flex flex-col  w-full px-5 absolute bottom-0">
                     <h1 class="text-white text-2xl">Design 1</h1>
@@ -28,9 +28,9 @@ Portfolio Templates - Selfme
                     </div>
                 </div>
             </div>
-            <div class="h-5/6 flex flex-col w-72 bg-neutral-800 rounded-xl test relative place-self-center">
+            <div class=" flex flex-col w-72 bg-neutral-800 rounded-xl template-size relative place-self-center">
                 <div class="flex-1 justify-center items-center opacity-70">
-                    <img src="{{asset('assets/2.png')}}" class=" h-3/4 w-full rounded-xl" alt="">
+                    <img src="{{asset('assets/temp.png')}}" class=" h-96 w-full rounded-xl" alt="">
                 </div>
                 <div class="flex flex-col  w-full px-5 absolute bottom-0">
                     <h1 class="text-white text-2xl">Design 1</h1>
@@ -40,9 +40,9 @@ Portfolio Templates - Selfme
                     </div>
                 </div>
             </div>
-            <div class="h-5/6 flex flex-col w-72 bg-neutral-800 rounded-xl test relative place-self-center">
+            <div class=" flex flex-col w-72 bg-neutral-800 rounded-xl template-size relative place-self-center">
                 <div class="flex-1 justify-center items-center opacity-70">
-                    <img src="{{asset('assets/2.png')}}" class=" h-3/4 w-full rounded-xl" alt="">
+                    <img src="{{asset('assets/temp.png')}}" class=" h-96 w-full rounded-xl" alt="">
                 </div>
                 <div class="flex flex-col  w-full px-5 absolute bottom-0">
                     <h1 class="text-white text-2xl">Design 1</h1>
@@ -52,9 +52,9 @@ Portfolio Templates - Selfme
                     </div>
                 </div>
             </div>
-            <div class="h-5/6 flex flex-col w-72 bg-neutral-800 rounded-xl test relative place-self-center">
+            <div class=" flex flex-col w-72 bg-neutral-800 rounded-xl template-size relative place-self-center">
                 <div class="flex-1 justify-center items-center opacity-70">
-                    <img src="{{asset('assets/2.png')}}" class=" h-3/4 w-full rounded-xl" alt="">
+                    <img src="{{asset('assets/temp.png')}}" class=" h-96 w-full rounded-xl" alt="">
                 </div>
                 <div class="flex flex-col  w-full px-5 absolute bottom-0">
                     <h1 class="text-white text-2xl">Design 1</h1>
@@ -64,56 +64,6 @@ Portfolio Templates - Selfme
                     </div>
                 </div>
             </div>
-            <div class="h-5/6 flex flex-col w-72 bg-neutral-800 rounded-xl test relative place-self-center">
-                <div class="flex-1 justify-center items-center opacity-70">
-                    <img src="{{asset('assets/2.png')}}" class=" h-3/4 w-full rounded-xl" alt="">
-                </div>
-                <div class="flex flex-col  w-full px-5 absolute bottom-0">
-                    <h1 class="text-white text-2xl">Design 1</h1>
-                    <div class="mt-5 pb-5 flex justify-between w-full">
-                        <a href="" class="px-4 py-2 text-emerald-300 bg-neutral-900 rounded-lg">Preview</a>
-                        <a href="" class="px-4 py-2 bg-emerald-300 text-neutral-900 rounded-lg">Use Template</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="h-5/6 flex flex-col w-72 bg-neutral-800 rounded-xl test relative place-self-center">
-                <div class="flex-1 justify-center items-center opacity-70">
-                    <img src="{{asset('assets/2.png')}}" class=" h-3/4 w-full rounded-xl" alt="">
-                </div>
-                <div class="flex flex-col  w-full px-5 absolute bottom-0">
-                    <h1 class="text-white text-2xl">Design 1</h1>
-                    <div class="mt-5 pb-5 flex justify-between w-full">
-                        <a href="" class="px-4 py-2 text-emerald-300 bg-neutral-900 rounded-lg">Preview</a>
-                        <a href="" class="px-4 py-2 bg-emerald-300 text-neutral-900 rounded-lg">Use Template</a>
-                    </div>
-                </div>
-            </div>
-            <div class="h-5/6 flex flex-col w-72 bg-neutral-800 rounded-xl test relative place-self-center">
-                <div class="flex-1 justify-center items-center opacity-70">
-                    <img src="{{asset('assets/2.png')}}" class=" h-3/4 w-full rounded-xl" alt="">
-                </div>
-                <div class="flex flex-col  w-full px-5 absolute bottom-0">
-                    <h1 class="text-white text-2xl">Design 1</h1>
-                    <div class="mt-5 pb-5 flex justify-between w-full">
-                        <a href="" class="px-4 py-2 text-emerald-300 bg-neutral-900 rounded-lg">Preview</a>
-                        <a href="" class="px-4 py-2 bg-emerald-300 text-neutral-900 rounded-lg">Use Template</a>
-                    </div>
-                </div>
-            </div>
-            <div class="h-5/6 flex flex-col w-72 bg-neutral-800 rounded-xl test relative place-self-center">
-                <div class="flex-1 justify-center items-center opacity-70">
-                    <img src="{{asset('assets/2.png')}}" class=" h-3/4 w-full rounded-xl" alt="">
-                </div>
-                <div class="flex flex-col  w-full px-5 absolute bottom-0">
-                    <h1 class="text-white text-2xl">Design 1</h1>
-                    <div class="mt-5 pb-5 flex justify-between w-full">
-                        <a href="" class="px-4 py-2 text-emerald-300 bg-neutral-900 rounded-lg">Preview</a>
-                        <a href="" class="px-4 py-2 bg-emerald-300 text-neutral-900 rounded-lg">Use Template</a>
-                    </div>
-                </div>
-            </div>
-
 
         </div>
     </section>
@@ -133,8 +83,8 @@ Portfolio Templates - Selfme
     ::-webkit-scrollbar {
         width: 5px;
     }
-    .test{
-        height: 550px;
+    .template-size{
+        height: 520px;
     }
     /* Track
     ::-webkit-scrollbar-track {

@@ -229,12 +229,13 @@ Data Insert Page - SelfMe
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        console.log(data);
+        // console.log(data);
         $.ajax({
             url:'/username',
             method:'POST',
             data:data,
             success:function(res){
+            console.log(res)
                 var err = document.getElementById('err');
                 if(res.data>0){
                     err.innerHTML  =`<p>username was already taken</p>`;

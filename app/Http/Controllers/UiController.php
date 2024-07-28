@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Portfolio;
 use Illuminate\Http\Request;
+use PHPUnit\Framework\Constraint\Count;
 
 class UiController extends Controller
 {
@@ -26,7 +28,8 @@ class UiController extends Controller
     }
     public function homeui()
     {
-        return view('home');
+        $check_portfolio = Count(Portfolio::where('user_id', 1)->get());
+        return view('home', compact('check_portfolio'));
     }
 
 

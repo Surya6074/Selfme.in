@@ -23,8 +23,12 @@ Route::post('/user-log', [Authcontroller::class, 'Login'])->name('Login');
 Route::post('/user-reg', [Authcontroller::class, 'Register'])->name('Register');
 
 //update Data
-Route::post('/data-update', [PortfolioController::class, 'Storedata'])->name('storedata');
+Route::post('/data-store', [PortfolioController::class, 'Storedata'])->name('storedata');
+Route::post('/data-update', [PortfolioController::class, 'Updatedata'])->name('updatedata');
 
 
 //Api for validation
 Route::post('/username', [PortfolioController::class, 'ValidateUsername']);
+
+
+Route::get('/test', [PortfolioController::class, 'test']);

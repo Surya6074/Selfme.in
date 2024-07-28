@@ -24,26 +24,72 @@ Home Page - SelfMe
                 </select>
             </div>
         </div>
-        <div class="w-full h-3/4 bg-neutral-900 p-3 mt-7 rounded-xl">
-            {{-- <div class="flex justify-center items-center h-full w-full">
-                <a href="/data" class=" px-5 py-3 bg-emerald-300 text-neutral-900 font-semibold rounded-lg">Create a Portfolio</a>
-            </div> --}}
-            <div class="flex justify-center items-center h-full w-full">
-                <div class=" h-full flex flex-col justify-center items-center px-10">
-                    <div class="">
-                        <label for="" class=" mb-4 text-emerald-300 font-semibold">Your Template</label>
+        @if ($check_portfolio==1)
+            <div class="w-full bg-neutral-900 p-3 mt-7 rounded-xl relative">
+                <div class=" absolute right-6 top-10 text-[12px] text-neutral-500">Server status : <span class=" text-green-400">200K</span></div>
+                <div class="flex lg:flex-row flex-col justify-center items-center h-full">
+                    <div class=" h-full flex flex-col justify-center px-10 my-6">
+                        <div class="">
+                            <label for="" class=" mb-4 text-emerald-300 w-full font-normal ">Your Template</label>
+                        </div>
+                        <div class="flex mt-4">
+                            <div class=" relative flex justify-center">
+                                <img src="{{asset('assets/temp.png')}}" class=" h-96" class="mt-4" alt="">
+                                <a href="/template" class=" absolute bottom-1 right-1 p-2 px-4 bg-emerald-300 lg:block hidden text-neutral-900 font-semibold rounded-lg"><i class='bx bxs-edit'></i></a>
+                            </div>
+                            <div class="lg:hidden block ml-8 ">
+                                <div class="h-full w-48 flex justify-center items-center flex-col">
+                                    <h1 class="text-emerald-300 text-2xl mb-2">Desgin 1</h1>
+                                    <p class="text-neutral-200 text-center text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum laboriosam ab modi suscipit, temporibu.</p>
+                                    <button class="bg-emerald-300 py-2 px-4 rounded-md mt-10 text-neural-950">Change Template</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class=" relative">
-                        <img src="{{asset('assets/temp.png')}}" class="mt-4" alt="">
-                        <a href="/template" class=" absolute bottom-1 right-1 p-2 px-4 bg-emerald-300 text-neutral-900 font-semibold rounded-lg"><i class='bx bxs-edit'></i></a>
-                    </div>
-                </div>
-                <div class="h-full flex-1 px-5 p-5">
-                    <div class=" h-full w-full">
-                        <h1 class="text-emerald-300 text-center">Information </h1>
+                    <div class="h-full w-full flex-1 px-5 p-5">
+                        <div class=" h-full w-full">
+                            <h1 class="text-emerald-300 text-lg text-start">Hosting Info</h1>
+                            <div class="flex lg:flex-row flex-col justify-around mt-6">
+                                <div class="p-5 my-4 bg-neutral-950 mx-4 flex-1 text-neutral-400 rounded-lg">
+                                    <h2 class="text-2xl text-emerald-300 mb-2">Total Days</h2>
+                                    <h2 class="text-sm">2024</h2>
+                                </div>
+                                <div class="p-5 my-4 bg-neutral-950 mx-4 flex-1 text-neutral-400 rounded-lg">
+                                    <h2 class="text-2xl text-emerald-300 mb-2">Portfolio Status</h2>
+                                    <h2 class="text-sm">Online</h2>
+                                </div>
+                                <div class="p-5 my-4 bg-neutral-950 mx-4 flex-1 text-neutral-400 rounded-lg">
+                                    <h2 class="text-2xl text-emerald-300 mb-2">Host date</h2>
+                                    <h2 class="text-sm">2024-07-26 17:10:27</h2>
+                                </div>
+                            </div>
+                            <div class="mt-6">
+                                <div class="flex items-center justify-between">
+                                    <h1 class="text-emerald-300 ml-4">Latesh News</h1>
+                                    <a href="/new" class=" p-2 px-4 text-neutral-600 text-sm rounded-lg">More</a>
+                                </div>
+                                <div class="p-4 bg-neutral-950 rounded-xl w-full">
+                                    <div class="">
+                                        <p class="text-emerald-300 font-semibold">Surya</p>
+                                    </div>
+                                    <p class="text-md text-gray-100 text-sm my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
+                                    <div class="mt-2">
+                                        <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        @else
+            <div class="w-full h-3/4 bg-neutral-900 p-3 mt-7 rounded-xl relative">
+                <div class="flex justify-center items-center h-full w-full">
+                    <a href="/data" class=" px-5 py-3 bg-emerald-300 text-neutral-900 font-semibold rounded-lg">Create a Portfolio</a>
+                </div>
+            </div>
+        @endif
+
         </div>
     </section>
 </body>
