@@ -252,14 +252,15 @@ class PortfolioController extends Controller
     public function ValidateUsername(Request $request)
     {
         $name = $request->input('name');
-        $data = Count(User::where('username', $name)->get());
+        $data = User::where('username', $name)->get();
         return response()->json(['msg' => 'success', 'data' => $data]);
     }
 
-    public function test()
+    public function test(Request $request)
     {
-        // $name = 'surya';
-        // $data = Link::where('user_id', 1)->get();
+        $name = 'surya';
+        $data = User::where('username', $name)->get();
+        dd(Count($data));
         dd(Hash::make('123456'));
     }
 }
