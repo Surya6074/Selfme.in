@@ -24,6 +24,8 @@
         });
     });
 
+//user
+
 DB::table('users')->insert([
             'username' => 'surya',
             'email' => 'surya@gmail.com',
@@ -37,3 +39,393 @@ DB::table('users')->insert([
             ['id'=>1,'username' => 'water', 'email' => 'water@gmail.com', 'password' => '$2y$10$nODvgr2DzGeQz0EnwScyaeQamyXv6FjQ79Uv5CT.8yn1Bh/H7Y4vu'], //water123
             ['id'=>1,'username' => 'aruvi', 'email' => 'aruvi@gmail.com', 'password' => '$2y$10$pOCH3AgxfJYUz4q7w6adrePOT/3HlKYLN7A5DuJAkKgJppppsVEI.'], //aruvi123
         ];
+
+[
+            [
+                'username' => 'john_doe',
+                'email' => 'john@example.com',
+                'password' => Hash::make('password123'),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'username' => 'jane_smith',
+                'email' => 'jane@example.com',
+                'password' => Hash::make('password123'),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'username' => 'alice_jones',
+                'email' => 'alice@example.com',
+                'password' => Hash::make('password123'),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'username' => 'bob_brown',
+                'email' => 'bob@example.com',
+                'password' => Hash::make('password123'),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'username' => 'charlie_black',
+                'email' => 'charlie@example.com',
+                'password' => Hash::make('password123'),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+        ]
+
+//home page
+DB::table('homepages')->insert([
+            [
+                'user_id' => 1,
+                'hp_name' => 'Tech Haven',
+                'hp_desc' => 'Welcome to Tech Haven, your ultimate destination for the latest tech news, reviews, and tutorials. Stay updated with the newest trends and innovations in technology.',
+                'hp_img' => 'tech_haven.jpg',
+                'hp_roles' => 'admin,editor',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'user_id' => 2,
+                'hp_name' => 'Creative Corner',
+                'hp_desc' => 'Creative Corner is a platform dedicated to showcasing artistic talents, design trends, and creative projects. Explore and get inspired by the vibrant world of creativity.',
+                'hp_img' => 'creative_corner.jpg',
+                'hp_roles' => 'editor',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'user_id' => 3,
+                'hp_name' => 'Fitness Fusion',
+                'hp_desc' => 'Join Fitness Fusion to discover effective workout routines, healthy eating tips, and wellness advice. Transform your lifestyle with our comprehensive fitness resources.',
+                'hp_img' => 'fitness_fusion.jpg',
+                'hp_roles' => 'viewer',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'user_id' => 4,
+                'hp_name' => 'Gourmet Galore',
+                'hp_desc' => 'Gourmet Galore brings you the best in culinary experiences. From delicious recipes to restaurant reviews, dive into the world of gourmet food and dining.',
+                'hp_img' => 'gourmet_galore.jpg',
+                'hp_roles' => 'admin,editor',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'user_id' => 5,
+                'hp_name' => 'Travel Trek',
+                'hp_desc' => 'Travel Trek is your guide to exploring the world. Find travel tips, destination guides, and adventure stories to inspire your next journey.',
+                'hp_img' => 'travel_trek.jpg',
+                'hp_roles' => 'editor',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+        ]);
+
+
+//about page
+
+DB::table('aboutpages')->insert([
+            [
+                'user_id' => 1,
+                'ap_name' => 'John Doe',
+                'ap_role' => 'Software Engineer',
+                'ap_resume' => 'john_doe_resume.pdf',
+                'ap_desc' => 'John Doe is a seasoned software engineer with over 10 years of experience in developing scalable web and mobile applications. His expertise includes full-stack development, cloud services, and machine learning.',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'user_id' => 2,
+                'ap_name' => 'Jane Smith',
+                'ap_role' => 'UI/UX Designer',
+                'ap_resume' => 'jane_smith_resume.pdf',
+                'ap_desc' => 'Jane Smith is a talented UI/UX designer specializing in creating intuitive and visually appealing user interfaces. With a keen eye for detail and a passion for design, she brings innovative solutions to every project.',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'user_id' => 3,
+                'ap_name' => 'Alice Johnson',
+                'ap_role' => 'Product Manager',
+                'ap_resume' => 'alice_johnson_resume.pdf',
+                'ap_desc' => 'Alice Johnson is an experienced product manager with a strong background in leading cross-functional teams to deliver successful products. She excels in project management, market research, and strategic planning.',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'user_id' => 4,
+                'ap_name' => 'Bob Brown',
+                'ap_role' => 'Marketing Specialist',
+                'ap_resume' => 'bob_brown_resume.pdf',
+                'ap_desc' => 'Bob Brown is a dynamic marketing specialist with a knack for crafting compelling campaigns and driving brand growth. His expertise spans digital marketing, content creation, and social media strategy.',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'user_id' => 5,
+                'ap_name' => 'Charlie Black',
+                'ap_role' => 'Data Scientist',
+                'ap_resume' => 'charlie_black_resume.pdf',
+                'ap_desc' => 'Charlie Black is a skilled data scientist with extensive experience in data analysis, machine learning, and statistical modeling. He leverages data-driven insights to support business decision-making and strategic initiatives.',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+        ]);
+
+//contact page
+
+        DB::table('contactpages')->insert([
+            [
+                'user_id' => 1,
+                'cp_name' => 'John Doe',
+                'cp_phoneno' => '+1-800-555-1234',
+                'cp_email' => 'john.doe@example.com',
+                'cp_address' => '123 Tech Lane, Silicon Valley, CA 94043, USA',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'user_id' => 2,
+                'cp_name' => 'Jane Smith',
+                'cp_phoneno' => '+1-800-555-5678',
+                'cp_email' => 'jane.smith@example.com',
+                'cp_address' => '456 Design Avenue, New York, NY 10001, USA',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'user_id' => 3,
+                'cp_name' => 'Alice Johnson',
+                'cp_phoneno' => '+1-800-555-9101',
+                'cp_email' => 'alice.johnson@example.com',
+                'cp_address' => '789 Product Road, Austin, TX 73301, USA',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'user_id' => 4,
+                'cp_name' => 'Bob Brown',
+                'cp_phoneno' => '+1-800-555-1122',
+                'cp_email' => 'bob.brown@example.com',
+                'cp_address' => '101 Marketing Street, Los Angeles, CA 90001, USA',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'user_id' => 5,
+                'cp_name' => 'Charlie Black',
+                'cp_phoneno' => '+1-800-555-3344',
+                'cp_email' => 'charlie.black@example.com',
+                'cp_address' => '202 Data Drive, San Francisco, CA 94105, USA',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+        ]);
+
+// own page
+        DB::table('ownpages')->insert([
+            // Ownpages for User 1
+            ['user_id' => 1, 'w_title1' => 'Welcome to My Portfolio', 'w_title2' => 'Explore My Work', 'w_desc' => 'This is a showcase of my personal projects and professional achievements. Dive into my work and discover how I can help you achieve your goals.', 'op_name' => 'John Doe Portfolio', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 1, 'w_title1' => 'My Latest Projects', 'w_title2' => 'Innovative Solutions', 'w_desc' => 'Check out my most recent projects that demonstrate my skills in software development, problem-solving, and innovation.', 'op_name' => 'John Doe Projects', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+
+            // Ownpages for User 2
+            ['user_id' => 2, 'w_title1' => 'Creative Design Showcase', 'w_title2' => 'My Design Journey', 'w_desc' => 'Here, you can find a collection of my design projects, from user interfaces to graphic designs. Each project represents my passion for creativity and innovation.', 'op_name' => 'Jane Smith Designs', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 2, 'w_title1' => 'Design Process', 'w_title2' => 'From Concept to Completion', 'w_desc' => 'Explore the process behind my designs, from initial sketches to final products. Learn about my approach to creating compelling and effective designs.', 'op_name' => 'Jane Smith Design Process', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+
+            // Ownpages for User 3
+            ['user_id' => 3, 'w_title1' => 'Product Innovations', 'w_title2' => 'Leading the Future', 'w_desc' => 'Explore the products I have managed and developed. Learn about the challenges, solutions, and impacts of each project in my journey as a product manager.', 'op_name' => 'Alice Johnson Products', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 3, 'w_title1' => 'Case Studies', 'w_title2' => 'Product Success Stories', 'w_desc' => 'Read detailed case studies on the products I have worked on, including the strategies implemented and the results achieved.', 'op_name' => 'Alice Johnson Case Studies', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+
+            // Ownpages for User 4
+            ['user_id' => 4, 'w_title1' => 'Marketing Strategies', 'w_title2' => 'Transforming Brands', 'w_desc' => 'Discover the marketing strategies and campaigns I have crafted. Each campaign is designed to elevate brands and connect with audiences in meaningful ways.', 'op_name' => 'Bob Brown Marketing', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 4, 'w_title1' => 'Campaign Highlights', 'w_title2' => 'Successful Campaigns', 'w_desc' => 'Highlighting some of the most successful marketing campaigns I have led. See the impact and results of these campaigns on various brands.', 'op_name' => 'Bob Brown Campaigns', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+
+            // Ownpages for User 5
+            ['user_id' => 5, 'w_title1' => 'Data Insights', 'w_title2' => 'Harnessing Data Power', 'w_desc' => 'Delve into my data science projects and analyses. See how I use data to drive insights, make decisions, and uncover opportunities for growth.', 'op_name' => 'Charlie Black Data', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 5, 'w_title1' => 'Analytics Projects', 'w_title2' => 'Data-Driven Success', 'w_desc' => 'Explore various analytics projects that demonstrate my ability to turn data into actionable insights and drive success.', 'op_name' => 'Charlie Black Analytics', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+        ]);
+
+
+
+// links
+        DB::table('links')->insert([
+            // Links for User 1
+            ['user_id' => 1, 'link_name' => 'GitHub', 'link' => 'https://github.com/johndoe', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 1, 'link_name' => 'Portfolio', 'link' => 'https://johndoe.dev', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 1, 'link_name' => 'LinkedIn', 'link' => 'https://www.linkedin.com/in/johndoe', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 1, 'link_name' => 'Twitter', 'link' => 'https://twitter.com/johndoe', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+
+            // Links for User 2
+            ['user_id' => 2, 'link_name' => 'Behance', 'link' => 'https://www.behance.net/janesmith', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 2, 'link_name' => 'Dribbble', 'link' => 'https://dribbble.com/janesmith', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 2, 'link_name' => 'LinkedIn', 'link' => 'https://www.linkedin.com/in/janesmith', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 2, 'link_name' => 'Instagram', 'link' => 'https://www.instagram.com/janesmith', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+
+            // Links for User 3
+            ['user_id' => 3, 'link_name' => 'LinkedIn', 'link' => 'https://www.linkedin.com/in/alicejohnson', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 3, 'link_name' => 'Medium', 'link' => 'https://medium.com/@alicejohnson', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 3, 'link_name' => 'GitHub', 'link' => 'https://github.com/alicejohnson', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 3, 'link_name' => 'Portfolio', 'link' => 'https://alicejohnson.dev', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+
+            // Links for User 4
+            ['user_id' => 4, 'link_name' => 'Twitter', 'link' => 'https://twitter.com/bobbrown', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 4, 'link_name' => 'LinkedIn', 'link' => 'https://www.linkedin.com/in/bobbrown', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 4, 'link_name' => 'Facebook', 'link' => 'https://www.facebook.com/bobbrown', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 4, 'link_name' => 'YouTube', 'link' => 'https://www.youtube.com/user/bobbrown', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+
+            // Links for User 5
+            ['user_id' => 5, 'link_name' => 'GitHub', 'link' => 'https://github.com/charlieblack', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 5, 'link_name' => 'LinkedIn', 'link' => 'https://www.linkedin.com/in/charlieblack', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 5, 'link_name' => 'Portfolio', 'link' => 'https://charlieblack.dev', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 5, 'link_name' => 'Twitter', 'link' => 'https://twitter.com/charlieblack', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+        ]);
+
+// skills
+
+DB::table('skills')->insert([
+            // Skills for User 1
+            ['user_id' => 1, 'skill_name' => 'JavaScript', 'skill_percentage' => '90%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 1, 'skill_name' => 'PHP', 'skill_percentage' => '85%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 1, 'skill_name' => 'Python', 'skill_percentage' => '80%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 1, 'skill_name' => 'React', 'skill_percentage' => '75%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 1, 'skill_name' => 'Laravel', 'skill_percentage' => '70%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 1, 'skill_name' => 'HTML/CSS', 'skill_percentage' => '95%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 1, 'skill_name' => 'SQL', 'skill_percentage' => '85%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+
+            // Skills for User 2
+            ['user_id' => 2, 'skill_name' => 'Graphic Design', 'skill_percentage' => '90%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 2, 'skill_name' => 'UI/UX Design', 'skill_percentage' => '85%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 2, 'skill_name' => 'Adobe Photoshop', 'skill_percentage' => '80%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 2, 'skill_name' => 'Illustrator', 'skill_percentage' => '75%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 2, 'skill_name' => 'Sketch', 'skill_percentage' => '70%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 2, 'skill_name' => 'InVision', 'skill_percentage' => '65%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 2, 'skill_name' => 'Figma', 'skill_percentage' => '75%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+
+            // Skills for User 3
+            ['user_id' => 3, 'skill_name' => 'Product Management', 'skill_percentage' => '90%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 3, 'skill_name' => 'Market Research', 'skill_percentage' => '85%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 3, 'skill_name' => 'Agile Methodology', 'skill_percentage' => '80%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 3, 'skill_name' => 'Scrum', 'skill_percentage' => '75%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 3, 'skill_name' => 'Roadmapping', 'skill_percentage' => '70%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 3, 'skill_name' => 'Data Analysis', 'skill_percentage' => '65%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 3, 'skill_name' => 'Stakeholder Management', 'skill_percentage' => '80%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+
+            // Skills for User 4
+            ['user_id' => 4, 'skill_name' => 'SEO', 'skill_percentage' => '90%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 4, 'skill_name' => 'Content Marketing', 'skill_percentage' => '85%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 4, 'skill_name' => 'Google Analytics', 'skill_percentage' => '80%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 4, 'skill_name' => 'Social Media Marketing', 'skill_percentage' => '75%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 4, 'skill_name' => 'PPC Advertising', 'skill_percentage' => '70%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 4, 'skill_name' => 'Email Marketing', 'skill_percentage' => '65%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 4, 'skill_name' => 'Marketing Automation', 'skill_percentage' => '70%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+
+            // Skills for User 5
+            ['user_id' => 5, 'skill_name' => 'Data Analysis', 'skill_percentage' => '90%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 5, 'skill_name' => 'Machine Learning', 'skill_percentage' => '85%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 5, 'skill_name' => 'Statistics', 'skill_percentage' => '80%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 5, 'skill_name' => 'Python', 'skill_percentage' => '75%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 5, 'skill_name' => 'SQL', 'skill_percentage' => '70%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 5, 'skill_name' => 'Data Visualization', 'skill_percentage' => '65%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['user_id' => 5, 'skill_name' => 'Big Data', 'skill_percentage' => '60%', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+        ]);
+// new
+
+DB::table('new_updates')->insert([
+            [
+                'name' => 'SelfMe Profile Enhancements',
+                'content' => 'We are excited to introduce new profile enhancement features on SelfMe! Users can now customize their profiles with new themes and backgrounds, upload cover photos, and add more personal details to make their profiles truly unique. Explore these new options in your profile settings and give your SelfMe page a fresh look!',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Advanced Analytics Dashboard',
+                'content' => 'Our new Advanced Analytics Dashboard is now live on SelfMe! This feature provides in-depth insights into your activity and engagement, with customizable charts and metrics to track your progress and performance. Gain better understanding and control over your SelfMe experience with these powerful new tools.',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Integrated Messaging System',
+                'content' => 'We’ve rolled out a brand-new Integrated Messaging System on SelfMe! This system allows users to send and receive messages directly within the platform, with enhanced features such as message notifications, chat history, and more. Stay connected with your network effortlessly with our new messaging capabilities!',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'SelfMe Mobile App Release',
+                'content' => 'The SelfMe Mobile App is now available for download! Enjoy all the features of SelfMe on the go with our new mobile app, optimized for both iOS and Android devices. Stay connected, manage your profile, and access updates anytime, anywhere. Download the app from the App Store or Google Play today!',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'Enhanced Privacy Controls',
+                'content' => 'We’ve upgraded our privacy controls to give you more power over your data on SelfMe. With the new settings, you can now manage who sees your activity, posts, and personal information with greater precision. Check out the new privacy options in your account settings to ensure your SelfMe experience aligns with your privacy preferences.',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'New Content Creation Tools',
+                'content' => 'SelfMe now offers a suite of new content creation tools to help you express yourself creatively. From advanced text editors to multimedia integration and customizable templates, these new features make it easier than ever to create engaging and dynamic content. Start creating with our enhanced tools and make your SelfMe presence stand out!',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+        ]);
+
+
+
+//portfolios
+DB::table('portfolios')->insert([
+            [
+                'user_id' => 1,  // Assuming user with ID 1 exists
+                'template_id' => 1,  // Assuming template with ID 1 exists
+                'visibility' => 'public',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'user_id' => 2,  // Assuming user with ID 2 exists
+                'template_id' => 2,  // Assuming template with ID 2 exists
+                'visibility' => 'private',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'user_id' => 3,  // Assuming user with ID 3 exists
+                'template_id' => 3,  // Assuming template with ID 3 exists
+                'visibility' => 'public',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'user_id' => 4,  // Assuming user with ID 4 exists
+                'template_id' => 4,  // Assuming template with ID 4 exists
+                'visibility' => 'private',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'user_id' => 5,  // Assuming user with ID 5 exists
+                'template_id' => 5,  // Assuming template with ID 5 exists
+                'visibility' => 'public',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+        ]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
