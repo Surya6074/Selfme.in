@@ -58,14 +58,13 @@ Register Page - Selfme
 <script>
     $('#username').on('keyup',function(){
         var data={
-            username:$('#username').val(),
+            name:$('#username').val(),
         };
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        console.log(data);
         $.ajax({
             url:'/username',
             method:'POST',
@@ -73,7 +72,7 @@ Register Page - Selfme
             success:function(res){
                 var err = document.getElementById('err');
                 if(res.data>0){
-                    err.innerHTML  =`<p>username was already taken</p>`;
+                    err.innerHTML  =`<p class="text-sm text-red-400">username was already taken</p>`;
                 }else{
                     err.innerHTML  =`<p></p>`;
                 }

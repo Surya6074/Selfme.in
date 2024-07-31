@@ -32,3 +32,8 @@ Route::post('/username', [PortfolioController::class, 'ValidateUsername']);
 
 
 Route::get('/test', [PortfolioController::class, 'test']);
+
+
+Route::get('/template1', function () {
+    return view('templates.template1');
+});

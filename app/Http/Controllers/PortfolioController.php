@@ -11,6 +11,7 @@ use App\Models\Skill;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use PHPUnit\Framework\Constraint\Count;
 
 class PortfolioController extends Controller
 {
@@ -252,7 +253,7 @@ class PortfolioController extends Controller
     public function ValidateUsername(Request $request)
     {
         $name = $request->input('name');
-        $data = User::where('username', $name)->get();
+        $data = Count(User::where('username', $name)->get());
         return response()->json(['msg' => 'success', 'data' => $data]);
     }
 
