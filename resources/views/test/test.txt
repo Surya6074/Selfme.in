@@ -844,3 +844,46 @@ Edit Student
     });
 </script>
 @endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$messages= [
+    'ap_name.required' => 'About -> Name Field is Required!',
+    'ap_role.required' => 'About -> Role Field is Required!',
+    'ap_desc.required' => 'About -> Decription Field is Required!',
+    'hp_name.required' => 'Home -> Name Field is Required!',
+    'hp_desc.required' => 'Home -> Description Field is Required!',
+    'linkname.required' => 'Linkname Field is Required!',
+    'link.required' => 'Link Field is Required!',
+    'roles.required' => 'Roles Field is Required!',
+    'op_name.required' => 'Own page -> Name Field is Required!',
+    'w_title1.required' => 'Own page Title 1 Field is Required!',
+    'w_title2.required' => 'Own page Title 2 Field is Required!',
+    'w_desc.required' => 'Own page desc Feild is Required',
+    'cp_name.required' => 'Contact -> Name Field is Required!',
+    'cp_phone.required' => 'Contact -> Phone Field is Required!',
+    'cp_email.required' => 'Contact -> Email Field is Required!',
+    'cp_address.required' => 'About -> Address Field is Required!',
+    'skill.required' => 'Skills Feild is Required',
+    'percentage.required' => 'Percentage Feild is Required',
+    'ap_resume.required' => 'About -> Resume Field is Required!',
+    'ap_resume.mimes' => 'File type should be : .pdf',
+    'ap_resume.max' => 'File size is below 512kb',
+    'hp_img.required' => 'Image is Required!',
+    'hp_img.image' => 'Image should be a Image',
+    'hp_img.mimes' => 'Image type should be a .png , .jpg',
+    'hp_img.max' => 'Image size is below 2MB',
+];
+
