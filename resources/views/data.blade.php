@@ -42,7 +42,7 @@ Data Insert Page - SelfMe
                     <h1 class="text-sm">temaplate</h1>
                 </button> --}}
             </div>
-        <form action="/testdata" method="POST" enctype="multipart/form-data">
+        <form action="{{route('storedata')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="tabcontent" id="Home">
                 <div class="w-full  flex-col">

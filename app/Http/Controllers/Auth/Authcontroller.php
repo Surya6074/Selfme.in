@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Hash;
 
 class Authcontroller extends Controller
 {
+
+
+
+
     public function Login(Request $request)
     {
         $request->validate([
@@ -21,9 +25,9 @@ class Authcontroller extends Controller
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
             $user = User::where('email', $email)->first();
             Auth::login($user);
-            return redirect('/data')->with(['msg' => 'Logged in successfully', 'status' => 'success']);
+            return redirect(route('homeui'))->with(['msg' => 'Logged in successfully', 'status' => 'success']);
         } else {
-            return redirect('/login')->with(['msg' => 'Invalid Credentials', 'status' => 'er']);
+            return redirect(route('loginui'))->with(['msg' => 'Invalid Credentials', 'status' => 'er']);
         }
     }
     public function Register(Request $request)
@@ -43,7 +47,15 @@ class Authcontroller extends Controller
         $user->password = $password;
         if ($user->save()) {
             Auth::login($user);
-            return redirect('/data');
+            return redirect(route('homeui'));
         }
+    }
+
+
+
+    public function Logout()
+    {
+        Auth::logout();
+        return redirect(route('indexui'));
     }
 }

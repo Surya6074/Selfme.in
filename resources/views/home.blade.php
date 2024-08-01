@@ -52,15 +52,22 @@ Home Page - SelfMe
                             <div class="flex lg:flex-row flex-col justify-around mt-6">
                                 <div class="p-5 my-4 bg-neutral-950 mx-4 flex-1 text-neutral-400 rounded-lg">
                                     <h2 class="text-2xl text-emerald-300 mb-2">Total Days</h2>
-                                    <h2 class="text-sm">2024</h2>
+                                    @php
+                                        $date=explode(' ',$Portfolio->created_at);
+                                        $date1 =new DateTime($date[0]);
+                                        $date2 =new DateTime(date('Y-m-d'));
+                                        $interval = $date1->diff($date2);
+                                        $daysDifference = $interval->days;
+                                    @endphp
+                                    <h2 class="text-sm">{{$daysDifference}}</h2>
                                 </div>
                                 <div class="p-5 my-4 bg-neutral-950 mx-4 flex-1 text-neutral-400 rounded-lg">
                                     <h2 class="text-2xl text-emerald-300 mb-2">Portfolio Status</h2>
-                                    <h2 class="text-sm">Online</h2>
+                                    <h2 class="text-sm">{{$Portfolio->visibility=='public'?'Online':'Offline'}}</h2>
                                 </div>
                                 <div class="p-5 my-4 bg-neutral-950 mx-4 flex-1 text-neutral-400 rounded-lg">
                                     <h2 class="text-2xl text-emerald-300 mb-2">Host date</h2>
-                                    <h2 class="text-sm">2024-07-26 17:10:27</h2>
+                                    <h2 class="text-sm">{{$date[0]}}</h2>
                                 </div>
                             </div>
                             <div class="mt-6">
@@ -70,11 +77,11 @@ Home Page - SelfMe
                                 </div>
                                 <div class="p-4 bg-neutral-950 rounded-xl w-full">
                                     <div class="">
-                                        <p class="text-emerald-300 font-semibold">Surya</p>
+                                        <p class="text-emerald-300 font-semibold">{{$newupdate->name}}</p>
                                     </div>
-                                    <p class="text-md text-gray-100 text-sm my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
+                                    <p class="text-md text-gray-100 text-sm my-2">{{$newupdate->content}}</p>
                                     <div class="mt-2">
-                                        <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
+                                        <p class="text-end text-neutral-600 text-sm"> last updated {{$newupdate->created_at}}</p>
                                     </div>
                                 </div>
                             </div>

@@ -19,7 +19,7 @@ Data Insert Page - SelfMe
                    <li><a href="" class="text-xl font-semibold">Home</a></li>
                    <li><a href="" class="text-xl font-semibold">About</a></li>
                    <li><a href="" class="text-xl font-semibold">Templates</a></li>
-                   <li><a href="" class="px-5 py-2 bg-white text-xl text-emerald-300 font-semibold rounded-lg">Login</a></li>
+                   <li><a href="/login" class="px-5 py-2 bg-white text-xl text-emerald-300 font-semibold rounded-lg">Login</a></li>
                </ul>
            </div>
         </nav>

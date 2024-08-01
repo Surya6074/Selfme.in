@@ -10,7 +10,11 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+       @vite('resources/css/app.css')
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body class=" lg:h-screen bg-neutral-900 h-full w-screen lg:overflow-hidden overflow-y-scroll overflow-x-hidden relative">
     <aside class=" absolute top-0 left-0 h-full w-80 flex items-center justify-center hidden bg-red-600 transition duration-500 ease-linear pt-40" id="sidebar">
@@ -246,6 +250,3 @@
   </script>
 </html>
 
-
-  </style>
-</html>

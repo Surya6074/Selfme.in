@@ -11,6 +11,9 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
+        $middleware->alias([
+            'isUser' => \App\Http\Middleware\isUser::class,
+        ]);
         $middleware->validateCsrfTokens(except: [
             'http://127.0.0.1:8000/username' // <-- exclude this route
         ]);

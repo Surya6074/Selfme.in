@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\NewUpdate;
 use App\Models\Portfolio;
+use App\Models\Template;
 use Illuminate\Http\Request;
 use PHPUnit\Framework\Constraint\Count;
 
@@ -20,16 +22,20 @@ class UiController extends Controller
     }
     public function newupdatesui()
     {
-        return view('new');
+        $news = NewUpdate::all();
+        return view('new', compact('news'));
     }
     public function templatesui()
     {
-        return view('template');
+        $templates = Template::all();
+        return view('template', compact('templates'));
     }
     public function homeui()
     {
-        $check_portfolio = Count(Portfolio::where('user_id', 1)->get());
-        return view('home', compact('check_portfolio'));
+        $check_portfolio = Count(Portfolio::where('user_id', auth()->user()->id)->get());
+        $Portfolio = Portfolio::where('user_id', auth()->user()->id)->first();
+        $newupdate = NewUpdate::orderBy('created_at', 'DESC')->first();
+        return view('home', compact('check_portfolio', 'newupdate', 'Portfolio'));
     }
 
 

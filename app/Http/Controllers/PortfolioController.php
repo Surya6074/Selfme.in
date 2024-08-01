@@ -231,10 +231,10 @@ class PortfolioController extends Controller
         return redirect('/home');
     }
 
-    public function Getdataui()
+    public function GetUserdata()
     {
-        // $id = auth()->user()->id;
-        $id = 1;
+        $id = auth()->user()->id;
+        // $id = 1;
         $homepages = Homepage::where('user_id', $id)->get();
         $aboutpages = Aboutpage::where('user_id', $id)->get();
         $contactpages = Contactpage::where('user_id', $id)->get();
@@ -259,9 +259,11 @@ class PortfolioController extends Controller
 
     public function test(Request $request)
     {
-        $name = 'surya';
-        $data = User::where('username', $name)->get();
-        dd(Count($data));
-        dd(Hash::make('123456'));
+        // $name = 'surya';
+        // $data = User::where('username', $name)->get();
+        // dd(Count($data));
+        // dd(Hash::make('123456'));
+
+        return view('templates.template1');
     }
 }

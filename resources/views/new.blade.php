@@ -16,69 +16,18 @@ New updates - Selfme
             </div>
         </div>
         <div class="">
+            @foreach ($news as $new)
             <div class="mt-5 p-4 bg-neutral-900 rounded-xl w-full">
                 <div class="">
-                    <p class="text-emerald-300 font-semibold">Surya</p>
+                    <p class="text-emerald-300 font-semibold">{{$new->name}}</p>
                 </div>
-                <p class="text-md text-gray-100 my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
+                <p class="text-md text-gray-100 my-2">{{$new->content}}</p>
                 <div class="mt-2">
-                    <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
+                    <p class="text-end text-neutral-600 text-sm"> last updated {{$new->created_at}}</p>
                 </div>
             </div>
-            <div class="mt-5 p-4 bg-neutral-900 rounded-xl w-full">
-                <div class="">
-                    <p class="text-emerald-300 font-semibold">Surya</p>
-                </div>
-                <p class="text-md text-gray-100 my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
-                <div class="mt-2">
-                    <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
-                </div>
-            </div>
-            <div class="mt-5 p-4 bg-neutral-900 rounded-xl w-full">
-                <div class="">
-                    <p class="text-emerald-300 font-semibold">Surya</p>
-                </div>
-                <p class="text-md text-gray-100 my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
-                <div class="mt-2">
-                    <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
-                </div>
-            </div>
-            <div class="mt-5 p-4 bg-neutral-900 rounded-xl w-full">
-                <div class="">
-                    <p class="text-emerald-300 font-semibold">Surya</p>
-                </div>
-                <p class="text-md text-gray-100 my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
-                <div class="mt-2">
-                    <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
-                </div>
-            </div>
-            <div class="mt-5 p-4 bg-neutral-900 rounded-xl w-full">
-                <div class="">
-                    <p class="text-emerald-300 font-semibold">Surya</p>
-                </div>
-                <p class="text-md text-gray-100 my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
-                <div class="mt-2">
-                    <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
-                </div>
-            </div>
-            <div class="mt-5 p-4 bg-neutral-900 rounded-xl w-full">
-                <div class="">
-                    <p class="text-emerald-300 font-semibold">Surya</p>
-                </div>
-                <p class="text-md text-gray-100 my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
-                <div class="mt-2">
-                    <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
-                </div>
-            </div>
-            <div class="mt-5 p-4 bg-neutral-900 rounded-xl w-full">
-                <div class="">
-                    <p class="text-emerald-300 font-semibold">Surya</p>
-                </div>
-                <p class="text-md text-gray-100 my-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quaerat sapiente culpa tempore quis soluta ab fugit odit similique, praesentium maxime dolore placeat exercitationem, aliquid non sint fugiat nisi natus!</p>
-                <div class="mt-2">
-                    <p class="text-end text-neutral-600 text-sm"> last updated 6/6/2024 12:00PM</p>
-                </div>
-            </div>
+            @endforeach
+
         </div>
     </section>
 </body>

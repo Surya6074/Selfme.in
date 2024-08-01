@@ -15,7 +15,7 @@
         <li class="w-full h-16 my-2 relative">
             <a href="/template" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300 {{($url[3]=="template")?'text-emerald-300 active':''}} rounded-lg side-menu"><i class="fa-solid fa-cube w-10"></i>Design</a>
         </li>
-        @if (auth()->user())
+        @if (auth()->user()->id==1)
         <li class="w-full h-16 my-2 relative">
             <a href="/edit-data" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300 {{($url[3]=="edit-data")?'text-emerald-300 active':''}} rounded-lg side-menu"><i class="fa-solid fa-database w-10"></i>Edit Data</a>
         </li>
@@ -29,7 +29,7 @@
         </li>
     </ul>
     <div class=" p-4">
-        <a href="" class="w-full flex items-center justify-center text-xl px-4 py-4 bg-neutral-900  rounded-lg text-emerald-300">Logout<i class="fa-solid fa-arrow-right-from-bracket ml-5"></i></a>
+        <a href="{{route('logout')}}" class="w-full flex items-center justify-center text-xl px-4 py-4 bg-neutral-900  rounded-lg text-emerald-300">Logout<i class="fa-solid fa-arrow-right-from-bracket ml-5"></i></a>
     </div>
 </aside>
 
