@@ -418,6 +418,14 @@ DB::table('portfolios')->insert([
 
 
 
+DB::table('templates')->insert([
+                'id' => 1,
+                'template_name' => 'Red Warming',
+                'template_desc' => 'Basic portfolio for the fresher to showcase the works',
+                'template_img' => 'Redwarming.png',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
 
 
 
@@ -429,3 +437,80 @@ DB::table('portfolios')->insert([
 
 
 
+
+
+
+
+    public function Updatestudent(Request $request){
+        $request->validate([
+            'student_name' => 'required|string|regex:/^[a-zA-Z\s]+$/',
+            'student_dob' => 'required|date',
+            'student_phno' => 'required|integer|digits:10',
+            'student_gender' => 'required',
+            'student_country' => 'required',
+            'student_state' => 'required',
+            'student_img' => 'mimes:png,jpg|max:500',
+            'hobbies' => 'required',
+            'qualification.*' => 'required|string|max:255',
+            'yearpassout.*' => 'required|string|max:255',
+            'universityname.*' => 'required|string|max:255',
+        ]);
+        $id=$request->input('student_id');
+        $student=Student::where('student_id',$id)->first();
+        $student->student_name=$request->input('student_name');
+        $student->student_dob=$request->input('student_dob');
+        $student->student_phno=$request->input('student_phno');
+        $student->student_gender=$request->input('student_gender');
+        $student->student_country=$request->input('student_country');
+        $student->student_state=$request->input('student_state');
+        $student->hobbies=implode(',',$request->input('hobbies'));
+
+        if($request->has('student_img')){
+            $origianlimage=$request->file('student_img');
+            $imagename=time().$origianlimage->getClientOriginalName();
+            $origianlimage->move('students/',$imagename);
+            $student->student_img=$imagename;
+        }else{
+            $student->student_img=$request->input('student_img_name');
+        }
+
+        $student->save();
+        $qid=[];
+        foreach($request->input('qualification_ids') as $qids){
+            array_push($qid,$qids);
+        }
+
+        $qualificationdatas=Qualification::where('student_id',$id)->get();
+
+        foreach($qualificationdatas as $qdata){
+            if(!in_array($qdata->id,$qid)){
+                $data=Qualification::where('id',$qdata->id)->first();
+                $data->isdelete=0;
+                $data->save();
+            }
+        }
+        $studqualifdata=$request->input('qualification');
+        $studyearpassout=$request->input('yearpassout');
+        $studuniversityname=$request->input('universityname');
+
+        $qualficationupdata=Qualification::where('student_id',$id)->where('isdelete',1)->get();
+
+        foreach($qid as $index=> $q){
+            $sq=Qualification::find($q);
+            $sq->qualification=$studqualifdata[$index];
+            $sq->yearpassout=$studyearpassout[$index];
+            $sq->universityname=$studuniversityname[$index];
+            $sq->save();
+        }
+        for($i=$index+1;$i<(count($studqualifdata));$i++){
+            $studqualification=new Qualification();
+            $studqualification->student_id=$id;
+            $studqualification->qualification=$studqualifdata[$i];
+            $studqualification->yearpassout=$studyearpassout[$i];
+            $studqualification->universityname=$studuniversityname[$i];
+            $studqualification->isdelete=1;
+            $studqualification->save();
+        }
+        $msg='Student Updated successfully!';
+        return view('components.success',compact('msg'));
+    }
