@@ -514,3 +514,333 @@ DB::table('templates')->insert([
         $msg='Student Updated successfully!';
         return view('components.success',compact('msg'));
     }
+
+
+
+
+
+
+
+    /// Update the data
+
+
+        public function Updatestudent(Request $request){
+        $request->validate([
+            'student_name' => 'required|string|regex:/^[a-zA-Z\s]+$/',
+            'student_dob' => 'required|date',
+            'student_phno' => 'required|integer|digits:10',
+            'student_gender' => 'required',
+            'student_country' => 'required',
+            'student_state' => 'required',
+            'student_img' => 'mimes:png,jpg|max:500',
+            'hobbies' => 'required',
+            'qualification.*' => 'required|string|max:255',
+            'yearpassout.*' => 'required|string|max:255',
+            'universityname.*' => 'required|string|max:255',
+        ]);
+        $id=$request->input('student_id');
+        $student=Student::where('student_id',$id)->first();
+        $student->student_name=$request->input('student_name');
+        $student->student_dob=$request->input('student_dob');
+        $student->student_phno=$request->input('student_phno');
+        $student->student_gender=$request->input('student_gender');
+        $student->student_country=$request->input('student_country');
+        $student->student_state=$request->input('student_state');
+        $student->hobbies=implode(',',$request->input('hobbies'));
+
+        if($request->has('student_img')){
+            $origianlimage=$request->file('student_img');
+            $imagename=time().$origianlimage->getClientOriginalName();
+            $origianlimage->move('students/',$imagename);
+            $student->student_img=$imagename;
+        }else{
+            $student->student_img=$request->input('student_img_name');
+        }
+
+        $student->save();
+        $qid=[];
+        foreach($request->input('qualification_ids') as $qids){
+            array_push($qid,$qids);
+        }
+
+        $qualificationdatas=Qualification::where('student_id',$id)->get();
+
+        foreach($qualificationdatas as $qdata){
+            if(!in_array($qdata->id,$qid)){
+                $data=Qualification::where('id',$qdata->id)->first();
+                $data->isdelete=0;
+                $data->save();
+            }
+        }
+        $studqualifdata=$request->input('qualification');
+        $studyearpassout=$request->input('yearpassout');
+        $studuniversityname=$request->input('universityname');
+
+        $qualficationupdata=Qualification::where('student_id',$id)->where('isdelete',1)->get();
+
+        foreach($qid as $index=> $q){
+            $sq=Qualification::find($q);
+            $sq->qualification=$studqualifdata[$index];
+            $sq->yearpassout=$studyearpassout[$index];
+            $sq->universityname=$studuniversityname[$index];
+            $sq->save();
+        }
+        for($i=$index+1;$i<(count($studqualifdata));$i++){
+            $studqualification=new Qualification();
+            $studqualification->student_id=$id;
+            $studqualification->qualification=$studqualifdata[$i];
+            $studqualification->yearpassout=$studyearpassout[$i];
+            $studqualification->universityname=$studuniversityname[$i];
+            $studqualification->isdelete=1;
+            $studqualification->save();
+        }
+        $msg='Student Updated successfully!';
+        return view('components.success',compact('msg'));
+    }
+
+
+    // forntend code
+
+
+    @extends('layouts.app')
+@section('title')
+Edit Student
+@endsection
+@section('content')
+<div class="w-full bg-gray-100 pb-44  overflow-hidden">
+    @include('components.header')
+    <div class=" w-screen px-44 pt-14">
+        <div class="w-full bg-white p-3 rounded">
+            <div class="flex items-center w-full justify-center">
+                <h1>Edit Student </h1>
+            </div>
+            <div class=" mt-3">
+                @foreach ($students as $stud)
+                <form action="/edit-student" enctype="multipart/form-data" method="post">
+                    <input type="hidden" name="student_id" value="{{$id}}">
+                    @csrf
+                    <div class="">
+                        <h4>Student Details</h4>
+                    </div>
+                    <div class="flex gap-2">
+                        <div class="flex flex-col gap-1 w-full">
+                            <label for="" class=" text-neutral-600">Enter a Name</label>
+                            <input type="text" name="student_name" placeholder="Name" class=" outline-none border border-gray-900 p-2 px-3 rounded" value="{{ $stud->student_name}}">
+                            @if ($errors->has('student_name'))
+                                <p class="text-red-400 mb-0">{{$errors->get('student_name')[0]}}</p>
+                            @endif
+                        </div>
+                        <div class="flex flex-col gap-1 w-full">
+                            <label for="" class=" text-neutral-600">Enter a DOB</label>
+                            <input type="date" placeholder="Name" name="student_dob" class=" outline-none border border-gray-900 p-2 px-3 rounded" value="{{$stud->student_dob}}">
+                            @if ($errors->has('student_dob'))
+                                <p class="text-red-400 mb-0">{{$errors->get('student_dob')[0]}}</p>
+                            @endif
+                        </div>
+                        <div class="flex flex-col gap-1 w-full">
+                            <label for="" class=" text-neutral-600">Enter a phone no</label>
+                            <input type="number" placeholder="Phone no" name="student_phno" class=" outline-none border border-gray-900 p-2 px-3 rounded" value="{{$stud->student_phno}}">
+                            @if ($errors->has('student_phno'))
+                                <p class="text-red-400 mb-0">{{$errors->get('student_phno')[0]}}</p>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="flex gap-2 my-3">
+                        <div class="flex flex-col gap-1 h-full w-96">
+                            <label for="" class=" text-neutral-600">Gender</label>
+                            <div class="flex gap-3 mt-3">
+                                <div class="">
+                                    <input type="radio" placeholder="Name" name="student_gender" value="Male" class="mr-2" {{($stud->student_gender=='Male')?'checked':''}}>Male
+                                </div>
+                                <div class="">
+                                    <input type="radio" placeholder="Name" name="student_gender" value="Female" class="mr-2" {{($stud->student_gender=='Female')?'checked':''}}>Female
+                                </div>
+                            </div>
+                            @if ($errors->has('student_gender'))
+                                <p class="text-red-400 mb-0">{{$errors->get('student_gender')[0]}}</p>
+                            @endif
+                        </div>
+                        <div class="flex flex-col gap-1 w-full">
+                            <label for="" class=" text-neutral-600">Select a Image</label>
+                            <div class="flex items-end">
+                                <div class="flex items-end">
+                                    <img src="{{asset('students/'.$stud->student_img)}}" width="100px" height="100px" alt="">
+                                    <input type="hidden" name="student_img_name" value="{{$stud->student_img}}">
+                                    <button type="button" id="imgbtn" class="h-10 btn btn-primary ">change</button>
+                                </div>
+                                <div class=" hidden" id="imginp">
+                                    <input type="file" placeholder="Name" name="student_img" class=" outline-none border border-gray-900 p-2 px-3 rounded">
+                                </div>
+                            </div>
+                            @if ($errors->has('student_img'))
+                                <p class="text-red-400 mb-0">{{$errors->get('student_img')[0]}}</p>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="flex gap-2  my-3">
+                        <div class="flex flex-col gap-1 w-full">
+                            <label for="" class=" text-neutral-600">Select a Country</label>
+                            <select class=" outline-none border border-gray-900 p-2 px-3 rounded" name="student_country" id="country">
+                                <option value="India" {{($stud->student_country=='India')?'selected':''}}>India</option>
+                                <option value="USA" {{($stud->student_country=='USA')?'selected':''}}>USA</option>
+                            </select>
+                            @if ($errors->has('student_country'))
+                                <p class="text-red-400 mb-0">{{$errors->get('student_country')[0]}}</p>
+                            @endif
+                        </div>
+                        <div class="flex flex-col gap-1 w-full">
+                            <label for="" class=" text-neutral-600">Select a State</label>
+                            <select class=" outline-none border border-gray-900 p-2 px-3 rounded" name="student_state" id="state">
+                                @if($stud->student_country=='USA')
+                                <option value="Califonia" {{($stud->student_state=='Califonia')?'selected':''}}>Califonia</option>
+                                <option value="Texas" {{($stud->student_state=='Texas')?'selected':''}}>Texas</option>
+                                @else
+                                <option value="Tamil Nadu" {{($stud->student_state=='Tamil Nadu')?'selected':''}}>Tamil Nadu</option>
+                                <option value="Kerala" {{($stud->student_state=='Kerala')?'selected':''}}>Kerala</option>
+                                @endif
+                            </select>
+                            @if ($errors->has('student_state'))
+                                <p class="text-red-400 mb-0">{{$errors->get('student_state')[0]}}</p>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-1 w-full  my-3">
+                        @php
+                            $hobbies=explode(',',$stud->hobbies);
+                        @endphp
+                        <label for="" class=" text-neutral-600">Hobbies</label>
+                        <div class="flex gap-3">
+                            <div class="">
+                                <input type="checkbox" placeholder="Name" name="hobbies[]" value="Books" class="mr-2" @if (is_array($hobbies)&&in_array('Books',$hobbies)) checked @endif>Books
+                            </div>
+                            <div class="">
+                                <input type="checkbox" placeholder="Name" name="hobbies[]" value="Games" class="mr-2"  @if (is_array($hobbies)&&in_array('Games',$hobbies)) checked @endif>Games
+                            </div>
+
+                            <div class="">
+                                <input type="checkbox" placeholder="Name" name="hobbies[]" value="Painting" class="mr-2"  @if (is_array($hobbies)&&in_array('Painting',$hobbies)) checked @endif>Painting
+                            </div>
+
+                            <div class="">
+                                <input type="checkbox" placeholder="Name" name="hobbies[]" value="Gardening" class="mr-2"  @if (is_array($hobbies)&&in_array('Gardening',$hobbies)) checked @endif>Gardening
+                            </div>
+
+                            <div class="">
+                                <input type="checkbox" placeholder="Name" name="hobbies[]" value="Learning" class="mr-2"  @if (is_array($hobbies)&&in_array('Learning',$hobbies)) checked @endif>Learning
+                            </div>
+                        </div>
+                        @if ($errors->has('hobbies'))
+                            <p class="text-red-400 mb-0">{{$errors->get('hobbies')[0]}}</p>
+                        @endif
+                    </div>
+                    <div class="mb-2  my-3">
+                        <h4>Qualification Details</h4>
+                    </div>
+                    <div class="flex mt-3 flex-col w-full  my-3">
+                        <label for="" class=" text-neutral-600">Enter a Qualification</label>
+                        <div class=""  id="qualification">
+                            @if (is_array(old('qualification'))&&is_array(old('yearpassout'))&&is_array(old('universityname')))
+                                @php
+                                    $qualification=old("qualification");
+                                    $yearpassout=old("yearpassout");
+                                    $universityname=old("universityname");
+                                    $qid=[];
+                                    foreach ($stud->qualification as $key => $qids) {
+                                        array_push($qid,$qids->id);
+
+                                    }
+                                @endphp
+                                @for ($i=0;$i<count($qualification);$i++)
+                                    @if ($i==0)
+                                    <div class="flex gap-1  my-3 w-full">
+                                            <input type="hidden" name="qualification_ids[]" value="{{$qid[$i]}}">
+                                            <input type="text" placeholder="Qualification" name="qualification[]" class=" outline-none {{$errors->has('qualification.'.$i)?'border-2 border-red-400':'border border-gray-900'}} w-full p-2 px-3 rounded" value="{{$qualification[$i]}}">
+                                            <input type="text" placeholder="Year passout"  name="yearpassout[]" class=" outline-none {{$errors->has('yearpassout.'.$i)?'border-2 border-red-400':'border border-gray-900'}} w-full  p-2 px-3 rounded" value="{{$yearpassout[$i]}}">
+                                            <input type="text" placeholder="Name of university"  name="universityname[]" class=" outline-none {{$errors->has('universityname.'.$i)?'border-2 border-red-400':'border border-gray-900'}} w-full p-2 px-3 rounded" value="{{$universityname[$i]}}">
+                                        <button type="button" class="btn btn-primary w-56" id="btn-qualification">Add</button>
+                                    </div>
+                                    @else
+                                    <div class="flex gap-1  my-3 w-full">
+                                        <input type="hidden" name="{{(count($qid)<=$i)?'':'qualification_ids[]'}}" value="{{(count($qid)<=$i)?'':$qid[$i]}}">
+                                            <input type="text" placeholder="Qualification" name="qualification[]" class=" outline-none {{$errors->has('qualification.'.$i)?'border-2 border-red-400':'border border-gray-900'}} w-full p-2 px-3 rounded" value="{{$qualification[$i]}}">
+                                            <input type="text" placeholder="Year passout"  name="yearpassout[]" class=" outline-none {{$errors->has('yearpassout.'.$i)?'border-2 border-red-400':'border border-gray-900'}} w-full  p-2 px-3 rounded" value="{{$yearpassout[$i]}}">
+                                            <input type="text" placeholder="Name of university"  name="universityname[]" class=" outline-none w-full {{$errors->has('universityname.'.$i)?'border-2 border-red-400':'border border-gray-900'}} p-2 px-3 rounded" value="{{$universityname[$i]}}">
+                                        <button type="button" class="btn btn-danger w-48" onclick="this.parentNode.remove()" id="btn-qualification">Remove</button>
+                                    </div>
+                                    @endif
+                                @endfor
+                            @else
+                                @foreach ($stud->qualification as $index=> $sq)
+                                    @if($index==0)
+                                        @if ($sq->isdelete==1)
+                                        <div class="flex gap-1  my-3 w-full">
+                                            <input type="hidden" name="qualification_ids[]" value="{{$sq->id}}">
+                                            <input type="text" placeholder="Qualification" name="qualification[]" class=" outline-none border w-full border-gray-900 p-2 px-3 rounded" value="{{$sq->qualification}}">
+                                            <input type="text" placeholder="Year passout"  name="yearpassout[]" class=" outline-none border w-full border-gray-900 p-2 px-3 rounded" value="{{$sq->yearpassout}}">
+                                            <input type="text" placeholder="Name of university"  name="universityname[]" class=" outline-none border w-full border-gray-900 p-2 px-3 rounded" value="{{$sq->universityname}}">
+                                            <button type="button" class="btn btn-primary w-56" id="btn-qualification">Add</button>
+                                        </div>
+                                        @endif
+                                    @else
+                                        @if ($sq->isdelete==1)
+                                        <div class="flex gap-1  my-3 w-full">
+                                            <input type="hidden" name="qualification_ids[]" value="{{$sq->id}}">
+                                            <input type="text" placeholder="Qualification" name="qualification[]" class=" outline-none border w-full border-gray-900 p-2 px-3 rounded" value="{{$sq->qualification}}">
+                                            <input type="text" placeholder="Year passout"  name="yearpassout[]" class=" outline-none border w-full border-gray-900 p-2 px-3 rounded" value="{{$sq->yearpassout}}">
+                                            <input type="text" placeholder="Name of university"  name="universityname[]" class=" outline-none border w-full border-gray-900 p-2 px-3 rounded" value="{{$sq->universityname}}">
+                                            <button type="button" class="btn btn-danger w-48" onclick="this.parentNode.remove()" id="btn-qualification">Remove</button>
+                                        </div>
+                                        @endif
+                                    @endif
+                                @endforeach
+                            @endif
+                        </div>
+                    </div>
+                    <div class="mt-5 w-full flex justify-center">
+                        <button class="btn btn-success ">Submit</button>
+                    </div>
+                </form>
+                @endforeach
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var list=document.getElementById('qualification');
+    $('#btn-qualification').click(function(){
+        if(list.children.length>4){
+            alert('limit is 5');
+        }else{
+
+            $('#qualification').append(`<div class="flex gap-1 my-3 w-full">
+                <input type="text" placeholder="Qualification" name="qualification[]" class=" outline-none border w-full border-gray-900 p-2 px-3 rounded">
+                <input type="text" placeholder="Year passout"  name="yearpassout[]" class=" outline-none border w-full border-gray-900 p-2 px-3 rounded">
+                <input type="text" placeholder="Name of university"  name="universityname[]" class=" outline-none border w-full border-gray-900 p-2 px-3 rounded">
+                <button type="button" class="btn btn-danger w-48" onclick="this.parentNode.remove()" id="btn-qualification">Remove</button>
+                </div>`);
+            }
+    });
+
+    let state=document.getElementById('state');
+    $('#country').on('change',function(){
+        state.innerHTML='';
+        var data={
+            country:$('#country').val(),
+        };
+        $.ajax({
+            url:'/country',
+            type:'POST',
+            data:data,
+            success:function(res){
+                for(i=0;i<res.data.length;i++){
+                    state.innerHTML+=`<option value="${res.data[i].state}">${res.data[i].state}</option>`;
+                }
+            }
+        });
+    });
+    $('#imgbtn').click(function(){
+        $('#imginp').toggle();
+    });
+</script>
+@endsection
