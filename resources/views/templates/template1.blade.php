@@ -29,10 +29,10 @@
             </button>
         </div>
       <ul class=" list-none lg:flex hidden gap-32">
-        <li><a class="text-red-600 text-xl tablinks" onclick="opentab(event,'home')">Home</a></li>
-        <li><a class="text-white text-xl tablinks" onclick="opentab(event,'about')">About Me</a></li>
-        <li><a class="text-white text-xl tablinks" onclick="opentab(event,'ownpage')">Experience</a></li>
-        <li><a class="text-white text-xl tablinks" onclick="opentab(event,'contact')">Contact Me</a></li>
+        <li><a class="text-white text-xl tablinks cursor-pointer active" onclick="opentab(event,'home')">Home</a></li>
+        <li><a class="text-white text-xl tablinks cursor-pointer" onclick="opentab(event,'about')">About Me</a></li>
+        <li><a class="text-white text-xl tablinks cursor-pointer" onclick="opentab(event,'ownpage')">Experience</a></li>
+        <li><a class="text-white text-xl tablinks cursor-pointer" onclick="opentab(event,'contact')">Contact Me</a></li>
       </ul>
     </nav>
 
@@ -158,7 +158,7 @@
         </div>
         <div class="flex flex-col w-full items-center mt-10">
           <div class="bg-red-600 px-5 py-10 w-3/4 rounded-lg flex lg:flex-row flex-col my-10">
-            <h1 class="text-8xl w-72 flex justify-center items-center text-white lg:border-r-2 sm:border-b-2 pb-5 border-white">1</h1>
+            <h1 class="text-8xl lg:w-72 w-full flex justify-center items-center text-white lg:border-r-2 lg:border-b-0 border-b-2 border-r-0 pb-5 border-white">1</h1>
             <div class="flex flex-col gap-3 lg:pl-10 pl-2 pt-5">
               <h2 class="text-4xl text-white">company 1</h2>
               <h2 class="text-2xl text-neutral-300">company 1</h2>
@@ -166,7 +166,7 @@
             </div>
           </div>
           <div class="bg-red-600 px-5 py-10 w-3/4 rounded-lg flex lg:flex-row flex-col my-10">
-            <h1 class="text-8xl w-72 flex justify-center items-center text-white lg:border-r-2 sm:border-b-2 pb-5 border-white">1</h1>
+            <h1 class="text-8xl lg:w-72 w-full flex justify-center items-center text-white lg:border-r-2 lg:border-b-0 border-b-2 border-r-0 pb-5 border-white">2</h1>
             <div class="flex flex-col gap-3 lg:pl-10 pl-2 pt-5">
               <h2 class="text-4xl text-white">company 1</h2>
               <h2 class="text-2xl text-neutral-300">company 1</h2>
@@ -176,7 +176,7 @@
         </div>
       </div>
     </section>
-    <section class=" h-full w-full lg:pb-5 pb-20 flex flex-col lg:px-44 px-10 justify-center items-center  tabcontent" id="contact">
+    <section class=" h-full w-full lg:pb-5 pb-20 flex flex-col lg:px-44 px-10 justify-center items-center hidden tabcontent" id="contact">
         <div class="mt-20 w-full text-center">
            <h1 class="text-red-600 text-4xl">Contact Me</h1>
         </div>
@@ -206,6 +206,11 @@
       </div>
     </section>
   </body>
+  <style>
+    .active{
+    color: rgb(218, 18, 18);
+    }
+  </style>
   <script>
     $('#sidebar-btn').click(function(){
         $('#sidebar').slideToggle();
@@ -236,9 +241,6 @@
         evt.currentTarget.className += " active";
 
         // $('#sidebar').toggle();
-        var sidebaricon = document.getElementById('sidebar-icon');
-        sidebaricon.classList.remove('bx-x');
-        sidebaricon.classList.add('bx-menu');
     }
 
   </script>
