@@ -10,22 +10,22 @@
     <h1 class="text-start text-3xl text-emerald-300 font-semibold">SelfMe</h1>
     <ul class="mt-14 flex-1">
         <li class="w-full h-16 my-2 relative">
-            <a href="{{route('homeui')}}" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300 {{($url[4]=="home")?'text-emerald-300 active':''}}  rounded-lg side-menu"><i class="fa-solid fa-house-fire w-10"></i>Home</a>
+            <a href="{{route('homeui')}}" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300 {{($url[3]=="home")?'text-emerald-300 active':''}}  rounded-lg side-menu"><i class="fa-solid fa-house-fire w-10"></i>Home</a>
         </li>
         <li class="w-full h-16 my-2 relative">
-            <a href="{{route('templatesui')}}" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300 {{($url[4]=="template")?'text-emerald-300 active':''}} rounded-lg side-menu"><i class="fa-solid fa-cube w-10"></i>Design</a>
+            <a href="{{route('templatesui')}}" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300 {{($url[3]=="template")?'text-emerald-300 active':''}} rounded-lg side-menu"><i class="fa-solid fa-cube w-10"></i>Design</a>
         </li>
-        @if (auth()->user()->id==1)
+        @if (auth()->user()->id)
         <li class="w-full h-16 my-2 relative">
-            <a href="{{route('getdataui')}}" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300 {{($url[4]=="edit-data")?'text-emerald-300 active':''}} rounded-lg side-menu"><i class="fa-solid fa-database w-10"></i>Edit Data</a>
+            <a href="{{route('getdataui')}}" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300 {{($url[3]=="edit-data")?'text-emerald-300 active':''}} rounded-lg side-menu"><i class="fa-solid fa-database w-10"></i>Edit Data</a>
         </li>
         @else
         <li class="w-full h-16 my-2 relative">
-            <a href="{{route('dataui')}}" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300 {{($url[4]=="data")?'text-emerald-300 active':''}} rounded-lg side-menu"><i class="fa-solid fa-database w-10"></i>Datas</a>
+            <a href="{{route('dataui')}}" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300 {{($url[3]=="data")?'text-emerald-300 active':''}} rounded-lg side-menu"><i class="fa-solid fa-database w-10"></i>Datas</a>
         </li>
         @endif
         <li class="w-full h-16 my-2 relative">
-            <a href="{{route('newupdatesui')}}" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300 {{($url[4]=="new")?'text-emerald-300 active':''}} rounded-lg side-menu"><i class="fa-solid fa-wand-magic-sparkles w-10"></i></i>New</a>
+            <a href="{{route('newupdatesui')}}" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300 {{($url[3]=="new")?'text-emerald-300 active':''}} rounded-lg side-menu"><i class="fa-solid fa-wand-magic-sparkles w-10"></i></i>New</a>
         </li>
     </ul>
     <div class=" p-4">

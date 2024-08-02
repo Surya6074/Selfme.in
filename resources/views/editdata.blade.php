@@ -97,7 +97,7 @@ Data Insert Page - SelfMe
                         </div>
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Enter a Roles</label>
-                            <div class="" id="Role-input">
+                            <div class="" id="Role-inputs">
                                 @php
                                     $roles=explode(',',$hp->hp_roles);
                                     $total_roles=count($roles)

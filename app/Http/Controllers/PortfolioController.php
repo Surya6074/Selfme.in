@@ -234,7 +234,6 @@ class PortfolioController extends Controller
     public function GetUserdata()
     {
         $id = auth()->user()->id;
-        // $id = 1;
         $homepages = Homepage::where('user_id', $id)->get();
         $aboutpages = Aboutpage::where('user_id', $id)->get();
         $contactpages = Contactpage::where('user_id', $id)->get();
@@ -249,6 +248,20 @@ class PortfolioController extends Controller
         return view('editdata', compact('homepages', 'aboutpages', 'contactpages', 'ownpages', 'ownpagetitle', 'skills', 'links'));
     }
 
+    public function ShowPortfolio($username)
+    {
+        $id = User::where('username', $username)->first();
+        $homepages = Homepage::where('user_id', $id->id)->get();
+        $aboutpages = Aboutpage::where('user_id', $id->id)->get();
+        $contactpages = Contactpage::where('user_id', $id->id)->get();
+        $ownpages = Ownpage::where('user_id', $id->id)->get();
+        $skills = Skill::where('user_id', $id->id)->get();
+        $links = Link::where('user_id', $id->id)->get();
+
+        $skillscount = Count($skills);
+        return view('templates.template1', compact('homepages', 'aboutpages', 'contactpages', 'ownpages', 'skills', 'links', 'skillscount'));
+    }
+
 
     public function ValidateUsername(Request $request)
     {
@@ -259,10 +272,6 @@ class PortfolioController extends Controller
 
     public function test(Request $request)
     {
-        // $name = 'surya';
-        // $data = User::where('username', $name)->get();
-        // dd(Count($data));
-        // dd(Hash::make('123456'));
 
         return view('templates.template1');
     }
