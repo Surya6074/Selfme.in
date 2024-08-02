@@ -25,7 +25,7 @@ class Authcontroller extends Controller
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
             $user = User::where('email', $email)->first();
             Auth::login($user);
-            return redirect(route('homeui'))->with(['msg' => 'Logged in successfully', 'status' => 'success']);
+            return redirect(route('homeui', ['user' => $user->username]))->with(['msg' => 'Logged in successfully', 'status' => 'success']);
         } else {
             return redirect(route('loginui'))->with(['msg' => 'Invalid Credentials', 'status' => 'er']);
         }
@@ -47,7 +47,7 @@ class Authcontroller extends Controller
         $user->password = $password;
         if ($user->save()) {
             Auth::login($user);
-            return redirect(route('homeui'));
+            return redirect(route('homeui', ['user' => $username]));
         }
     }
 

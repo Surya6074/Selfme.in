@@ -6,7 +6,6 @@ use App\Http\Controllers\UiController;
 use Illuminate\Support\Facades\Route;
 
 
-
 // Get Routes
 
 //Auth Get
@@ -22,16 +21,25 @@ Route::post('/user-reg', [Authcontroller::class, 'Register'])->name('Register');
 Route::get('/', [UiController::class, 'indexui'])->name('indexui');
 
 //User routes
-Route::get('/home', [UiController::class, 'homeui'])->name('homeui')->middleware('isUser');
-Route::get('/template', [UiController::class, 'templatesui'])->name('templatesui')->middleware('isUser');
-Route::get('/new', [UiController::class, 'newupdatesui'])->name('newupdatesui')->middleware('isUser');
-Route::get('/data', [UiController::class, 'dataui'])->name('dataui')->middleware('isUser');
-Route::get('/edit-data', [PortfolioController::class, 'GetUserdata'])->name('getdataui')->middleware('isUser');
+// Route::get('/home', [UiController::class, 'homeui'])->name('homeui')->middleware('isUser');
+// Route::get('/template', [UiController::class, 'templatesui'])->name('templatesui')->middleware('isUser');
+// Route::get('/new', [UiController::class, 'newupdatesui'])->name('newupdatesui')->middleware('isUser');
+// Route::get('/data', [UiController::class, 'dataui'])->name('dataui')->middleware('isUser');
+// Route::get('/edit-data', [PortfolioController::class, 'GetUserdata'])->name('getdataui')->middleware('isUser');
+
+
+Route::group(['prefix' => '{username}'], function () {
+    Route::get('/home', [UiController::class, 'homeui'])->name('homeui')->middleware('isUser');
+    Route::get('/template', [UiController::class, 'templatesui'])->name('templatesui')->middleware('isUser');
+    Route::get('/new', [UiController::class, 'newupdatesui'])->name('newupdatesui')->middleware('isUser');
+    Route::get('/data', [UiController::class, 'dataui'])->name('dataui')->middleware('isUser');
+    Route::get('/edit-data', [PortfolioController::class, 'GetUserdata'])->name('getdataui')->middleware('isUser');
+});
 
 
 //update Data
-Route::post('/data-store', [PortfolioController::class, 'Storedata'])->name('storedata');
-Route::post('/data-update', [PortfolioController::class, 'Updatedata'])->name('updatedata');
+Route::post('/data-store', [PortfolioController::class, 'Storedata'])->name('storedata')->middleware('isUser');
+Route::post('/data-update', [PortfolioController::class, 'Updatedata'])->name('updatedata')->middleware('isUser');
 
 
 //Api for validation
