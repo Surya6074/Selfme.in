@@ -29,7 +29,8 @@ Data Insert Page - SelfMe
             <div class="flex flex-col justify-center ">
                 <h1 class="lg:text-7xl md:text-8xl text-6xl text-white font-semibold">Make Your Own</h1>
                 <h1 class="md:text-8xl text-7xl mb-4 text-emerald-300 font-bold mt-4">Portfolio<span class="text-white">.</span></h1>
-                <p class="text-white text-start text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. At consequuntur reiciendis et blanditiis vero, aperiam excepturi iste magnam, dolorum amet officia porro tenetur minima consequatur sit culpa perspiciatis, eaque fugit!</p>
+                <p class="text-white text-start text-sm"> Make our own portfolio.Host it Free,Change your Life-Style,Thank us later.
+                Follow us for more greaful updates...</p>
                 <div class="mt-10 flex">
                     <div class=" bg-neutral-100 lg:w-2/4 w-5/6 px-4 py-2 rounded-xl flex items-center border-2 border-emerald-300" id="username-inp">
                         <span class=" text-xl text-neutral-600">https://selfme.in/</span><input type="text" name="username" id="username" class=" bg-transparent h-full w-full py-2 pr-2 outline-none">
@@ -51,7 +52,7 @@ Data Insert Page - SelfMe
 <div class="bg-neutral-800 h-screen w-full flex flex-col items-center p-5 ">
     <div class="pt-10 text-center">
         <h1 class="md:text-6xl text-4xl font-bold tracking-wide text-white">TEMPLATES</h1>
-        <h3 class="md:text-xl text-sm mb-10 text-emerald-300 mt-2">We provide be better... we are be better</h3>
+        <h3 class="md:text-xl text-sm mb-10 text-emerald-300 mt-2">We provide Better...We are better...</h3>
     </div>
     <div class="flex-1 flex gap-10 justify-center items-center h-full w-full">
         <div class="md:flex hidden flex-col w-96 h-[500px] bg-neutral-900 p-5 rounded-xl">
@@ -108,12 +109,20 @@ Data Insert Page - SelfMe
 <div class="bg-neutral-900 h-full w-full flex flex-col items-center md:p-10 p-4">
     <div class="pt-10 text-center">
         <h1 class="md:text-6xl text-4xl  font-bold tracking-wide text-white">About Us</h1>
-        <h3 class="md:text-xl text-sm  text-emerald-300 mt-2">We provide be better... we are be better</h3>
+        <h3 class="md:text-xl text-sm  text-emerald-300 mt-2">We Care About How The World Works</h3>
     </div>
     <div class="flex-1 h-full w-full mt-10 lg:px-20 px-8 flex lg:flex-row flex-col justify-center items-center">
         <img src="" class="lg:w-2/4  w-[400px] h-[500px] mb-10 bg-slate-200 " alt="">
         <div class="flex-1 flex flex-col lg:pl-20 p-0 text-center">
-            <p class="lg:text-lg text-sm mb-10 text-center text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, laboriosam explicabo! Dignissimos recusandae at est, vel debitis beatae officiis obcaecati incidunt blanditiis, quibusdam architecto suscipit doloribus assumenda, nisi saepe quis?Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora odit architecto delectus, incidunt officiis ipsam veniam provident. Quia magni officiis, nostrum obcaecati eaque esse maxime accusamus, suscipit provident, aliquid fugit! <br><br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, laboriosam explicabo! Dignissimos recusandae at est, vel debitis beatae officiis obcaecati incidunt blanditiis, quibusdam architecto suscipit doloribus assumenda, nisi saepe quis?Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora odit architecto delectus, incidunt officiis ipsam veniam provident. Quia magni officiis, nostrum obcaecati eaque esse maxime accusamus, suscipit provident, aliquid fugit!</p>
+            <p class="lg:text-lg text-sm mb-10 text-center text-white"><span class="text-emerald-300"> W </span> elcome to selfMe, where creativity meets accessibility. We believe everyone
+                        deserves a platform to showcase their talents and passions, which is why we provide a free and
+                        intuitive solution for building and hosting your portfolio. Whether you're an artist,designer,
+                        photographer, writer, or any creative soul, SelfMe empowers you to curate a personalized
+                        portfolio that
+                        that truly reflects who you are... <br><br>
+                        <span class="text-emerald-300"> O </span>ur user-frendly interface and customizable templates make the process seamless,
+                        allowing you to focus on what matters
+                        most-your work. Join our community of creators today and let your portfolio shine with selfMe.</p>
             <div class="w-full">
                 <a href="" class="text-emerald-300 border-2 px-6 py-3 rounded-2xl w-48 border-emerald-300 text-2xl mb-10">Contact Us</a>
             </div>
@@ -124,22 +133,22 @@ Data Insert Page - SelfMe
 <div class="bg-neutral-900  h-full w-full pb-20 flex flex-col lg:mt-0 mt-10 items-center md:p-10 p-4">
     <div class="pt-10 text-center flex justify-center flex-col items-center">
         <h1 class="md:text-6xl text-4xl font-bold tracking-wide text-white">Why You Choose Us</h1>
-        <h3 class="md:text-xl text-sm  lg:w-2/4 w-full text-emerald-300 mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi distinctio veritatis ex adipisci dolores maxime perspiciatis, numquam unde laudantium aspernatur et beatae nostrum consequuntur laboriosam, voluptatum illum reiciendis quam necessitatibus.</h3>
+        <h3 class="md:text-xl text-sm  lg:w-2/4 w-full text-emerald-300 mt-3">We're More Than A platform - We're Your Partner In <br> Showcasing Your Unique Talent To The World.</h3>
     </div>
     <div class="flex-1 h-full w-full mt-10 lg:gap-10 lg:px-20 pb-20 px-8 flex lg:flex-row flex-col justify-center items-center">
         <div class="">
             <div class="bg-white mt-10 relative rounded-lg lg:px-10 lg:py-5 p-5" >
                 <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center">Icon</div>
                 <div class="pt-5">
-                    <h1 class="text-emerald-300 text-xl font-bold mb-3">taljfklasdnf </h1>
-                    <p class="text-md text-neutral-900">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse praesentium tempore quas at vitae! Est quisquam enim maiores ab quaerat, deserunt placeat nostrum iure eius mollitia deleniti voluptates cupiditate quam.</p>
+                    <h1 class="text-emerald-300 text-xl font-bold mb-3">Customizable Templates </h1>
+                    <p class="text-md text-neutral-900">Unlock your unique style with SelfMe's customizable templates-tailor your portfolio to reflect your personality and vision effortlessly.</p>
                 </div>
             </div>
             <div class="bg-white mt-10 relative rounded-lg lg:px-10 lg:py-5 p-5" >
                 <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center">Icon</div>
                 <div class="pt-5">
-                    <h1 class="text-emerald-300 text-xl font-bold mb-3">taljfklasdnf </h1>
-                    <p class="text-md text-neutral-900">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse praesentium tempore quas at vitae! Est quisquam enim maiores ab quaerat, deserunt placeat nostrum iure eius mollitia deleniti voluptates cupiditate quam.</p>
+                    <h1 class="text-emerald-300 text-xl font-bold mb-3">Seamless Hosting </h1>
+                    <p class="text-md text-neutral-900">Experience seamless hosting with SelfME-reliable, hassle-free, and always there to showcase hour portfolio to the world.</p>
                 </div>
             </div>
         </div>
@@ -147,15 +156,15 @@ Data Insert Page - SelfMe
             <div class="bg-white mt-10 relative rounded-lg  lg:px-10 lg:py-5 p-5 " >
                 <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center">Icon</div>
                 <div class="pt-5">
-                    <h1 class="text-emerald-300 text-xl font-bold mb-3">taljfklasdnf </h1>
-                    <p class="text-md text-neutral-900">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse praesentium tempore quas at vitae! Est quisquam enim maiores ab quaerat, deserunt placeat nostrum iure eius mollitia deleniti voluptates cupiditate quam.</p>
+                    <h1 class="text-emerald-300 text-xl font-bold mb-3">24/7 Support</h1>
+                    <p class="text-md text-neutral-900">SelfMe offers 24/7 supports, ensuring assistance whenever you need it. Your creativity never waits, and neither do we.</p>
                 </div>
             </div>
             <div class="bg-white mt-10 relative rounded-lg  lg:px-10 lg:py-5 p-5" >
                 <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center">Icon</div>
                 <div class="pt-5">
-                    <h1 class="text-emerald-300 text-xl font-bold mb-3">taljfklasdnf </h1>
-                    <p class="text-md text-neutral-900">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse praesentium tempore quas at vitae! Est quisquam enim maiores ab quaerat, deserunt placeat nostrum iure eius mollitia deleniti voluptates cupiditate quam.</p>
+                    <h1 class="text-emerald-300 text-xl font-bold mb-3">No Limitations </h1>
+                    <p class="text-md text-neutral-900">SelfMe liberates your creativity with no boundaries-Embrace your full potential without any restriction,only on SelfMe.</p>
                 </div>
             </div>
         </div>
@@ -165,7 +174,7 @@ Data Insert Page - SelfMe
 <div class="bg-neutral-800 h-full w-full pb-20 flex flex-col lg:mt-0 mt-10 items-center md:p-10 p-4">
     <div class="text-center flex justify-center flex-col items-center lg:mt-0 pt-10">
         <h1 class="md:text-6xl text-4xl font-bold tracking-wide text-white">Contact Us</h1>
-        <h3 class="text-sm lg:w-2/4 w-full text-emerald-300 mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi distinctio veritatis ex adipisci dolores maxime perspiciatis, numquam unde laudantium aspernatur et beatae nostrum consequuntur laboriosam, voluptatum illum reiciendis quam necessitatibus.</h3>
+        <h3 class="text-sm lg:w-2/4 w-full text-emerald-300 mt-3">Join us and get in touch for inquiries, support, or feedback.</h3>
     </div>
     <div class="flex-1 h-full w-full mt-10 lg:gap-10 lg:px-20 pb-20 px-8 flex lg:flex-row flex-col justify-center items-center">
         <form action="" class="lg:w-1/2 w-full flex flex-col lg:mt-0 mt-10">
