@@ -1,7 +1,6 @@
 @php
     $url=explode('/',Request::url());
 @endphp
-
 <aside class="rounded-lg text-white w-72 p-5 md:flex hidden flex-col justify-between m-4 relative" id="mobileviewsidebar">
 
     <div class="top-4 right-2 absolute md:hidden">
@@ -15,7 +14,7 @@
         <li class="w-full h-16 my-2 relative">
             <a href="{{route('templatesui')}}" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300 {{($url[3]=="template")?'text-emerald-300 active':''}} rounded-lg side-menu"><i class="fa-solid fa-cube w-10"></i>Design</a>
         </li>
-        @if (auth()->user()->id)
+        @if (CheckUserProtflio())
         <li class="w-full h-16 my-2 relative">
             <a href="{{route('getdataui')}}" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300 {{($url[3]=="edit-data")?'text-emerald-300 active':''}} rounded-lg side-menu"><i class="fa-solid fa-database w-10"></i>Edit Data</a>
         </li>

@@ -3,10 +3,6 @@
 Register Page - Selfme
 @endsection
 @section('content')
-@if ($errors->any())
-    <p>{{$errors}}</p>
-@endif
-
 <div class="h-full w-full flex md:flex-row flex-col-reverse bg-neutral-800">
     <div class="lg:w-1/2 w-full h-full flex justify-center items-center form-page ">
         <form action="{{route('Register')}}" method="POST" class="flex flex-col w-2/4">
@@ -14,20 +10,32 @@ Register Page - Selfme
             <h1 class="text-4xl text-center font-bold mb-6 text-emerald-300">Register</h1>
             <div class="flex flex-col mb-5">
                 <label for="" class="text-gray-100">Enter a Username</label>
-                <input type="text" name="username" id="username" class="p-3 mt-1 rounded-md bg-neutral-900 outline-none text-neutral-300" placeholder="username">
+                <input type="text" name="username" id="username" class="p-3 mt-1 rounded-md bg-neutral-900 outline-none text-neutral-300" placeholder="username" value="{{old('username')}}">
                 <div id="err"></div>
+                @error('username')
+                    <p class="text-red-500 mb-0">{{ $message }}</p>
+                @enderror
             </div>
              <div class="flex flex-col mb-5">
                 <label for="" class="text-gray-100">Enter a Email</label>
-                <input type="email" name="email" class="p-3 mt-1 rounded-md bg-neutral-900 outline-none text-neutral-300" placeholder="Email Address">
+                <input type="email" name="email" class="p-3 mt-1 rounded-md bg-neutral-900 outline-none text-neutral-300" placeholder="Email Address" value="{{old('email')}}">
+                 @error('email')
+                    <p class="text-red-500 mb-0">{{ $message }}</p>
+                @enderror
             </div>
             <div class="flex flex-col mb-5">
                 <label for="" class="text-gray-100">Enter a Password</label>
-                <input type="password" name="password" class="p-3 mt-1 rounded-md outline-none bg-neutral-900 text-neutral-300"  placeholder="Password">
+                <input type="password" name="password" class="p-3 mt-1 rounded-md outline-none bg-neutral-900 text-neutral-300"  placeholder="Password" value="{{old('password')}}">
+                 @error('password')
+                    <p class="text-red-500 mb-0">{{ $message }}</p>
+                @enderror
             </div>
             <div class="flex flex-col mb-5">
                 <label for="" class="text-gray-100">Confirm Password</label>
-                <input type="password" name="password_confirmation" class="p-3 mt-1 rounded-md outline-none bg-neutral-900 text-neutral-300"  placeholder="confirm Password">
+                <input type="password" name="password_confirmation" class="p-3 mt-1 rounded-md outline-none bg-neutral-900 text-neutral-300"  placeholder="confirm Password" value="{{old('password_confirmation')}}">
+                 @error('password_confirmation')
+                    <p class="text-red-500 mb-0">{{ $message }}</p>
+                @enderror
             </div>
             <div class="flex mt-5 justify-between">
                 <div class="">

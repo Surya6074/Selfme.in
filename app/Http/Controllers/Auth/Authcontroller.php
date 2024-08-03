@@ -33,7 +33,7 @@ class Authcontroller extends Controller
     public function Register(Request $request)
     {
         $request->validate([
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email',
             'username' => 'required|unique:users,username',
             'password' => 'required|size:6',
             'password_confirmation' => 'required|same:password'

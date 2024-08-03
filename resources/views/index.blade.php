@@ -18,15 +18,16 @@ Data Insert Page - SelfMe
            </div>
            <div class="md:block hidden flex-1 h-full ">
                <ul class="flex h-full items-center justify-around">
-                   <li><a href="" class="text-xl font-semibold">Home</a></li>
-                   <li><a href="" class="text-xl font-semibold">About</a></li>
-                   <li><a href="" class="text-xl font-semibold">Templates</a></li>
+                   <li><a href="#home" class="text-xl font-semibold">Home</a></li>
+                   <li><a href="#about" class="text-xl font-semibold">About</a></li>
+                   <li><a href="#template" class="text-xl font-semibold">Templates</a></li>
+                   <li><a href="#contact" class="text-xl font-semibold">Contact</a></li>
                    <li><a href="/login" class="px-5 py-2 bg-white text-xl text-emerald-300 font-semibold rounded-lg">Login</a></li>
                </ul>
            </div>
         </nav>
     </div>
-     <div class="md:h-[100vh] h-full md:pt-14 pt-10 w-full flex lg:flex-row flex-col">
+     <div class="md:h-[100vh] h-full md:pt-14 pt-10 w-full flex lg:flex-row flex-col" id="home">
         <div class="lg:w-1/2 lg:pl-32 md:pl-14 pl-8 pr-3  pb-32 w-full h-full flex justify-center items-start pt-24"  data-aos="fade-right"  data-aos-duration="2000">
             <div class="flex flex-col justify-center ">
                 <h1 class="lg:text-8xl md:text-8xl text-6xl text-white font-semibold">Make Your Own</h1>
@@ -51,7 +52,7 @@ Data Insert Page - SelfMe
      </div>
 </div>
 {{-- templates --}}
-<div class="bg-neutral-800 h-screen w-full flex flex-col items-center p-5 " >
+<div class="bg-neutral-800 h-screen w-full flex flex-col items-center p-5 " id="template">
     <div class="pt-10 text-center" data-aos="fade-up"data-aos-anchor-placement="center-bottom">
         <h1 class="md:text-6xl text-4xl font-bold tracking-wide text-white">TEMPLATES</h1>
         <h3 class="md:text-xl text-sm mb-10 text-emerald-300 mt-2">We provide Better...We are better...</h3>
@@ -174,13 +175,13 @@ Data Insert Page - SelfMe
     </div>
 </div>
 {{-- Abouts --}}
-<div class="bg-neutral-900 h-full w-full flex flex-col items-center md:p-10 p-4">
+<div class="bg-neutral-900 h-full w-full flex flex-col items-center md:p-10 p-4" id="about">
     <div class="pt-10 text-center" data-aos="fade-up"data-aos-anchor-placement="center-bottom">
         <h1 class="md:text-6xl text-4xl  font-bold tracking-wide text-white">About Us</h1>
         <h3 class="md:text-xl text-sm  text-emerald-300 mt-2">We Care About How The World Works</h3>
     </div>
     <div class="flex-1 h-full w-full mt-10 lg:px-20 px-8 flex lg:flex-row flex-col justify-center items-center">
-        <img src="" class="lg:w-2/4  w-[400px] h-[500px] mb-10 bg-slate-200 " alt="" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+        <img src="{{asset('assets/icons/about.png')}}" class="lg:w-2/4  w-[400px] h-[500px] rounded-3xl mb-10 bg-slate-200 " alt="" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
         <div class="flex-1 flex flex-col lg:pl-20 p-0 text-start" data-aos="fade-left"  data-aos-offset="300" data-aos-duration="500">
             <p class="lg:text-lg text-sm mb-10 text-start text-white" ><span class="text-emerald-300 text-3xl"> W</span>elcome to selfMe, where creativity meets accessibility. We believe everyone
                         deserves a platform to showcase their talents and passions, which is why we provide a free and
@@ -206,14 +207,14 @@ Data Insert Page - SelfMe
     <div class="flex-1 h-full w-full mt-10 lg:gap-10 lg:px-20 pb-20 px-8 flex lg:flex-row flex-col justify-center items-center">
         <div class="">
             <div class="bg-white mt-10 relative rounded-lg lg:px-10 lg:py-5 p-5" data-aos="fade-up"data-aos-anchor-placement="bottom-bottom">
-                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center">Icon</div>
+                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center"><img src="{{asset('assets/icons/customize.png')}}" class=" w-9 h-9" alt=""></div>
                 <div class="pt-5">
                     <h1 class="text-emerald-300 text-xl font-bold mb-3">Customizable Templates </h1>
                     <p class="text-md text-neutral-900">Unlock your unique style with SelfMe's customizable templates-tailor your portfolio to reflect your personality and vision effortlessly.</p>
                 </div>
             </div>
             <div class="bg-white mt-10 relative rounded-lg lg:px-10 lg:py-5 p-5" data-aos="fade-up"data-aos-anchor-placement="bottom-bottom">
-                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center">Icon</div>
+                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center"><img src="{{asset('assets/icons/host.png')}}" class=" w-12 h-12" alt=""></div>
                 <div class="pt-5">
                     <h1 class="text-emerald-300 text-xl font-bold mb-3">Seamless Hosting </h1>
                     <p class="text-md text-neutral-900">Experience seamless hosting with SelfME-reliable, hassle-free, and always there to showcase hour portfolio to the world.</p>
@@ -222,14 +223,14 @@ Data Insert Page - SelfMe
         </div>
         <div class="">
             <div class="bg-white mt-10 relative rounded-lg  lg:px-10 lg:py-5 p-5 " data-aos="fade-up"data-aos-anchor-placement="bottom-bottom">
-                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center">Icon</div>
+                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center"><img src="{{asset('assets/icons/247.png')}}" class=" w-12 h-12" alt=""></div>
                 <div class="pt-5">
                     <h1 class="text-emerald-300 text-xl font-bold mb-3">24/7 Support</h1>
                     <p class="text-md text-neutral-900">SelfMe offers 24/7 supports, ensuring assistance whenever you need it. Your creativity never waits, and neither do we.</p>
                 </div>
             </div>
             <div class="bg-white mt-10 relative rounded-lg  lg:px-10 lg:py-5 p-5" data-aos="fade-up"data-aos-anchor-placement="bottom-bottom">
-                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center">Icon</div>
+                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center"><img src="{{asset('assets/icons/infinity.png')}}" class=" w-12 h-12" alt=""></div>
                 <div class="pt-5">
                     <h1 class="text-emerald-300 text-xl font-bold mb-3">No Limitations </h1>
                     <p class="text-md text-neutral-900">SelfMe liberates your creativity with no boundaries-Embrace your full potential without any restriction,only on SelfMe.</p>
@@ -239,7 +240,7 @@ Data Insert Page - SelfMe
     </div>
 </div>
 {{-- contact Us --}}
-<div class="bg-neutral-800 h-full w-full pb-20 flex flex-col lg:mt-0 mt-10 items-center md:p-10 p-4">
+<div class="bg-neutral-800 h-full w-full pb-20 flex flex-col lg:mt-0 mt-10 items-center md:p-10 p-4" id="contact">
     <div class="text-center flex justify-center flex-col items-center lg:mt-0 pt-10" data-aos="fade-up"data-aos-anchor-placement="center-bottom">
         <h1 class="md:text-6xl text-4xl font-bold tracking-wide text-white">Contact Us</h1>
         <h3 class="md:text-md text-sm w-full text-emerald-300 mt-3">Join us and get in touch for inquiries, support, or feedback.</h3>
@@ -262,7 +263,7 @@ Data Insert Page - SelfMe
         </form>
     </div>
 </div>
-{{--  Us --}}
+{{--  Footer --}}
 <div class="bg-neutral-900 h-64 w-full  flex flex-col gap-20 lg:flex-row  justify-around lg:mt-0 mt-10 items-center md:p-10 p-4">
     <div class="flex flex-col items-center justify-center" data-aos="fade-right"data-aos-anchor-placement="center-bottom" data-aos-duration="1500">
         <h4 class="h-16 w-16 flex justify-center items-center rounded-full text-white bg-emerald-300">Sm</h4>
@@ -272,10 +273,10 @@ Data Insert Page - SelfMe
         <div class="flex justify-center items-center flex-col">
             <h4 class="text-xl font-semibold mb-2">Sitemap</h4>
             <ul class="flex">
-                <li class="px-5  hover:text-emerald-300 border-r-2 border-neutral-200"><a href="">Home</a></li>
-                <li class="px-5  hover:text-emerald-300 border-r-2 border-neutral-200"><a href="">Template</a></li>
-                <li class="px-5  hover:text-emerald-300 border-r-2 border-neutral-200"><a href="">About</a></li>
-                <li class="px-5 "><a href="">Contact</a></li>
+                <li class="px-5  hover:text-emerald-300 border-r-2 border-neutral-200"><a href="#home">Home</a></li>
+                <li class="px-5  hover:text-emerald-300 border-r-2 border-neutral-200"><a href="#template">Template</a></li>
+                <li class="px-5  hover:text-emerald-300 border-r-2 border-neutral-200"><a href="#about">About</a></li>
+                <li class="px-5 "><a href="contact">Contact</a></li>
             </ul>
         </div>
         <p class="mt-4 text-center"><i class='bx bx-copyright' style='color:#ffffff' ></i>Coyrights are belong to <span class="text-emerald-300">Aplinix</span></p>
@@ -291,6 +292,9 @@ Data Insert Page - SelfMe
 </div>
 </body>
 <style>
+    html {
+        scroll-behavior: smooth;
+    }
     body{
         overflow-y: scroll;
         height: 100%;

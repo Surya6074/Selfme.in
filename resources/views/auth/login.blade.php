@@ -10,11 +10,17 @@ Login Page - Selfme
             @csrf
             <div class="flex flex-col mb-5">
                 <label for="" class="text-gray-100">Enter a Email</label>
-                <input type="email" name="email" class="p-4 mt-1 rounded-md bg-neutral-900 outline-none text-neutral-300" placeholder="Email Address">
+                <input type="email" name="email" class="p-4 mt-1 rounded-md bg-neutral-900 outline-none text-neutral-300" placeholder="Email Address" value="{{old('email')}}">
+                @error('email')
+                    <p class="text-red-500 mb-0">{{ $message }}</p>
+                @enderror
             </div>
             <div class="flex flex-col">
                 <label for="" class="text-gray-100">Enter a Password</label>
-                <input type="password" name="password" class="p-3 mt-1 rounded-md outline-none bg-neutral-900 text-neutral-300"  placeholder="Password">
+                <input type="password" name="password" class="p-3 mt-1 rounded-md outline-none bg-neutral-900 text-neutral-300"  placeholder="Password" value="{{old('password')}}">
+                @error('password')
+                    <p class="text-red-500 mb-0">{{ $message }}</p>
+                @enderror
             </div>
             <div class="flex mt-5 justify-between">
                 <div class="">
