@@ -43,9 +43,9 @@ Route::post('/data-update', [PortfolioController::class, 'Updatedata'])->name('u
 Route::get('/{username}', [PortfolioController::class, 'ShowPortfolio'])->name('ShowPortfolio')->middleware('isUser');
 
 
-//Api for validation
+//Api Routes
 Route::post('/username', [PortfolioController::class, 'ValidateUsername']);
-
+Route::post('/ChangeVisibility',[PortfolioController::class,'ChangeVisibility']);
 
 Route::get('/test', [PortfolioController::class, 'test']);
 

@@ -251,15 +251,30 @@ class PortfolioController extends Controller
     public function ShowPortfolio($username)
     {
         $id = User::where('username', $username)->first();
-        $homepages = Homepage::where('user_id', $id->id)->get();
-        $aboutpages = Aboutpage::where('user_id', $id->id)->get();
-        $contactpages = Contactpage::where('user_id', $id->id)->get();
-        $ownpages = Ownpage::where('user_id', $id->id)->get();
-        $skills = Skill::where('user_id', $id->id)->get();
-        $links = Link::where('user_id', $id->id)->get();
+        $portfolio_user=Portfolio::where('user_id',$id)->first();
+        if($portfolio_user->visibility=='public'){
+            $homepages = Homepage::where('user_id', $id->id)->get();
+            $aboutpages = Aboutpage::where('user_id', $id->id)->get();
+            $contactpages = Contactpage::where('user_id', $id->id)->get();
+            $ownpages = Ownpage::where('user_id', $id->id)->get();
+            $skills = Skill::where('user_id', $id->id)->get();
+            $links = Link::where('user_id', $id->id)->get();
+            $skillscount = Count($skills);
+            return view('templates.template1', compact('homepages', 'aboutpages', 'contactpages', 'ownpages', 'skills', 'links', 'skillscount'));
+        }else{
+            return view('PrivatePortfolio');
+        }
+    }
 
-        $skillscount = Count($skills);
-        return view('templates.template1', compact('homepages', 'aboutpages', 'contactpages', 'ownpages', 'skills', 'links', 'skillscount'));
+
+
+    public function ChangeVisibility(Request $request){
+        $id=$request->input('user_id');
+        $visibility=$request->input('visibility');
+        $user_portfolio=Portfolio::where('user_id',$id)->first();
+        $user_portfolio->visibility=$visibility;
+        $user_portfolio->save();
+        return response()->json(['msg' => 'success', 'data' => $visibility]);
     }
 
 

@@ -18,9 +18,9 @@ Home Page - SelfMe
         <div class="w-full bg-neutral-900 p-3 mt-7 rounded-xl">
             <div class="flex justify-between mx-5 items-center">
                 <label for="" class="text-emerald-300">Profile Visbility</label>
-                <select name="" id="" class="ml-2 w-96 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none ">
-                    <option value="Public">Public</option>
-                    <option value="Private">Private</option>
+                <select name="profile_visibility" id="profile_visibility" class="ml-2 w-96 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none ">
+                    <option value="public">Public</option>
+                    <option value="private">Private</option>
                 </select>
             </div>
         </div>
@@ -100,6 +100,28 @@ Home Page - SelfMe
         </div>
     </section>
 </body>
+<script>
+    $('#profile_visibility').on('change',function(){
+        var data={
+            user_id:{{auth()->user()->id}},
+            visibility:$('#profile_visibility').val(),
+        };
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        // console.log(data);
+        $.ajax({
+            url:'/ChangeVisibility',
+            method:'POST',
+            data:data,
+            success:function(res){
+                console.log(res);
+            }
+        });
+    });
+</script>
 <style>
         body{
         width: 100vw;
