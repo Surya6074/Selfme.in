@@ -38,6 +38,11 @@ class UiController extends Controller
         return view('home', compact('check_portfolio', 'newupdate', 'Portfolio'));
     }
 
+    public function profile()
+    {
+        return view('profile');
+    }
+
 
     //Auth ui
     public function registerui()

@@ -14,7 +14,7 @@ Data Insert Page - SelfMe
                 <h1 class="text-xl text-white">Data Update</h1>
             </div>
             <div class="h-14 rounded-full flex justify-center items-center w-14 bg-white cursor-pointer">
-                <h1 class="text-3xl ">S</h1>
+                <a href="{{route('profileui')}}" class="text-4xl ">{{strtoupper(substr(auth()->user()->username, 0, 1))}}</a>
             </div>
         </div>
         <div class="w-full bg-neutral-900 p-3 mt-7 rounded-xl">
@@ -46,7 +46,7 @@ Data Insert Page - SelfMe
             </div>
         <form action="{{route('updatedata')}}" method="POST" enctype="multipart/form-data">
             @csrf
-            <input type="hidden" name="selfme_user_id" value="1">
+            <input type="hidden" name="selfme_user_id" value="{{auth()->user()->id}}">
             <div class="tabcontent" id="Home">
                 <div class="w-full  flex-col">
                     @foreach ($homepages as $hp)
@@ -88,8 +88,13 @@ Data Insert Page - SelfMe
                             <label class="text-emerald-300">Choose a Image <span class="text-netural-600 text-sm">(.png)</span></label>
                             <div class="flex">
                                 <input type="hidden" name="hp_img_name" value="{{$hp->hp_img}}">
-                                <img src="{{asset('assets/dbdesign.png')}}" height="50px" width="50px" class="mx-2" alt="">
-                                <input type="file" name="hp_img"  class=" w-full bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Name">
+                                <div class="flex gap-4 items-center">
+                                    <img src="{{asset('selfme_assets/users_img/'.$hp->hp_img)}}" height="50px" width="50px" class="mx-2" alt="">
+                                    <button type="button" id="btn-change-userimg" class="bg-neutral-400 text-neutral-900 px-2 py-2 rounded">Change</button>
+                                </div>
+                                <div class="hidden" id="btn-userimg">
+                                    <input type="file" name="hp_img"  class=" w-full bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Name">
+                                </div>
                                 @error('hp_img')
                             <p class="text-red-500 mb-0">{{ $message }}</p>
                         @enderror
@@ -145,7 +150,15 @@ Data Insert Page - SelfMe
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Choose a Resume<span class="text-netural-600 text-sm">(.pdf)</span></label>
                             <input type="hidden" name="ap_resume_name" value="{{$ap->ap_resume}}">
-                            <input type="file" value="{{$ap->ap_resume}}"  name="ap_resume" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Resume.pdf">
+                            <div class="flex gap-5 items-center">
+                                <div class="flex gap-4 items-center">
+                                    <p class="text-neutral-300">Resume.pdf</p>
+                                    <button type="button" id="btn-change-resume" class="bg-neutral-400 text-neutral-900 px-2 py-2 rounded">Change</button>
+                                </div>
+                                <div class="hidden" id="btn-resume">
+                                    <input type="file" value="{{$ap->ap_resume}}"  name="ap_resume" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Resume.pdf">
+                                </div>
+                            </div>
                             @error('ap_resume')
                             <p class="text-red-500 mb-0">{{ $message }}</p>
                         @enderror
@@ -357,8 +370,6 @@ Data Insert Page - SelfMe
         evt.currentTarget.className += " actives";
         document.getElementById(tabName+'btn').classList.add('text-emerald-300');
     }
-
-
     function validateForm(tabname) {
         var  i, valid = true;
         y = x[tabname].getElementsByTagName("input");
@@ -373,8 +384,12 @@ Data Insert Page - SelfMe
         }
         return valid;
     }
-
-
+    $('#btn-change-resume').click(function(){
+        $('#btn-resume').toggle();
+    });
+    $('#btn-change-userimg').click(function(){
+        $('#btn-userimg').toggle();
+    });
 </script>
 <style>
     body{

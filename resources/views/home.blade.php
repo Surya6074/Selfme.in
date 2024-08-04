@@ -12,19 +12,27 @@ Home Page - SelfMe
                 <h1 class="text-xl text-white">Home</h1>
             </div>
             <div class="h-14 rounded-full flex justify-center items-center w-14 bg-white cursor-pointer">
-                <h1 class="text-3xl ">S</h1>
+                <a href="{{route('profileui')}}" class="text-4xl ">{{strtoupper(substr(auth()->user()->username, 0, 1))}}</a>
             </div>
         </div>
+        <div class="w-full bg-neutral-900 p-3 h-16 mt-7 rounded-xl flex justify-between items-center">
+            <div class="flex justify-between mx-5 items-center">
+                <label for="" class="text-emerald-300">Your Portfolio Link</label>
+            </div>
+            <div class=" text-neutral-200">
+                <a href="http://127.0.0.1:8000/{{auth()->user()->username}}" class="mr-5 flex items-center">https://127.0.0.1:8000/{{auth()->user()->username}}<i class='bx bx-link text-2xl ml-2 text-emerald-300'></i> </a>
+            </div>
+        </div>
+        @if ($check_portfolio==1)
         <div class="w-full bg-neutral-900 p-3 mt-7 rounded-xl">
             <div class="flex justify-between mx-5 items-center">
                 <label for="" class="text-emerald-300">Profile Visbility</label>
                 <select name="profile_visibility" id="profile_visibility" class="ml-2 w-96 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none ">
-                    <option value="public">Public</option>
-                    <option value="private">Private</option>
+                    <option value="public" {{isset($Portfolio->visibility)?$Portfolio->visibility=='public'?'selected':'':''}}>Public</option>
+                    <option value="private" {{isset($Portfolio->visibility)?$Portfolio->visibility=='private'?'selected':'':''}}>Private</option>
                 </select>
             </div>
         </div>
-        @if ($check_portfolio==1)
             <div class="w-full bg-neutral-900 p-3 mt-7 rounded-xl relative">
                 <div class=" absolute right-6 top-10 text-[12px] text-neutral-500">Server status : <span class=" text-green-400">200K</span></div>
                 <div class="flex lg:flex-row flex-col justify-center items-center h-full">
@@ -35,7 +43,7 @@ Home Page - SelfMe
                         <div class="flex mt-4">
                             <div class=" relative flex justify-center">
                                 <img src="{{asset('assets/temp.png')}}" class=" h-96" class="mt-4" alt="">
-                                <a href="/template" class=" absolute bottom-1 right-1 p-2 px-4 bg-emerald-300 lg:block hidden text-neutral-900 font-semibold rounded-lg"><i class='bx bxs-edit'></i></a>
+                                <a href="{{route('templatesui')}}" class=" absolute bottom-1 right-1 p-2 px-4 bg-emerald-300 lg:block hidden text-neutral-900 font-semibold rounded-lg"><i class='bx bxs-edit'></i></a>
                             </div>
                             <div class="lg:hidden block ml-8 ">
                                 <div class="h-full w-48 flex justify-center items-center flex-col">
@@ -73,7 +81,7 @@ Home Page - SelfMe
                             <div class="mt-6">
                                 <div class="flex items-center justify-between">
                                     <h1 class="text-emerald-300 ml-4">Latesh News</h1>
-                                    <a href="/new" class=" p-2 px-4 text-neutral-600 text-sm rounded-lg">More</a>
+                                    <a href="{{route('newupdatesui')}}" class=" p-2 px-4 text-neutral-600 text-sm rounded-lg">More</a>
                                 </div>
                                 <div class="p-4 bg-neutral-950 rounded-xl w-full">
                                     <div class="">
@@ -92,7 +100,7 @@ Home Page - SelfMe
         @else
             <div class="w-full h-3/4 bg-neutral-900 p-3 mt-7 rounded-xl relative">
                 <div class="flex justify-center items-center h-full w-full">
-                    <a href="/data" class=" px-5 py-3 bg-emerald-300 text-neutral-900 font-semibold rounded-lg">Create a Portfolio</a>
+                    <a href="{{route('dataui')}}" class=" px-5 py-3 bg-emerald-300 text-neutral-900 font-semibold rounded-lg">Create a Portfolio</a>
                 </div>
             </div>
         @endif

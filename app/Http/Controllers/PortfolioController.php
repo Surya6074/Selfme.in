@@ -39,6 +39,32 @@ class PortfolioController extends Controller
             'cp_phone' => 'required',
             'cp_email' => 'required',
             'cp_address' => 'required',
+        ], [
+            'ap_name.required' => 'About -> Name Field is Required!',
+            'ap_role.required' => 'About -> Role Field is Required!',
+            'ap_desc.required' => 'About -> Decription Field is Required!',
+            'hp_name.required' => 'Home -> Name Field is Required!',
+            'hp_desc.required' => 'Home -> Description Field is Required!',
+            'linkname.required' => 'Linkname Field is Required!',
+            'link.required' => 'Link Field is Required!',
+            'roles.required' => 'Roles Field is Required!',
+            'op_name.required' => 'Own page -> Name Field is Required!',
+            'w_title1.required' => 'Own page Title 1 Field is Required!',
+            'w_title2.required' => 'Own page Title 2 Field is Required!',
+            'w_desc.required' => 'Own page desc Feild is Required',
+            'cp_name.required' => 'Contact -> Name Field is Required!',
+            'cp_phone.required' => 'Contact -> Phone Field is Required!',
+            'cp_email.required' => 'Contact -> Email Field is Required!',
+            'cp_address.required' => 'About -> Address Field is Required!',
+            'skill.required' => 'Skills Feild is Required',
+            'percentage.required' => 'Percentage Feild is Required',
+            'ap_resume.required' => 'About -> Resume Field is Required!',
+            'ap_resume.mimes' => 'File type should be : .pdf',
+            'ap_resume.max' => 'File size is below 512kb',
+            'hp_img.required' => 'Image is Required!',
+            'hp_img.image' => 'Image should be a Image',
+            'hp_img.mimes' => 'Image type should be a .png , .jpg',
+            'hp_img.max' => 'Image size is below 2MB',
         ]);
 
         // home page
@@ -115,8 +141,15 @@ class PortfolioController extends Controller
         $contact_page->cp_address = $request->input('cp_address');
         $contact_page->save();
 
+        // set a default template
 
-        return redirect('/home');
+        $template = new Portfolio();
+        $template->user_id = auth()->user()->id;
+        $template->template_id = 1;
+        $template->visibility = 'public';
+        $template->save();
+
+        return redirect(route('homeui'));
     }
 
     public function Updatedata(Request $request)
@@ -142,6 +175,32 @@ class PortfolioController extends Controller
             'cp_phone' => 'required',
             'cp_email' => 'required',
             'cp_address' => 'required',
+        ], [
+            'ap_name.required' => 'About -> Name Field is Required!',
+            'ap_role.required' => 'About -> Role Field is Required!',
+            'ap_desc.required' => 'About -> Decription Field is Required!',
+            'hp_name.required' => 'Home -> Name Field is Required!',
+            'hp_desc.required' => 'Home -> Description Field is Required!',
+            'linkname.required' => 'Linkname Field is Required!',
+            'link.required' => 'Link Field is Required!',
+            'roles.required' => 'Roles Field is Required!',
+            'op_name.required' => 'Own page -> Name Field is Required!',
+            'w_title1.required' => 'Own page Title 1 Field is Required!',
+            'w_title2.required' => 'Own page Title 2 Field is Required!',
+            'w_desc.required' => 'Own page desc Feild is Required',
+            'cp_name.required' => 'Contact -> Name Field is Required!',
+            'cp_phone.required' => 'Contact -> Phone Field is Required!',
+            'cp_email.required' => 'Contact -> Email Field is Required!',
+            'cp_address.required' => 'About -> Address Field is Required!',
+            'skill.required' => 'Skills Feild is Required',
+            'percentage.required' => 'Percentage Feild is Required',
+            'ap_resume.required' => 'About -> Resume Field is Required!',
+            'ap_resume.mimes' => 'File type should be : .pdf',
+            'ap_resume.max' => 'File size is below 512kb',
+            'hp_img.required' => 'Image is Required!',
+            'hp_img.image' => 'Image should be a Image',
+            'hp_img.mimes' => 'Image type should be a .png , .jpg',
+            'hp_img.max' => 'Image size is below 2MB',
         ]);
         $id = $request->input('selfme_user_id');
         // home page
@@ -229,7 +288,21 @@ class PortfolioController extends Controller
         $contact_page->save();
 
 
-        return redirect('/home');
+        return redirect(route('homeui'));
+    }
+
+    public function DeleteUser(Request $request)
+    {
+        $id = $request->input('user_id');
+        Homepage::where('user_id', $id)->delete();
+        Aboutpage::where('user_id', $id)->delete();
+        Contactpage::where('user_id', $id)->delete();
+        Ownpage::where('user_id', $id)->delete();
+        Skill::where('user_id', $id)->delete();
+        Link::where('user_id', $id)->delete();
+        Portfolio::where('user_id', $id)->delete();
+        User::where('id', $id)->delete();
+        return redirect(route('indexui'));
     }
 
     public function GetUserdata()
@@ -252,22 +325,28 @@ class PortfolioController extends Controller
     public function ShowPortfolio($username)
     {
         $id = User::where('username', $username)->first();
-        $portfolio_user = Portfolio::where('user_id', $id)->first();
-        if ($portfolio_user->visibility == 'public') {
-            $homepages = Homepage::where('user_id', $id->id)->get();
-            $aboutpages = Aboutpage::where('user_id', $id->id)->get();
-            $contactpages = Contactpage::where('user_id', $id->id)->get();
-            $ownpages = Ownpage::where('user_id', $id->id)->get();
-            $skills = Skill::where('user_id', $id->id)->get();
-            $links = Link::where('user_id', $id->id)->get();
-            $skillscount = Count($skills);
-            return view('templates.template1', compact('homepages', 'aboutpages', 'contactpages', 'ownpages', 'skills', 'links', 'skillscount'));
+        if (isset($id)) {
+            $portfolio_user = Portfolio::where('user_id', $id->id)->first();
+            if (isset($portfolio_user)) {
+                if ($portfolio_user->visibility == 'public') {
+                    $homepages = Homepage::where('user_id', $id->id)->get();
+                    $aboutpages = Aboutpage::where('user_id', $id->id)->get();
+                    $contactpages = Contactpage::where('user_id', $id->id)->get();
+                    $ownpages = Ownpage::where('user_id', $id->id)->get();
+                    $skills = Skill::where('user_id', $id->id)->get();
+                    $links = Link::where('user_id', $id->id)->get();
+                    $skillscount = Count($skills);
+                    return view('templates.template1', compact('homepages', 'aboutpages', 'contactpages', 'ownpages', 'skills', 'links', 'skillscount'));
+                } else {
+                    return view('others.PrivatePortfolio');
+                }
+            } else {
+                return view('others.PortfolioNotupdate');
+            }
         } else {
-            return view('PrivatePortfolio');
+            return view('others.UserNotFound');
         }
     }
-
-
 
     public function ChangeVisibility(Request $request)
     {

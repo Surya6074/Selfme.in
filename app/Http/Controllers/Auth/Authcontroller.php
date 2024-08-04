@@ -10,10 +10,6 @@ use Illuminate\Support\Facades\Hash;
 
 class Authcontroller extends Controller
 {
-
-
-
-
     public function Login(Request $request)
     {
         $request->validate([
@@ -35,7 +31,7 @@ class Authcontroller extends Controller
         $request->validate([
             'email' => 'required|email|unique:users,email',
             'username' => 'required|unique:users,username',
-            'password' => 'required|size:6',
+            'password' => 'required|min:6',
             'password_confirmation' => 'required|same:password'
         ]);
         $username = $request->input('username');
@@ -47,7 +43,7 @@ class Authcontroller extends Controller
         $user->password = $password;
         if ($user->save()) {
             Auth::login($user);
-            return redirect(route('homeui', ['user' => $username]));
+            return redirect(route('homeui'));
         }
     }
 

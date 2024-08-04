@@ -35,7 +35,7 @@ Data Insert Page - SelfMe
                 <p class="text-white text-start text-sm"> Make our own portfolio.Host it Free,Change your Life-Style,Thank us later.
                 Follow us for more greaful updates...</p>
                 <div class="mt-10 flex">
-                    <div class=" bg-neutral-100 lg:w-2/4 w-5/6 px-4 py-2 rounded-xl flex items-center border-2 border-emerald-300" id="username-inp">
+                    <div class=" bg-neutral-100 lg:w-2/4 w-5/6 px-4 py-2 rounded-xl flex items-center border-4 border-emerald-300" id="username-inp">
                         <span class=" text-xl text-neutral-600">https://selfme.in/</span><input type="text" name="username" id="username" class=" bg-transparent h-full w-full py-2 pr-2 outline-none">
                     </div>
                     {{-- <button class="px-5 py-2 ml-2 bg-emerald-300 text-neutral-900 rounded-lg">Check</button> --}}
@@ -45,7 +45,7 @@ Data Insert Page - SelfMe
         <div class="lg:w-1/2 w-full h-[600px] lg:flex hidden items-center justify-center md:pl-20" data-aos="fade-left"  data-aos-duration="2000">
             <div class=" w-80 h-[500px] bg-emerald-300 rounded-xl  relative">
                 <div class=" absolute flex justify-center items-center -top-5 -right-5 w-80 h-full bg-white rounded-xl">
-                    <p>fasdf</p>
+                    <p class="text-5xl font-semibold text-emerald-300 text-center">Showcase <br> Your skill <br><br><br> <span class="text-3xl text-neutral-900">PORTFOLIO</span></p>
                 </div>
             </div>
         </div>

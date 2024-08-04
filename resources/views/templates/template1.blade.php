@@ -21,7 +21,7 @@
         <ul class="list-none flex flex-col text-center gap-20">
             <li><a class="text-white text-xl cursor-pointer tablinks" onclick="opentab(event,'home')">Home</a></li>
             <li><a class="text-white text-xl cursor-pointer tablinks" onclick="opentab(event,'about')">About Me</a></li>
-            <li><a class="text-white text-xl cursor-pointer tablinks" onclick="opentab(event,'ownpage')">Experience</a></li>
+            <li><a class="text-white text-xl cursor-pointer tablinks" onclick="opentab(event,'ownpage')">Others</a></li>
             <li><a class="text-white text-xl cursor-pointer tablinks" onclick="opentab(event,'contact')">Contact Me</a></li>
           </ul>
     </aside>
@@ -35,7 +35,7 @@
       <ul class=" list-none lg:flex hidden gap-32">
         <li><a class="text-white text-xl tablinks cursor-pointer active" onclick="opentab(event,'home')">Home</a></li>
         <li><a class="text-white text-xl tablinks cursor-pointer" onclick="opentab(event,'about')">About Me</a></li>
-        <li><a class="text-white text-xl tablinks cursor-pointer" onclick="opentab(event,'ownpage')">Experience</a></li>
+        <li><a class="text-white text-xl tablinks cursor-pointer" onclick="opentab(event,'ownpage')">Others</a></li>
         <li><a class="text-white text-xl tablinks cursor-pointer" onclick="opentab(event,'contact')">Contact Me</a></li>
       </ul>
     </nav>
@@ -44,24 +44,33 @@
         @foreach ($homepages as $hp)
         <div class="flex lg:flex-row-reverse lg:mt-24 flex-col items-center">
             <div class="lg:w-1/2 pt-5 w-5/6 h-3/4 flex justify-center items-center pb-10 ">
-                <img class="img-responsive" src="{{asset('selfme_assets/users_img/17220140432024-07-17 21_39_06-Window.png')}}" alt="" />
+                <img class="img-responsive" src="{{asset('selfme_assets/users_img/'.$hp->hp_img)}}" class="h-96" alt="" />
             </div>
             <div class="lg:w-1/2 lg:pl-56 flex flex-col text-center pb-10 lg:items-start px-5 gap-5">
-                <div class="lg:text-8xl text-6xl text-white">
+                <div class="lg:text-8xl text-6xl w-full text-white">
                 <p>{{$hp->hp_name}}</p>
                 </div>
                 <div class="lg:text-6xl text-4xl">
-                <p class="text-white">I'am <span class="text-red-600">{{$hp->hp_roles}}</span></p>
+                <p class="text-white">I'am <span class="text-red-600" id="element"></span></p>
                 </div>
                 <div class="lg:text-xl text-md lg:text-start text-center text-neutral-300">
                 <p>{{$hp->hp_desc}}</p>
                 </div>
-                <div class="flex text-2xl gap-6 lg:justify-start justify-center">
+                <div class="flex text-3xl gap-6 lg:justify-start justify-center">
                     @foreach ($links as $link)
-                        <a class="link" class="text-red-600" href="{{$link->link}}"><i class="bx bxl-instagram text-red-600"></i></a>
-                        {{-- <a class="link" class="text-red-600" href="#"><i class="bx bxl-github text-red-600"></i></a>
-                        <a class="link" class="text-red-600" href="#"><i class="bx bxl-facebook-circle text-red-600"></i></a>
-                        <a class="link" class="text-red-600" href="#"><i class="bx bxl-linkedin text-red-600"></i></a> --}}
+                        <a class="link" class="text-red-600" href="{{$link->link}}">
+                            @if ($link->link_name=='Instagram')
+                                <i class="bx bxl-instagram text-red-600"></i>
+                            @elseif ($link->link_name=='Github')
+                                <i class='bx bxl-github text-red-600'></i>
+                            @elseif ($link->link_name=='Facebook')
+                                <i class='bx bxl-facebook-circle text-red-600' ></i>
+                            @elseif ($link->link_name=='Twitter')
+                                <i class='bx bxl-twitter text-red-600' ></i>
+                            @elseif ($link->link_name=='Discord')
+                                <i class='bx bxl-discord-alt text-red-600' ></i>
+                            @endif
+                        </a>
                     @endforeach
                 </div>
             </div>
@@ -73,7 +82,7 @@
         <div class="flex flex-col justify-center items-center pt-20 py-10">
             <h1 class="text-4xl text-red-600">About Me</h1>
             <p class="text-lg text-center mt-5 text-neutral-300">{{$ap->ap_desc}}</p>
-            <a href="{{asset('selfme_assets/users_resume/1722014043MoorthykumarResume.pdf')}}" download class="mt-10 px-5 py-2 bg-red-600 text-white rounded">Download CV</a>
+            <a href="{{asset('selfme_assets/users_resume/'.$ap->ap_resume)}}" download class="mt-10 px-5 py-2 bg-red-600 text-white rounded">Download CV</a>
         </div>
         @endforeach
       <div class="flex flex-col justify-center mt-10 items-center">
@@ -164,7 +173,18 @@
     color: rgb(218, 18, 18);
     }
   </style>
-  <script>
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<script>
+    @php
+    $array=explode(',',$hp->hp_roles);
+    @endphp
+    $roles={!!json_encode($array)!!};
+        var typed = new Typed("#element", {
+            strings: $roles,
+            typeSpeed: 80,
+            backSpeed: 100,
+            loop: true,
+        });
     $('#sidebar-btn').click(function(){
         $('#sidebar').slideToggle();
         var sidebaricon = document.getElementById('sidebar-icon');

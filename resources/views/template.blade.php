@@ -12,7 +12,7 @@ Portfolio Templates - Selfme
                 <h1 class="text-xl text-white">Designs</h1>
             </div>
             <div class="h-14 rounded-full flex justify-center items-center w-14 bg-white cursor-pointer">
-                <h1 class="text-3xl ">S</h1>
+                <a href="{{route('profileui')}}" class="text-4xl ">{{strtoupper(substr(auth()->user()->username, 0, 1))}}</a>
             </div>
         </div>
         <div class=" mt-10 grid lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-6 justify-center ">
@@ -25,7 +25,9 @@ Portfolio Templates - Selfme
                     <h1 class="text-white text-2xl">{{$template->template_name}}</h1>
                     <div class="mt-5 pb-5 flex justify-between w-full">
                         <a href="/preview/{{$template->id}}" class="px-4 py-2 text-emerald-300 bg-neutral-900 rounded-lg">Preview</a>
-                        <a href="" class="px-4 py-2 bg-emerald-300 text-neutral-900 rounded-lg">Use Template</a>
+
+                        {{-- <p class="px-4 py-2 text-emerald-300 bg-neutral-900 rounded-lg">Using</p> --}}
+                        <button type="button" value="{{$template->id}}" id="template-btn" class="px-4 py-2 bg-emerald-300 text-neutral-900 rounded-lg">Use Template</button>
                     </div>
                 </div>
             </div>

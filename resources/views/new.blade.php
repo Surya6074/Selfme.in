@@ -12,7 +12,7 @@ New updates - Selfme
                 <h1 class="text-xl text-white">New Updates</h1>
             </div>
             <div class="h-14 rounded-full flex justify-center items-center w-14 bg-white cursor-pointer">
-                <h1 class="text-3xl ">S</h1>
+                <a href="{{route('profileui')}}" class="text-4xl ">{{strtoupper(substr(auth()->user()->username, 0, 1))}}</a>
             </div>
         </div>
         <div class="">
