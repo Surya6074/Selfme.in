@@ -50,7 +50,7 @@ Register Page - Selfme
     </div>
     <div class="lg:w-1/2 w-full h-full bg-emerald-300 relative info form-page">
         <div class="h-full w-full bg-neutral-950 opacity-35 absolute -z-10">s</div>
-        <img src="{{asset('assets/3c8c0a7ffd3e0dd67f1b8749a7ac2861-removebg-preview.png')}}" class=" absolute h-full w-full opacity-15"/>
+        <img src="{{asset('public/assets/3c8c0a7ffd3e0dd67f1b8749a7ac2861-removebg-preview.png')}}" class=" absolute h-full w-full opacity-15"/>
         <div class="flex flex-col justify-center p-10 h-full z-30">
             <h1 class="text-neutral-800 sm:text-4xl text-2xl pl-1">Hello!</h1>
             <h1 class="md:text-8xl sm:text-7xl text-4xl z-30 text-white">Make Your Own <br><span class="text-neutral-800 font-semibold">Portfolio<span class="text-8xl text-gray-50">.</span></span></h1>

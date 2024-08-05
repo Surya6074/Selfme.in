@@ -44,7 +44,7 @@
         @foreach ($homepages as $hp)
         <div class="flex lg:flex-row-reverse lg:mt-24 flex-col items-center">
             <div class="lg:w-1/2 pt-5 w-5/6 h-3/4 flex justify-center items-center pb-10 ">
-                <img class="img-responsive" src="{{asset('selfme_assets/users_img/'.$hp->hp_img)}}" class="h-96" alt="" />
+                <img class="img-responsive" src="{{asset('public/selfme_assets/users_img/'.$hp->hp_img)}}" class="h-96" alt="" />
             </div>
             <div class="lg:w-1/2 lg:pl-56 flex flex-col text-center pb-10 lg:items-start px-5 gap-5">
                 <div class="lg:text-8xl text-6xl w-full text-white">

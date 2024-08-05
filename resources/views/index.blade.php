@@ -181,7 +181,7 @@ Data Insert Page - SelfMe
         <h3 class="md:text-xl text-sm  text-emerald-300 mt-2">We Care About How The World Works</h3>
     </div>
     <div class="flex-1 h-full w-full mt-10 lg:px-20 px-8 flex lg:flex-row flex-col justify-center items-center">
-        <img src="{{asset('assets/icons/about.png')}}" class="lg:w-2/4  w-[400px] h-[500px] rounded-3xl mb-10 bg-slate-200 " alt="" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+        <img src="{{asset('public/assets/icons/about.png')}}" class="lg:w-2/4  w-[400px] h-[500px] rounded-3xl mb-10 bg-slate-200 " alt="" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
         <div class="flex-1 flex flex-col lg:pl-20 p-0 text-start" data-aos="fade-left"  data-aos-offset="300" data-aos-duration="500">
             <p class="lg:text-lg text-sm mb-10 text-start text-white" ><span class="text-emerald-300 text-3xl"> W</span>elcome to selfMe, where creativity meets accessibility. We believe everyone
                         deserves a platform to showcase their talents and passions, which is why we provide a free and
@@ -207,14 +207,14 @@ Data Insert Page - SelfMe
     <div class="flex-1 h-full w-full mt-10 lg:gap-10 lg:px-20 pb-20 px-8 flex lg:flex-row flex-col justify-center items-center">
         <div class="">
             <div class="bg-white mt-10 relative rounded-lg lg:px-10 lg:py-5 p-5" data-aos="fade-up"data-aos-anchor-placement="bottom-bottom">
-                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center"><img src="{{asset('assets/icons/customize.png')}}" class=" w-9 h-9" alt=""></div>
+                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center"><img src="{{asset('public/assets/icons/customize.png')}}" class=" w-9 h-9" alt=""></div>
                 <div class="pt-5">
                     <h1 class="text-emerald-300 text-xl font-bold mb-3">Customizable Templates </h1>
                     <p class="text-md text-neutral-900">Unlock your unique style with SelfMe's customizable templates-tailor your portfolio to reflect your personality and vision effortlessly.</p>
                 </div>
             </div>
             <div class="bg-white mt-10 relative rounded-lg lg:px-10 lg:py-5 p-5" data-aos="fade-up"data-aos-anchor-placement="bottom-bottom">
-                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center"><img src="{{asset('assets/icons/host.png')}}" class=" w-12 h-12" alt=""></div>
+                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center"><img src="{{asset('public/assets/icons/host.png')}}" class=" w-12 h-12" alt=""></div>
                 <div class="pt-5">
                     <h1 class="text-emerald-300 text-xl font-bold mb-3">Seamless Hosting </h1>
                     <p class="text-md text-neutral-900">Experience seamless hosting with SelfME-reliable, hassle-free, and always there to showcase hour portfolio to the world.</p>
@@ -223,14 +223,14 @@ Data Insert Page - SelfMe
         </div>
         <div class="">
             <div class="bg-white mt-10 relative rounded-lg  lg:px-10 lg:py-5 p-5 " data-aos="fade-up"data-aos-anchor-placement="bottom-bottom">
-                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center"><img src="{{asset('assets/icons/247.png')}}" class=" w-12 h-12" alt=""></div>
+                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center"><img src="{{asset('public/assets/icons/247.png')}}" class=" w-12 h-12" alt=""></div>
                 <div class="pt-5">
                     <h1 class="text-emerald-300 text-xl font-bold mb-3">24/7 Support</h1>
                     <p class="text-md text-neutral-900">SelfMe offers 24/7 supports, ensuring assistance whenever you need it. Your creativity never waits, and neither do we.</p>
                 </div>
             </div>
             <div class="bg-white mt-10 relative rounded-lg  lg:px-10 lg:py-5 p-5" data-aos="fade-up"data-aos-anchor-placement="bottom-bottom">
-                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center"><img src="{{asset('assets/icons/infinity.png')}}" class=" w-12 h-12" alt=""></div>
+                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center"><img src="{{asset('public/assets/icons/infinity.png')}}" class=" w-12 h-12" alt=""></div>
                 <div class="pt-5">
                     <h1 class="text-emerald-300 text-xl font-bold mb-3">No Limitations </h1>
                     <p class="text-md text-neutral-900">SelfMe liberates your creativity with no boundaries-Embrace your full potential without any restriction,only on SelfMe.</p>

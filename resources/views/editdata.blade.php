@@ -90,7 +90,7 @@ Data Insert Page - SelfMe
                                 <input type="hidden" name="hp_img_name" value="{{$hp->hp_img}}">
                                 <div class="flex flex-col gap-4 items-start">
                                     <div class="flex gap-4 items-center">
-                                        <img src="{{asset('selfme_assets/users_img/'.$hp->hp_img)}}" height="50px" width="50px" class="mx-2" alt="">
+                                        <img src="{{asset('public/selfme_assets/users_img/'.$hp->hp_img)}}" height="50px" width="50px" class="mx-2" alt="">
                                         <button type="button" id="btn-change-userimg" class="bg-neutral-400 text-neutral-900 px-2 py-2 rounded">Change</button>
                                     </div>
                                     <div class="hidden" id="btn-userimg">
