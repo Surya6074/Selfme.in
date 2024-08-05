@@ -15,7 +15,7 @@ Home Page - SelfMe
                 <a href="{{route('profileui')}}" class="text-4xl ">{{strtoupper(substr(auth()->user()->username, 0, 1))}}</a>
             </div>
         </div>
-        <div class="w-full bg-neutral-900 p-3 h-16 mt-7 rounded-xl flex justify-between items-center">
+        <div class="w-full bg-neutral-900 p-3  h-16 mt-7 rounded-xl flex justify-between items-center md:flex-row flex-col">
             <div class="flex justify-between mx-5 items-center">
                 <label for="" class="text-emerald-300 sm:text-lg text-xs">Your Portfolio Link</label>
             </div>
@@ -27,7 +27,7 @@ Home Page - SelfMe
         <div class="w-full bg-neutral-900 p-3 mt-7 rounded-xl">
             <div class="flex justify-between mx-5 items-center">
                 <label for="" class="text-emerald-300 sm:text-lg text-xs">Profile Visbility</label>
-                <select name="profile_visibility" id="profile_visibility" class="ml-2 w-96 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none sm:text-lg text-xs">
+                <select name="profile_visibility" id="profile_visibility" class="ml-2 md:w-96 w-auto bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none sm:text-lg text-xs">
                     <option value="public" {{isset($Portfolio->visibility)?$Portfolio->visibility=='public'?'selected':'':''}}>Public</option>
                     <option value="private" {{isset($Portfolio->visibility)?$Portfolio->visibility=='private'?'selected':'':''}}>Private</option>
                 </select>
@@ -40,12 +40,12 @@ Home Page - SelfMe
                         <div class="">
                             <label for="" class=" mb-4 text-emerald-300 w-full font-normal ">Your Template</label>
                         </div>
-                        <div class="flex mt-4">
+                        <div class="flex mt-4 md:flex-row flex-col">
                             <div class=" relative flex justify-center">
-                                <img src="{{asset('assets/temp.png')}}" class=" h-96" class="mt-4" alt="">
+                                <img src="{{asset('assets/temp.png')}}" height="250px" width="150px" class="mt-4" alt="">
                                 <a href="{{route('templatesui')}}" class=" absolute bottom-1 right-1 p-2 px-4 bg-emerald-300 lg:block hidden text-neutral-900 font-semibold rounded-lg"><i class='bx bxs-edit'></i></a>
                             </div>
-                            <div class="lg:hidden block ml-8 ">
+                            <div class="lg:hidden block ml-8 md:mt-0 mt-5">
                                 <div class="h-full w-48 flex justify-center items-center flex-col">
                                     <h1 class="text-emerald-300 text-2xl mb-2">Desgin 1</h1>
                                     <p class="text-neutral-200 text-center text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum laboriosam ab modi suscipit, temporibu.</p>

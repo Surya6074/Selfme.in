@@ -58,4 +58,4 @@ Route::get('preview/{id}', function ($id) {
 })->name('template1');
 
 //portfolio
-Route::get('/{username}', [PortfolioController::class, 'ShowPortfolio'])->name('ShowPortfolio')->middleware('isUser');
+Route::get('/{username}', [PortfolioController::class, 'ShowPortfolio'])->name('ShowPortfolio');

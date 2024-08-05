@@ -1,7 +1,7 @@
 @php
     $url=explode('/',Request::url());
 @endphp
-<aside class="rounded-lg text-white w-72 p-5 md:flex hidden flex-col justify-between md:bg-transparent z-50 bg-neutral-950  m-4 md:relative fixed" id="mobileviewsidebar">
+<aside class="rounded-lg text-white w-72 p-5 md:flex flex-col justify-between bg-neutral-950  md:bg-none z-50  m-4 md:relative max-sm:fixed max-sm:hidden" id="mobileviewsidebar">
     <div class="top-4 right-2 absolute md:hidden">
         <i class='bx bx-x text-4xl ' onclick="CloseSlideBar()" id="sidebariconclose"></i>
     </div>
