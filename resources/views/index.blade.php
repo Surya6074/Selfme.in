@@ -52,7 +52,7 @@ Data Insert Page - SelfMe
      </div>
 </div>
 {{-- templates --}}
-<div class="bg-neutral-800 h-screen w-full flex flex-col items-center p-5 " id="template">
+<div class="bg-neutral-800 h-screen w-screen flex flex-col items-center p-5 " id="template">
     <div class="pt-10 text-center" data-aos="fade-up"data-aos-anchor-placement="center-bottom">
         <h1 class="md:text-6xl text-4xl font-bold tracking-wide text-white">TEMPLATES</h1>
         <h3 class="md:text-xl text-sm mb-10 text-emerald-300 mt-2">We provide Better...We are better...</h3>
