@@ -39,10 +39,10 @@ Login Page - Selfme
    <div class="lg:w-1/2 w-full h-screen bg-emerald-300 relative form-page info">
         <img src="{{asset('assets/3c8c0a7ffd3e0dd67f1b8749a7ac2861-removebg-preview.png')}}" class=" absolute h-full w-full opacity-15 z-0"/>
         <div class="flex flex-col justify-center p-10 h-full z-30">
-            <h1 class="text-neutral-800 text-4xl pl-1">Hello!</h1>
-            <h1 class="md:text-8xl text-7xl z-30 text-white">Make Your Own <br><span class="text-neutral-800 font-semibold">Portfolio<span class="text-8xl text-gray-50">.</span></span></h1>
+            <h1 class="text-neutral-800 sm:text-4xl text-2xl pl-1">Hello!</h1>
+            <h1 class="md:text-8xl sm:text-7xl text-4xl z-30 text-white">Make Your Own <br><span class="text-neutral-800 font-semibold">Portfolio<span class="text-8xl text-gray-50">.</span></span></h1>
             <div class="mt-1 w-full pl-2 z-30">
-                <p class="mb-10 text-xl text-neutral-700">Empower Your Online Presence for Free!</p>
+                <p class="mb-10 sm:text-xl text-lg text-neutral-700">Empower Your Online Presence for Free!</p>
                 <a href="/register" class="py-3 px-8 mt-10 bg-neutral-900 text-emerald-300 rounded-lg">Register</a>
             </div>
         </div>

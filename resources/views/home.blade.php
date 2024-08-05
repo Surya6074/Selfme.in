@@ -17,17 +17,17 @@ Home Page - SelfMe
         </div>
         <div class="w-full bg-neutral-900 p-3 h-16 mt-7 rounded-xl flex justify-between items-center">
             <div class="flex justify-between mx-5 items-center">
-                <label for="" class="text-emerald-300">Your Portfolio Link</label>
+                <label for="" class="text-emerald-300 sm:text-lg text-xs">Your Portfolio Link</label>
             </div>
-            <div class=" text-neutral-200">
+            <div class=" sm:text-lg text-xs text-neutral-200">
                 <a href="http://127.0.0.1:8000/{{auth()->user()->username}}" class="mr-5 flex items-center">https://127.0.0.1:8000/{{auth()->user()->username}}<i class='bx bx-link text-2xl ml-2 text-emerald-300'></i> </a>
             </div>
         </div>
         @if ($check_portfolio==1)
         <div class="w-full bg-neutral-900 p-3 mt-7 rounded-xl">
             <div class="flex justify-between mx-5 items-center">
-                <label for="" class="text-emerald-300">Profile Visbility</label>
-                <select name="profile_visibility" id="profile_visibility" class="ml-2 w-96 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none ">
+                <label for="" class="text-emerald-300 sm:text-lg text-xs">Profile Visbility</label>
+                <select name="profile_visibility" id="profile_visibility" class="ml-2 w-96 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none sm:text-lg text-xs">
                     <option value="public" {{isset($Portfolio->visibility)?$Portfolio->visibility=='public'?'selected':'':''}}>Public</option>
                     <option value="private" {{isset($Portfolio->visibility)?$Portfolio->visibility=='private'?'selected':'':''}}>Private</option>
                 </select>
