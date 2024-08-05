@@ -5,7 +5,7 @@ Register Page - Selfme
 @section('content')
 <div class="h-full w-full flex md:flex-row flex-col-reverse bg-neutral-800">
     <div class="lg:w-1/2 w-full h-full flex justify-center items-center form-page ">
-        <form action="{{route('Register')}}" method="POST" class="flex flex-col w-2/4">
+        <form action="{{route('Register')}}" method="POST" class="flex flex-col lg:w-2/4 w-5/6">
             @csrf
             <h1 class="text-4xl text-center font-bold mb-6 text-emerald-300">Register</h1>
             <div class="flex flex-col mb-5">

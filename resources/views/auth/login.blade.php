@@ -4,7 +4,7 @@ Login Page - Selfme
 @endsection
 @section('content')
 <div class="h-full w-full flex md:flex-row flex-col-reverse bg-neutral-800">
-    <div class="lg:w-1/2 w-full h-full flex justify-center items-center form-page">
+    <div class="lg:w-1/2 w-full h-screen flex justify-center items-center form-page">
         <form action="{{route('Login')}}" method="POST" class="flex flex-col lg:w-2/4 w-5/6">
             <h1 class="text-4xl text-center font-bold mb-6 text-emerald-300">Login</h1>
             @csrf
@@ -36,7 +36,7 @@ Login Page - Selfme
             </div>
         </form>
     </div>
-   <div class="lg:w-1/2 w-full h-full bg-emerald-300 relative form-page info">
+   <div class="lg:w-1/2 w-full h-screen bg-emerald-300 relative form-page info">
         <img src="{{asset('assets/3c8c0a7ffd3e0dd67f1b8749a7ac2861-removebg-preview.png')}}" class=" absolute h-full w-full opacity-15 z-0"/>
         <div class="flex flex-col justify-center p-10 h-full z-30">
             <h1 class="text-neutral-800 text-4xl pl-1">Hello!</h1>
