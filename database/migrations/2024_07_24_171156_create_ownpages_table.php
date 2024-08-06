@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('w_title1');
             $table->string('w_title2');
-            $table->string('w_desc');
+            $table->text('w_desc');
             $table->string('op_name');
             $table->timestamps();
 

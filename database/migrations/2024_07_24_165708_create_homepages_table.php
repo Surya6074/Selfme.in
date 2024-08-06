@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('hp_name');
-            $table->string('hp_desc');
+            $table->text('hp_desc');
             $table->string('hp_img');
             $table->string('hp_roles');
             $table->timestamps();

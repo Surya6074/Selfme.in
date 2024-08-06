@@ -10,12 +10,36 @@ Data Insert Page - SelfMe
     <div class="lg:p-10 p-5 lg:px-32 pl-10 w-full">
         <nav class="w-full flex justify-between md:h-24 h-16 mt-4 bg-emerald-300 rounded-3xl">
            <div class="w-1/3 relative">
-                <h1 class=" rounded-full absolute md:-top-4 md:-left-4 -top-2 -left-2 flex justify-center items-center text-emerald-300 md:h-32 md:w-32 h-20 w-20 bg-white text-5xl">Sm</h1>
+                <h1 class=" rounded-full absolute md:-top-4 md:-left-4 -top-2 -left-2 flex justify-center items-center text-emerald-300 md:h-32 md:w-32 h-20 w-20 bg-white md:text-5xl text-2xl">Sm</h1>
            </div>
-           <div class="flex-1 md:hidden flex justify-between px-2 items-center">
-                <h1 class="text-2xl pl-10">SelfMe</h1>
-                <a href=""><i class='bx bx-menu text-neutral-900 text-3xl mr-4'></i></a>
+           <div class="md:hidden text-end flex items-center justify-end">
+                <button class="md:hidden block"  onclick="OpenSlidebar()"><i class="bx bx-menu-alt-left text-white text-4xl mr-5" id="sidebaricon"></i></button>
+                {{-- <i class='bx bx-menu text-neutral-900 text-3xl mr-4' id="open-sidebar-menu"></i> --}}
            </div>
+
+            <aside class="rounded-lg text-white w-72 p-10 flex-col justify-between  fixed bg-neutral-900 top-0 left-0 bottom-0 z-50 hidden" id="mobileviewsidebar">
+                <div class="top-4 right-2 absolute ">
+                    <i class='bx bx-x text-4xl ' onclick="CloseSlideBar()" id="sidebariconclose"></i>
+                </div>
+                <h1 class="text-start text-3xl text-emerald-300 font-semibold">SelfMe</h1>
+                <ul class="mt-14 flex-1">
+                    <li class="w-full h-16 my-2 relative">
+                        <a href="#home" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300   rounded-lg side-menu">Home</a>
+                    </li>
+                    <li class="w-full h-16 my-2 relative">
+                        <a href="#about" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300  rounded-lg side-menu">About</a>
+                    </li>
+                    <li class="w-full h-16 my-2 relative">
+                        <a href="#template" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300  rounded-lg side-menu">Template</a>
+                    </li>
+                    <li class="w-full h-16 my-2 relative">
+                        <a href="#contact" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300  rounded-lg side-menu">Contact</a>
+                    </li>
+                </ul>
+                <div class=" p-4">
+                    <a href="/login" class="w-full px-5 py-2 bg-white text-xl text-emerald-300 font-semibold rounded-lg">Login</a>
+                </div>
+            </aside>
            <div class="md:block hidden flex-1 h-full ">
                <ul class="flex h-full items-center justify-around">
                    <li><a href="#home" class="text-xl font-semibold">Home</a></li>
@@ -52,7 +76,7 @@ Data Insert Page - SelfMe
      </div>
 </div>
 {{-- templates --}}
-<div class="bg-neutral-800 h-screen w-full flex flex-col items-center p-5 " id="template">
+<div class="bg-neutral-800 h-screen w-screen flex flex-col items-center p-5 " id="template">
     <div class="pt-10 text-center" data-aos="fade-up"data-aos-anchor-placement="center-bottom">
         <h1 class="md:text-6xl text-4xl font-bold tracking-wide text-white">TEMPLATES</h1>
         <h3 class="md:text-xl text-sm mb-10 text-emerald-300 mt-2">We provide Better...We are better...</h3>
@@ -181,7 +205,7 @@ Data Insert Page - SelfMe
         <h3 class="md:text-xl text-sm  text-emerald-300 mt-2">We Care About How The World Works</h3>
     </div>
     <div class="flex-1 h-full w-full mt-10 lg:px-20 px-8 flex lg:flex-row flex-col justify-center items-center">
-        <img src="{{asset('assets/icons/about.png')}}" class="lg:w-2/4  w-[400px] h-[500px] rounded-3xl mb-10 bg-slate-200 " alt="" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+        <img src="{{asset('public/assets/icons/about.png')}}" class="lg:w-2/4  w-[400px] h-[500px] rounded-3xl mb-10 bg-slate-200 " alt="" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
         <div class="flex-1 flex flex-col lg:pl-20 p-0 text-start" data-aos="fade-left"  data-aos-offset="300" data-aos-duration="500">
             <p class="lg:text-lg text-sm mb-10 text-start text-white" ><span class="text-emerald-300 text-3xl"> W</span>elcome to selfMe, where creativity meets accessibility. We believe everyone
                         deserves a platform to showcase their talents and passions, which is why we provide a free and
@@ -207,14 +231,14 @@ Data Insert Page - SelfMe
     <div class="flex-1 h-full w-full mt-10 lg:gap-10 lg:px-20 pb-20 px-8 flex lg:flex-row flex-col justify-center items-center">
         <div class="">
             <div class="bg-white mt-10 relative rounded-lg lg:px-10 lg:py-5 p-5" data-aos="fade-up"data-aos-anchor-placement="bottom-bottom">
-                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center"><img src="{{asset('assets/icons/customize.png')}}" class=" w-9 h-9" alt=""></div>
+                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center"><img src="{{asset('public/assets/icons/customize.png')}}" class=" w-9 h-9" alt=""></div>
                 <div class="pt-5">
                     <h1 class="text-emerald-300 text-xl font-bold mb-3">Customizable Templates </h1>
                     <p class="text-md text-neutral-900">Unlock your unique style with SelfMe's customizable templates-tailor your portfolio to reflect your personality and vision effortlessly.</p>
                 </div>
             </div>
             <div class="bg-white mt-10 relative rounded-lg lg:px-10 lg:py-5 p-5" data-aos="fade-up"data-aos-anchor-placement="bottom-bottom">
-                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center"><img src="{{asset('assets/icons/host.png')}}" class=" w-12 h-12" alt=""></div>
+                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center"><img src="{{asset('public/assets/icons/host.png')}}" class=" w-12 h-12" alt=""></div>
                 <div class="pt-5">
                     <h1 class="text-emerald-300 text-xl font-bold mb-3">Seamless Hosting </h1>
                     <p class="text-md text-neutral-900">Experience seamless hosting with SelfME-reliable, hassle-free, and always there to showcase hour portfolio to the world.</p>
@@ -223,14 +247,14 @@ Data Insert Page - SelfMe
         </div>
         <div class="">
             <div class="bg-white mt-10 relative rounded-lg  lg:px-10 lg:py-5 p-5 " data-aos="fade-up"data-aos-anchor-placement="bottom-bottom">
-                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center"><img src="{{asset('assets/icons/247.png')}}" class=" w-12 h-12" alt=""></div>
+                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center"><img src="{{asset('public/assets/icons/247.png')}}" class=" w-12 h-12" alt=""></div>
                 <div class="pt-5">
                     <h1 class="text-emerald-300 text-xl font-bold mb-3">24/7 Support</h1>
                     <p class="text-md text-neutral-900">SelfMe offers 24/7 supports, ensuring assistance whenever you need it. Your creativity never waits, and neither do we.</p>
                 </div>
             </div>
             <div class="bg-white mt-10 relative rounded-lg  lg:px-10 lg:py-5 p-5" data-aos="fade-up"data-aos-anchor-placement="bottom-bottom">
-                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center"><img src="{{asset('assets/icons/infinity.png')}}" class=" w-12 h-12" alt=""></div>
+                <div class=" absolute shadow-lg -top-8 left-3 h-16 w-16 bg-white rounded-full flex justify-center items-center"><img src="{{asset('public/assets/icons/infinity.png')}}" class=" w-12 h-12" alt=""></div>
                 <div class="pt-5">
                     <h1 class="text-emerald-300 text-xl font-bold mb-3">No Limitations </h1>
                     <p class="text-md text-neutral-900">SelfMe liberates your creativity with no boundaries-Embrace your full potential without any restriction,only on SelfMe.</p>
@@ -338,6 +362,13 @@ Data Insert Page - SelfMe
             }
         });
     });
+
+        function CloseSlideBar(){
+        $('#mobileviewsidebar').toggle('hidden');
+    }
+    function OpenSlidebar(){
+        $('#mobileviewsidebar').toggle('hidden');
+    }
 </script>
 <style>
     body{

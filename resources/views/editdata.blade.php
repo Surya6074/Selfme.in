@@ -19,24 +19,24 @@ Data Insert Page - SelfMe
         </div>
         <div class="w-full bg-neutral-900 p-3 mt-7 rounded-xl">
             <div class="h-20 flex justify-center items-center mt-10 text-white">
-                <button class="flex mx-5 items-center justify-center flex-col text-emerald-300 tablinks" > {{--onclick="openCity(event, 'Home')"--}}
+               <button class="flex md:mx-5 mx-3 items-center justify-center flex-col text-emerald-300 tablinks" > {{--onclick="openCity(event, 'Home')"--}}
                     <i class="fa-solid fa-house text-xl mb-1"></i>
-                    <h1 class="text-sm">Home</h1>
+                    <h1 class="md:text-md text-xs  sm:block hidden">Home</h1>
                 </button>
                 <span class="h-1 bg-emerald-300 w-32 rounded-xl"></span>
-                <button class="flex mx-5 items-center justify-center flex-col tablinks" id="Aboutbtn">
+                <button class="flex md:mx-5 mx-3 items-center justify-center flex-col tablinks" id="Aboutbtn">
                     <i class="fa-regular fa-address-card text-xl mb-1"></i>
-                    <h1 class="text-sm">About Me</h1>
+                    <h1 class="md:text-md text-xs  sm:block hidden">About Me</h1>
                 </button>
                 <span class="h-1 bg-emerald-300 w-32 rounded-xl"></span>
-                <button class="flex mx-5 items-center justify-center flex-col tablinks" id="Ownpagebtn">
+                <button class="flex md:mx-5 mx-3 items-center justify-center flex-col tablinks" id="Ownpagebtn">
                     <i class="fa-solid fa-pager text-xl mb-1"></i>
-                    <h1 class="text-sm">Exp</h1>
+                    <h1 class="md:text-md text-xs  sm:block hidden">Exp</h1>
                 </button>
                 <span class="h-1 bg-emerald-300 w-32 rounded-xl"></span>
-                <button class="flex mx-5 items-center justify-center flex-col tablinks" id="Contactbtn">
+                <button class="flex md:mx-5 mx-3 items-center justify-center flex-col tablinks" id="Contactbtn">
                     <i class="fa-solid fa-id-badge text-xl mb-1"></i>
-                    <h1 class="text-sm">Contact</h1>
+                    <h1 class="md:text-md text-xs sm:block hidden">Contact</h1>
                 </button>
                 {{-- <span class="h-1 bg-emerald-300 w-32 rounded-xl"></span>
                 <button class="flex mx-5 items-center justify-center flex-col tablinks" onclick="openCity(event, 'Home',this)">
@@ -69,7 +69,7 @@ Data Insert Page - SelfMe
                             <label class="text-emerald-300">Links</label>
                             <div class="w-full" id="links">
                                 @foreach ($links as $li=> $link)
-                                <div class="flex w-full my-3">
+                                <div class="flex w-full my-3  sm:flex-row flex-col">
                                     <select  name="linkname[]"id="" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Details">
                                         <option value="Instagram" {{($link->link_name=='Instagram')?'selected':''}}>Instagram</option>
                                         <option value="Github" {{($link->link_name=='Github')?'selected':''}}>Github</option>
@@ -77,7 +77,7 @@ Data Insert Page - SelfMe
                                         <option value="Twitter" {{($link->link_name=='Twitter')?'selected':''}}>Twitter</option>
                                         <option value="Discord"  {{($link->link_name=='Discord')?'selected':''}}>Discord</option>
                                     </select>
-                                    <input type="url" value="{{$link->link}}" name="link[]" class="ml-2 bg-neutral-950 flex-1  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('link.'.$li) border border-red-500 @enderror"" placeholder="Link">
+                                    <input type="url" value="{{$link->link}}" name="link[]" class="md:ml-2 bg-neutral-950 flex-1  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('link.'.$li) border border-red-500 @enderror"" placeholder="Link">
                                 </div>
                                 @endforeach
                             </div>
@@ -88,12 +88,14 @@ Data Insert Page - SelfMe
                             <label class="text-emerald-300">Choose a Image <span class="text-netural-600 text-sm">(.png)</span></label>
                             <div class="flex">
                                 <input type="hidden" name="hp_img_name" value="{{$hp->hp_img}}">
-                                <div class="flex gap-4 items-center">
-                                    <img src="{{asset('selfme_assets/users_img/'.$hp->hp_img)}}" height="50px" width="50px" class="mx-2" alt="">
-                                    <button type="button" id="btn-change-userimg" class="bg-neutral-400 text-neutral-900 px-2 py-2 rounded">Change</button>
-                                </div>
-                                <div class="hidden" id="btn-userimg">
-                                    <input type="file" name="hp_img"  class=" w-full bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Name">
+                                <div class="flex flex-col gap-4 items-start">
+                                    <div class="flex gap-4 items-center">
+                                        <img src="{{asset('public/selfme_assets/users_img/'.$hp->hp_img)}}" height="50px" width="50px" class="mx-2" alt="">
+                                        <button type="button" id="btn-change-userimg" class="bg-neutral-400 text-neutral-900 px-2 py-2 rounded">Change</button>
+                                    </div>
+                                    <div class="hidden" id="btn-userimg">
+                                        <input type="file" name="hp_img"  class=" w-full bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Name">
+                                    </div>
                                 </div>
                                 @error('hp_img')
                             <p class="text-red-500 mb-0">{{ $message }}</p>
@@ -110,13 +112,13 @@ Data Insert Page - SelfMe
                                 @for ($roleid=0;$roleid<$total_roles;$roleid++)
                                     @if ($roleid==0)
                                         <div class="flex w-full my-2">
-                                            <input type="text" name="roles[]" value="{{$roles[$roleid]}}" class="flex-1 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('roles.'.$roleid ) border border-red-500 @enderror" placeholder="Role..">
-                                            <button type="button"  class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details" onclick="addRole(this)">Add</button>
+                                            <input type="text" name="roles[]" value="{{$roles[$roleid]}}" class="flex-1 bg-neutral-950 sm:w-full w-3/4  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('roles.'.$roleid ) border border-red-500 @enderror" placeholder="Role..">
+                                            <button type="button"  class=" md:w-28 max-sm:w-1/4 text-sm md:px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details" onclick="addRole(this)">Add</button>
                                         </div>
                                     @else
                                         <div class="flex w-full my-2">
-                                            <input type="text" name="roles[]" value="{{$roles[$roleid]}}" class="flex-1 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('roles.'.$roleid ) border border-red-500 @enderror" placeholder="Role..">
-                                            <button class=" w-28 px-4 py-3 mx-2 rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)">Remove</button>
+                                            <input type="text" name="roles[]" value="{{$roles[$roleid]}}" class="flex-1 bg-neutral-950 sm:w-full w-3/4  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('roles.'.$roleid ) border border-red-500 @enderror" placeholder="Role..">
+                                            <button class=" md:w-28 max-sm:w-1/4 text-sm md:px-4 py-3 mx-2  rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)">Remove</button>
                                         </div>
                                     @endif
                                 @endfor
@@ -150,13 +152,13 @@ Data Insert Page - SelfMe
                         <div class="flex flex-col m-5">
                             <label class="text-emerald-300">Choose a Resume<span class="text-netural-600 text-sm">(.pdf)</span></label>
                             <input type="hidden" name="ap_resume_name" value="{{$ap->ap_resume}}">
-                            <div class="flex gap-5 items-center">
+                            <div class="flex gap-5 flex-col items-start">
                                 <div class="flex gap-4 items-center">
                                     <p class="text-neutral-300">Resume.pdf</p>
                                     <button type="button" id="btn-change-resume" class="bg-neutral-400 text-neutral-900 px-2 py-2 rounded">Change</button>
                                 </div>
                                 <div class="hidden" id="btn-resume">
-                                    <input type="file" value="{{$ap->ap_resume}}"  name="ap_resume" class=" bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Resume.pdf">
+                                    <input type="file" value="{{$ap->ap_resume}}"  name="ap_resume" class="w-full bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none" placeholder="Resume.pdf">
                                 </div>
                             </div>
                             @error('ap_resume')
@@ -182,15 +184,15 @@ Data Insert Page - SelfMe
                                 @foreach ($skills as $skill)
                                     @if ($key==0)
                                         <div class="flex w-full my-2">
-                                            <input type="text" name="skill[]" value="{{$skill->skill_name}}" class="flex-1 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('skill.'.$key) border border-red-500 @enderror" placeholder="Skill">
-                                            <input type="number" name="percentage[]" value="{{$skill->skill_percentage}}" class="ml-2 w-24 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('percentage.'.$key) border border-red-500 @enderror" placeholder="100%">
-                                            <button type="button" class=" text-neutral-950 w-28 px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none " placeholder="Details" onclick="addskill(this)">Add</button>
+                                            <input type="text" name="skill[]" value="{{$skill->skill_name}}" class="flex-1  md:w-full w-32  bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('skill.'.$key) border border-red-500 @enderror" placeholder="Skill">
+                                            <input type="number" name="percentage[]" value="{{$skill->skill_percentage}}" class="ml-2 md:w-24 w-20 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('percentage.'.$key) border border-red-500 @enderror" placeholder="100%">
+                                            <button type="button" class=" text-neutral-950 w-24 text-sm  px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none " placeholder="Details" onclick="addskill(this)">Add</button>
                                         </div>
                                     @else
                                         <div class="flex w-full my-2">
-                                            <input type="text"  name="skill[]" value="{{$skill->skill_name}}" class="flex-1 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('skill.'.$key) border border-red-500 @enderror" placeholder="Skill">
-                                            <input type="number" name="percentage[]"  value="{{$skill->skill_percentage}}" class="ml-2 w-24 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('percentage.'.$key) border border-red-500 @enderror" placeholder="100%">
-                                            <button type="button"  class=" w-28 px-4 py-3 mx-2 rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)">Remove</button>
+                                            <input type="text"  name="skill[]" value="{{$skill->skill_name}}" class="flex-1  md:w-full w-32  bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('skill.'.$key) border border-red-500 @enderror" placeholder="Skill">
+                                            <input type="number" name="percentage[]"  value="{{$skill->skill_percentage}}" class="ml-2 md:w-24 w-20 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('percentage.'.$key) border border-red-500 @enderror" placeholder="100%">
+                                            <button type="button"  class=" w-24 text-sm  px-4 py-3 mx-2 rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)">Remove</button>
                                         </div>
                                     @endif
                                     @php
@@ -311,8 +313,8 @@ Data Insert Page - SelfMe
     function addRole(e){
         if(e.parentNode.parentNode.children.length<5){
             var input=`<div class="flex w-full my-2">
-                <input type="text" name="roles[]" class="flex-1 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="Role..">
-                <button class=" w-28 px-4 py-3 mx-2 rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)">Remove</button>
+                <input type="text" name="roles[]" class="flex-1 bg-neutral-950 sm:w-full w-3/4  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="Role..">
+                <button class=" md:w-28 max-sm:w-1/4 4 text-sm md:px-4 py-3 mx-2 rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)">Remove</button>
                 </div>`;
             var tempDiv = document.createElement('div');
             tempDiv.innerHTML = input.trim();
@@ -347,9 +349,9 @@ Data Insert Page - SelfMe
     function addskill(e){
         if(e.parentNode.parentNode.children.length<10){
             var input=`<div class="flex w-full my-2">
-                <input type="text"  name="skill[]" class="flex-1 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="Skill">
-                <input type="number" name="percentage[]" class="ml-2 w-24 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="100%">
-                <button type="button"  class=" w-28 px-4 py-3 mx-2 rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)">Remove</button>
+                <input type="text"  name="skill[]" class="flex-1 bg-neutral-950  md:w-full w-32  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="Skill">
+                <input type="number" name="percentage[]" class="ml-2 md:w-24 w-20 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="100%">
+                <button type="button"  class=" w-28 px-4 text-sm py-3 mx-2 rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)">Remove</button>
                 </div>`;
             var tempDiv = document.createElement('div');
             tempDiv.innerHTML = input.trim();
