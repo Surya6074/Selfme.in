@@ -4,7 +4,7 @@ Register Page - Selfme
 @endsection
 @section('content')
 <div class="h-full w-full flex md:flex-row flex-col-reverse bg-neutral-800">
-    <div class="lg:w-1/2 w-full h-full flex justify-center items-center form-page ">
+    <div class="lg:w-1/2 w-full h-screen flex justify-center items-center form-page ">
         <form action="{{route('Register')}}" method="POST" class="flex flex-col lg:w-2/4 w-5/6">
             @csrf
             <h1 class="text-4xl text-center font-bold mb-6 text-emerald-300">Register</h1>
@@ -48,12 +48,16 @@ Register Page - Selfme
             </div>
         </form>
     </div>
-    <div class="lg:w-1/2 w-full h-full bg-emerald-300 relative info form-page">
+    <div class="lg:w-1/2 w-full h-screen bg-emerald-300 relative info form-page">
         <div class="h-full w-full bg-neutral-950 opacity-35 absolute -z-10">s</div>
         <img src="{{asset('public/assets/3c8c0a7ffd3e0dd67f1b8749a7ac2861-removebg-preview.png')}}" class=" absolute h-full w-full opacity-15"/>
         <div class="flex flex-col justify-center p-10 h-full z-30">
             <h1 class="text-neutral-800 sm:text-4xl text-2xl pl-1">Hello!</h1>
+<<<<<<< HEAD
             <h1 class="md:text-8xl sm:text-7xl text-4xl z-30 text-white">Make Your Own <br><span class="text-neutral-800 font-semibold">Portfolio<span class="text-8xl text-gray-50">.</span></span></h1>
+=======
+            <h1 class="md:text-8xl text-7xl  z-30 text-white">Make Your Own <br><span class="text-neutral-800 font-semibold">Portfolio<span class="text-8xl text-gray-50">.</span></span></h1>
+>>>>>>> master
             <div class="mt-1 w-full pl-2 z-30">
                 <p class="mb-10 sm:text-xl text-lg text-neutral-700">Empower Your Online Presence for Free!</p>
                 <a href="/login" class="py-3 px-8 mt-10 bg-neutral-900 text-emerald-300 rounded-lg">Login</a>

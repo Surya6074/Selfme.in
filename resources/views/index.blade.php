@@ -10,12 +10,36 @@ Data Insert Page - SelfMe
     <div class="lg:p-10 p-5 lg:px-32 pl-10 w-full">
         <nav class="w-full flex justify-between md:h-24 h-16 mt-4 bg-emerald-300 rounded-3xl">
            <div class="w-1/3 relative">
-                <h1 class=" rounded-full absolute md:-top-4 md:-left-4 -top-2 -left-2 flex justify-center items-center text-emerald-300 md:h-32 md:w-32 h-20 w-20 bg-white text-5xl">Sm</h1>
+                <h1 class=" rounded-full absolute md:-top-4 md:-left-4 -top-2 -left-2 flex justify-center items-center text-emerald-300 md:h-32 md:w-32 h-20 w-20 bg-white md:text-5xl text-2xl">Sm</h1>
            </div>
-           <div class="flex-1 md:hidden flex justify-between px-2 items-center">
-                <h1 class="text-2xl pl-10">SelfMe</h1>
-                <a href=""><i class='bx bx-menu text-neutral-900 text-3xl mr-4'></i></a>
+           <div class="md:hidden text-end flex items-center justify-end">
+                <button class="md:hidden block"  onclick="OpenSlidebar()"><i class="bx bx-menu-alt-left text-white text-4xl mr-5" id="sidebaricon"></i></button>
+                {{-- <i class='bx bx-menu text-neutral-900 text-3xl mr-4' id="open-sidebar-menu"></i> --}}
            </div>
+
+            <aside class="rounded-lg text-white w-72 p-10 flex-col justify-between  fixed bg-neutral-900 top-0 left-0 bottom-0 z-50 hidden" id="mobileviewsidebar">
+                <div class="top-4 right-2 absolute ">
+                    <i class='bx bx-x text-4xl ' onclick="CloseSlideBar()" id="sidebariconclose"></i>
+                </div>
+                <h1 class="text-start text-3xl text-emerald-300 font-semibold">SelfMe</h1>
+                <ul class="mt-14 flex-1">
+                    <li class="w-full h-16 my-2 relative">
+                        <a href="#home" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300   rounded-lg side-menu">Home</a>
+                    </li>
+                    <li class="w-full h-16 my-2 relative">
+                        <a href="#about" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300  rounded-lg side-menu">About</a>
+                    </li>
+                    <li class="w-full h-16 my-2 relative">
+                        <a href="#template" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300  rounded-lg side-menu">Template</a>
+                    </li>
+                    <li class="w-full h-16 my-2 relative">
+                        <a href="#contact" class="w-full flex items-center text-xl px-4 py-4 hover:text-emerald-300  rounded-lg side-menu">Contact</a>
+                    </li>
+                </ul>
+                <div class=" p-4">
+                    <a href="/login" class="w-full px-5 py-2 bg-white text-xl text-emerald-300 font-semibold rounded-lg">Login</a>
+                </div>
+            </aside>
            <div class="md:block hidden flex-1 h-full ">
                <ul class="flex h-full items-center justify-around">
                    <li><a href="#home" class="text-xl font-semibold">Home</a></li>
@@ -338,6 +362,13 @@ Data Insert Page - SelfMe
             }
         });
     });
+
+        function CloseSlideBar(){
+        $('#mobileviewsidebar').toggle('hidden');
+    }
+    function OpenSlidebar(){
+        $('#mobileviewsidebar').toggle('hidden');
+    }
 </script>
 <style>
     body{
