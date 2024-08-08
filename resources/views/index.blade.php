@@ -5,7 +5,7 @@ Data Insert Page - SelfMe
 @section('content')
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<body class="bg-neutral-900">
+<body class="bg-neutral-900 w-screen overflow-x-hidden">
 <div class="bg-neutral-900 h-full w-full">
     <div class="lg:p-10 p-5 lg:px-32 pl-10 w-full">
         <nav class="w-full flex justify-between md:h-24 h-16 mt-4 bg-emerald-300 rounded-3xl">
@@ -17,7 +17,7 @@ Data Insert Page - SelfMe
                 {{-- <i class='bx bx-menu text-neutral-900 text-3xl mr-4' id="open-sidebar-menu"></i> --}}
            </div>
 
-            <aside class="rounded-lg text-white w-72 p-10 flex-col justify-between  fixed bg-neutral-900 top-0 left-0 bottom-0 z-50 hidden" id="mobileviewsidebar">
+            <aside class="rounded-lg text-white w-72 p-10 flex-col justify-between h-screen fixed bg-neutral-900 top-0 left-0 bottom-0 z-50 hidden" id="mobileviewsidebar">
                 <div class="top-4 right-2 absolute ">
                     <i class='bx bx-x text-4xl ' onclick="CloseSlideBar()" id="sidebariconclose"></i>
                 </div>
@@ -59,8 +59,8 @@ Data Insert Page - SelfMe
                 <p class="text-white text-start text-sm"> Make our own portfolio.Host it Free,Change your Life-Style,Thank us later.
                 Follow us for more greaful updates...</p>
                 <div class="mt-10 flex">
-                    <div class=" bg-neutral-100 lg:w-2/4 w-5/6 px-4 py-2 rounded-xl flex items-center border-4 border-emerald-300" id="username-inp">
-                        <span class=" text-xl text-neutral-600">https://selfme.in/</span><input type="text" name="username" id="username" class=" bg-transparent h-full w-full py-2 pr-2 outline-none">
+                    <div class=" bg-neutral-100 lg:w-3/4 w-5/6 px-4 py-2 rounded-xl flex items-center border-4 border-emerald-300" id="username-inp">
+                        <span class=" md:text-md max-sm:text-sm text-neutral-600">https://selfme.in/</span><input type="text" name="username" id="username" class=" bg-transparent h-full w-full py-2 pr-2 outline-none">
                     </div>
                     {{-- <button class="px-5 py-2 ml-2 bg-emerald-300 text-neutral-900 rounded-lg">Check</button> --}}
                 </div>
@@ -205,7 +205,7 @@ Data Insert Page - SelfMe
         <h3 class="md:text-xl text-sm  text-emerald-300 mt-2">We Care About How The World Works</h3>
     </div>
     <div class="flex-1 h-full w-full mt-10 lg:px-20 px-8 flex lg:flex-row flex-col justify-center items-center">
-        <img src="{{asset('public/assets/icons/about.png')}}" class="lg:w-2/4  w-[400px] h-[500px] rounded-3xl mb-10 bg-slate-200 " alt="" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+        <img src="{{asset('public/assets/icons/about.png')}}" class="lg:w-2/4  w-[400px] md:h-[500px] h-56 rounded-3xl mb-10 bg-slate-200 " alt="" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
         <div class="flex-1 flex flex-col lg:pl-20 p-0 text-start" data-aos="fade-left"  data-aos-offset="300" data-aos-duration="500">
             <p class="lg:text-lg text-sm mb-10 text-start text-white" ><span class="text-emerald-300 text-3xl"> W</span>elcome to selfMe, where creativity meets accessibility. We believe everyone
                         deserves a platform to showcase their talents and passions, which is why we provide a free and
@@ -374,6 +374,7 @@ Data Insert Page - SelfMe
     body{
         width: 100vw;
         overflow-x: hidden;
+        overflow-x: clip !important;
     }
     .swiper {
       width: 100%;
