@@ -54,7 +54,7 @@ Route::get('/test', [PortfolioController::class, 'test']);
 
 
 Route::get('preview/{id}', function ($id) {
-    return view('templates.template1');
+    return view('templates.preview.template');
 })->name('template1');
 
 //portfolio
