@@ -17,18 +17,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body class=" lg:h-full bg-neutral-900 h-full w-screen  overflow-y-scroll overflow-x-hidden relative">
-    <aside class=" absolute top-0 left-0 h-full w-80 flex items-center justify-center hidden bg-red-600 transition duration-500 ease-linear pt-40" id="sidebar">
-        <ul class="list-none flex flex-col text-center gap-20">
-            <li><a class="text-white text-xl cursor-pointer tablinks" onclick="opentab(event,'home')">Home</a></li>
-            <li><a class="text-white text-xl cursor-pointer tablinks" onclick="opentab(event,'about')">About Me</a></li>
-            <li><a class="text-white text-xl cursor-pointer tablinks" onclick="opentab(event,'ownpage')">Others</a></li>
-            <li><a class="text-white text-xl cursor-pointer tablinks" onclick="opentab(event,'contact')">Contact Me</a></li>
-          </ul>
+     <aside class="rounded-lg text-white w-72 p-10 flex-col justify-between h-screen fixed bg-red-600 top-0 left-0 bottom-0 z-50 hidden" id="mobileviewsidebar">
+        <div class="top-4 right-2 absolute ">
+            <i class='bx bx-x text-4xl ' onclick="CloseSlideBar()" id="sidebariconclose"></i>
+        </div>
+        <ul class="mt-14 flex-1 w-full flex flex-col justify-center items-center">
+            <li class="w-full h-16 my-2 relative">
+                <a onclick="opentab(event,'home')" class="w-full flex items-center text-xl px-4 py-4 hover:text-white   rounded-lg side-menu">Home</a>
+            </li>
+            <li class="w-full h-16 my-2 relative">
+                <a onclick="opentab(event,'about')" class="w-full flex items-center text-xl px-4 py-4 hover:text-white  rounded-lg side-menu">About</a>
+            </li>
+            <li class="w-full h-16 my-2 relative">
+                <a onclick="opentab(event,'ownpage')" class="w-full flex items-center text-xl px-4 py-4 hover:text-white  rounded-lg side-menu">Others</a>
+            </li>
+            <li class="w-full h-16 my-2 relative">
+                <a onclick="opentab(event,'contact')" class="w-full flex items-center text-xl px-4 py-4 hover:text-white  rounded-lg side-menu">Contact</a>
+            </li>
+        </ul>
     </aside>
     <nav class=" h-32  w-full flex justify-center items-center">
         <div class=" flex justify-between lg:hidden w-full h-20 items-center px-10">
             <h1 class="lg:text-3xl md:text-2xl text-2xl text-red-600">Ragava</h1>
-            <button type="button" id="sidebar-btn">
+            <button type="button" id="sidebar-btn" onclick="OpenSlidebar()">
                 <i class="bx bx-menu text-white text-4xl" id="sidebar-icon"></i>
             </button>
         </div>
@@ -169,9 +180,6 @@
     </section>
   </body>
   <style>
-    .active{
-    color: rgb(218, 18, 18);
-    }
   </style>
 <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 <script>
@@ -185,17 +193,7 @@
             backSpeed: 100,
             loop: true,
         });
-    $('#sidebar-btn').click(function(){
-        $('#sidebar').slideToggle();
-        var sidebaricon = document.getElementById('sidebar-icon');
-        if(sidebaricon.classList.contains('bx-menu')){
-            sidebaricon.classList.remove('bx-menu');
-            sidebaricon.classList.add('bx-x');
-        }else{
-            sidebaricon.classList.remove('bx-x');
-            sidebaricon.classList.add('bx-menu');
-        }
-    });
+
     function opentab(evt, cityName) {
 
         var i, tabcontent, tablinks;
@@ -214,8 +212,14 @@
         evt.currentTarget.className += " active";
 
         // $('#sidebar').toggle();
+        $('#mobileviewsidebar').toggle('hidden');
     }
-
+    function CloseSlideBar(){
+        $('#mobileviewsidebar').toggle('hidden');
+    }
+    function OpenSlidebar(){
+        $('#mobileviewsidebar').toggle('hidden');
+    }
   </script>
 </html>
 

@@ -3,7 +3,7 @@
 Home Page - SelfMe
 @endsection
 @section('content')
-<body class="flex">
+<body class="flex overflow-x-hidden">
     @include('components.sidebar')
     <section class="w-full min-h-min overflow-y-scroll p-4">
         <div class="flex justify-between items-center px-5 py-3 bg-neutral-900 rounded-xl">
@@ -20,7 +20,7 @@ Home Page - SelfMe
                 <label for="" class="text-emerald-300 sm:text-lg text-xs">Your Portfolio Link</label>
             </div>
             <div class=" sm:text-lg text-xs text-neutral-200">
-                <a href="http://127.0.0.1:8000/{{auth()->user()->username}}" class="mr-5 flex items-center">https://127.0.0.1:8000/{{auth()->user()->username}}<i class='bx bx-link text-2xl ml-2 text-emerald-300'></i> </a>
+                <a href="http://127.0.0.1:8000/{{auth()->user()->username}}" class="mr-5 flex items-center">https://selfme.in/{{auth()->user()->username}}<i class='bx bx-link text-2xl ml-2 text-emerald-300'></i> </a>
             </div>
         </div>
         @if ($check_portfolio==1)
