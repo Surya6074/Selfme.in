@@ -4,6 +4,7 @@ Data Insert Page - SelfMe
 @endsection
 @section('content')
 <body class="flex">
+    <x-alert status="success" msg="Operation successful!" />
     @include('components.sidebar')
     <section class="w-full min-h-min  overflow-y-scroll p-4">
         <div class="flex justify-between items-center px-5 py-3 bg-neutral-900 rounded-xl">
@@ -124,19 +125,19 @@ Data Insert Page - SelfMe
                                         @if($rolesid==0)
                                         <div class="flex w-full my-2">
                                             <input type="text" name="roles[]" class="flex-1 bg-neutral-950 sm:w-full w-3/4  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('roles.'.$rolesid ) border border-red-500 @enderror" placeholder="Role.." value="{{$role}}">
-                                            <button type="button"  class=" text-neutral-950 sm:w-28 px-4 py-3  md:w-28 max-sm:w-1/4  mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details" onclick="addRole(this)">Add</button>
+                                            <button type="button"  class=" text-neutral-950 sm:w-28 px-4 py-3  md:w-28 max-sm:w-1/4  mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details" onclick="addRole(this)"><i class='bx bx-plus sm:hidden block'></i><span class="max-sm:hidden block">Add</span></button>
                                         </div>
                                         @else
                                         <div class="flex w-full my-2">
                                             <input type="text" name="roles[]" class="flex-1 bg-neutral-950  sm:w-full w-3/4  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('roles.'.$rolesid ) border border-red-500 @enderror" placeholder="Role.." value="{{$role}}">
-                                            <button class=" md:w-28 max-sm:w-1/4  px-4 py-3 mx-2 rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)">Remove</button>
+                                            <button class=" md:w-28 max-sm:w-1/4  px-4 py-3 mx-2 rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)"><i class='bx bxs-trash md:hidden block'></i><span class="max-sm:hidden block">Remove</span></button>
                                         </div>
                                         @endif
                                     @endforeach
                                 @else
                                 <div class="flex w-full my-2">
                                     <input type="text" name="roles[]" class="flex-1 bg-neutral-950  sm:w-full w-3/4  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('roles.*') border border-red-500 @enderror" placeholder="Role..">
-                                    <button type="button"  class=" text-neutral-950  md:w-28 max-sm:w-1/4  px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details" onclick="addRole(this)">Add</button>
+                                    <button type="button"  class=" text-neutral-950  md:w-28 max-sm:w-1/4  px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details" onclick="addRole(this)"><i class='bx bx-plus sm:hidden block'></i><span class="max-sm:hidden block">Add</span></button>
                                 </div>
                                 @endif
                             </div>
@@ -194,13 +195,13 @@ Data Insert Page - SelfMe
                                         <div class="flex w-full my-2">
                                             <input type="text" name="skill[]" class="flex-1 bg-neutral-950   md:w-full w-32  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('skill.'.$si) border border-red-500 @enderror" placeholder="Skill" value="{{$skills[$si]}}">
                                             <input type="number" name="percentage[]" class="ml-2 md:w-24 w-20 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('percentage.'.$si) border border-red-500 @enderror" placeholder="100%" value="{{$percentages[$si]}}">
-                                            <button type="button" class=" text-neutral-950 w-24 text-sm px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details" onclick="addskill(this)">Add</button>
+                                            <button type="button" class=" text-neutral-950 w-24 text-sm px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details" onclick="addskill(this)"><i class='bx bx-plus sm:hidden block'></i><span class="max-sm:hidden block">Add</span></button>
                                         </div>
                                         @else
                                         <div class="flex w-full my-2">
                                             <input type="text" name="skill[]" class="flex-1 bg-neutral-950  md:w-full w-32  px-4 py-3  rounded mt-1 text-neutral-400 outline-none @error('skill.'.$si) border border-red-500 @enderror" placeholder="Skill" value="{{$skills[$si]}}">
                                             <input type="number" name="percentage[]" class="ml-2 md:w-24 w-20 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('percentage.'.$si) border border-red-500 @enderror" placeholder="100%" value="{{$percentages[$si]}}">
-                                            <button type="button"  class=" w-24 px-4 py-3 mx-2 text-sm rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)">Remove</button>
+                                            <button type="button"  class=" w-24 px-4 py-3 mx-2 text-sm rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)"><i class='bx bxs-trash sm:hidden block'></i><span class="max-sm:hidden block">Remove</span></button>
                                         </div>
                                         @endif
                                     @endfor
@@ -208,7 +209,7 @@ Data Insert Page - SelfMe
                                 <div class="flex w-full my-2">
                                     <input type="text"  name="skill[]" class="flex-1 bg-neutral-950 md:w-full w-32  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="Skill">
                                     <input type="number" name="percentage[]" class="ml-2 md:w-24 w-20 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="100%">
-                                    <button type="button" class="text-neutral-950 w-24 px-4 py-3 text-sm mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details" onclick="addskill(this)">Add</button>
+                                    <button type="button" class="text-neutral-950 w-24 px-4 py-3 text-sm mx-2 rounded mt-1 bg-emerald-300 outline-none" placeholder="Details" onclick="addskill(this)"><i class='bx bx-plus sm:hidden block'></i><span class="max-sm:hidden block">Add</span></button>
                                 </div>
                                 @endif
                             </div>
@@ -378,7 +379,7 @@ Data Insert Page - SelfMe
             var input=`<div class="flex w-full my-2">
                 <input type="text"  name="skill[]" class="flex-1 bg-neutral-950 md:w-full w-32  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="Skill">
                 <input type="number" name="percentage[]" class="ml-2 md:w-24 w-20 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="100%">
-                <button type="button"  class=" w-28 px-4 text-sm py-3 mx-2 rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)">Remove</button>
+                <button type="button"  class=" w-28 px-4 text-sm py-3 mx-2 rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)"><i class='bx bxs-trash sm:hidden block'></i><span class="max-sm:hidden block">Remove</span></button>
                 </div>`;
             var tempDiv = document.createElement('div');
             tempDiv.innerHTML = input.trim();

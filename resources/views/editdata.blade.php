@@ -5,6 +5,7 @@ Data Insert Page - SelfMe
 @section('content')
 <body class="flex">
     @include('components.sidebar')
+    <x-alert status="success" msg="Operation successful!" />
 
       <!-- Validations -->
     <section class="w-full min-h-min  overflow-y-scroll p-4">
@@ -186,13 +187,13 @@ Data Insert Page - SelfMe
                                         <div class="flex w-full my-2">
                                             <input type="text" name="skill[]" value="{{$skill->skill_name}}" class="flex-1  md:w-full w-32  bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('skill.'.$key) border border-red-500 @enderror" placeholder="Skill">
                                             <input type="number" name="percentage[]" value="{{$skill->skill_percentage}}" class="ml-2 md:w-24 w-20 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('percentage.'.$key) border border-red-500 @enderror" placeholder="100%">
-                                            <button type="button" class=" text-neutral-950 w-24 text-sm  px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none " placeholder="Details" onclick="addskill(this)">Add</button>
+                                            <button type="button" class=" text-neutral-950 w-24 text-sm  px-4 py-3 mx-2 rounded mt-1 bg-emerald-300 outline-none " placeholder="Details" onclick="addskill(this)"><i class='bx bx-plus sm:hidden block'></i><span class="max-sm:hidden block">Add</span></button>
                                         </div>
                                     @else
                                         <div class="flex w-full my-2">
                                             <input type="text"  name="skill[]" value="{{$skill->skill_name}}" class="flex-1  md:w-full w-32  bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('skill.'.$key) border border-red-500 @enderror" placeholder="Skill">
                                             <input type="number" name="percentage[]"  value="{{$skill->skill_percentage}}" class="ml-2 md:w-24 w-20 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none @error('percentage.'.$key) border border-red-500 @enderror" placeholder="100%">
-                                            <button type="button"  class=" w-24 text-sm  px-4 py-3 mx-2 rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)">Remove</button>
+                                            <button type="button"  class=" w-24 text-sm  px-4 py-3 mx-2 rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)"><i class='bx bxs-trash md:hidden block'></i><span class="max-sm:hidden block">Remove</span></button>
                                         </div>
                                     @endif
                                     @php
@@ -351,7 +352,7 @@ Data Insert Page - SelfMe
             var input=`<div class="flex w-full my-2">
                 <input type="text"  name="skill[]" class="flex-1 bg-neutral-950  md:w-full w-32  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="Skill">
                 <input type="number" name="percentage[]" class="ml-2 md:w-24 w-20 bg-neutral-950  px-4 py-3 rounded mt-1 text-neutral-400 outline-none " placeholder="100%">
-                <button type="button"  class=" w-28 px-4 text-sm py-3 mx-2 rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)">Remove</button>
+                <button type="button"  class=" w-28 px-4 text-sm py-3 mx-2 rounded mt-1 bg-red-500 outline-none text-white" placeholder="Details" onclick="RemoveRole(this)"><i class='bx bxs-trash sm:hidden block'></i><span class="max-sm:hidden block">Remove</span></button>
                 </div>`;
             var tempDiv = document.createElement('div');
             tempDiv.innerHTML = input.trim();
