@@ -341,7 +341,7 @@ Data Insert Page - SelfMe
         </div>
     </div>
     {{--  Footer --}}
-    <div class="bg-neutral-900 h-64 w-full  flex flex-col gap-20 lg:flex-row  justify-around lg:mt-0 mt-10 items-center md:p-10">
+    <div class="bg-neutral-900 md:h-64 h-full w-full py-5  flex flex-col gap-20 lg:flex-row  justify-around lg:mt-0 mt-10 items-center md:p-10">
         <div class="flex flex-col items-center justify-center" data-aos="fade-right"data-aos-anchor-placement="center-bottom" data-aos-duration="1500">
             <h4 class="h-16 w-16 flex justify-center items-center rounded-full text-white bg-emerald-300">Sm</h4>
             <p class="text-white">Get in Touch</p>

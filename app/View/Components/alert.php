@@ -10,6 +10,7 @@ class alert extends Component
 {
     public $status;
     public $msg;
+    public $theme;
 
     /**
      * Create a new component instance.
@@ -18,10 +19,11 @@ class alert extends Component
      * @param string $message
      * @return void
      */
-    public function __construct($msg, $status)
+    public function __construct($msg, $status, $theme)
     {
         $this->msg = $msg;
         $this->status = $status;
+        $this->theme = $theme;
     }
 
     /**

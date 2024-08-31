@@ -5,10 +5,11 @@ Data Insert Page - SelfMe
 @section('content')
 <body class="flex">
     @include('components.sidebar')
-    <x-alert status="success" msg="Operation successful!" />
-
+    @if (session('msg'))
+        <x-alert status="{{session('status')}}" msg="{{session('msg')}}" theme="{{session('theme')}}"/>
+    @endif
       <!-- Validations -->
-    <section class="w-full min-h-min  overflow-y-scroll p-4">
+    <section class="w-full min-h-min  overflow-y-scroll p-4  md:ml-[310px]">
         <div class="flex justify-between items-center px-5 py-3 bg-neutral-900 rounded-xl">
            <div class="flex itemes-center">
                 <button class="md:hidden block"  onclick="OpenSlidebar()"><i class="bx bx-menu-alt-left text-white text-4xl mr-5" id="sidebaricon"></i></button>

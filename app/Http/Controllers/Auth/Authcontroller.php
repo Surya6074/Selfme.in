@@ -21,9 +21,9 @@ class Authcontroller extends Controller
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
             $user = User::where('email', $email)->first();
             Auth::login($user);
-            return redirect(route('homeui'))->with(['msg' => 'Logged in successfully', 'status' => 'success']);
+            return redirect(route('homeui'))->with(['msg' => 'Logged in successfully', 'status' => 'Success', 'theme' => '0']);
         } else {
-            return redirect(route('loginui'))->with(['msg' => 'Invalid Credentials', 'status' => 'er']);
+            return redirect(route('loginui'))->with(['msg' => 'Invalid Credentials', 'status' => 'Failed', 'theme' => '1']);
         }
     }
     public function Register(Request $request)
@@ -43,7 +43,7 @@ class Authcontroller extends Controller
         $user->password = $password;
         if ($user->save()) {
             Auth::login($user);
-            return redirect(route('homeui'));
+            return redirect(route('homeui'))->with(['msg' => 'Thanks For Register on Selfme!', 'status' => 'Welcome Buddy!', 'theme' => '0']);
         }
     }
 
@@ -52,6 +52,6 @@ class Authcontroller extends Controller
     public function Logout()
     {
         Auth::logout();
-        return redirect(route('indexui'));
+        return redirect(route('indexui'))->with(['msg' => 'Successfully Logout!', 'status' => 'Success', 'theme' => '0']);
     }
 }

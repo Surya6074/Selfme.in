@@ -5,7 +5,7 @@ New updates - Selfme
 @section('content')
 <body class="flex">
     @include('components.sidebar')
-    <section class="w-full h-full ml-4 overflow-y-scroll p-4">
+    <section class="w-full h-full ml-4 overflow-y-scroll  md:ml-[310px] p-4">
         <div class="flex justify-between items-center px-5 py-3 bg-neutral-900 rounded-xl">
            <div class="flex itemes-center">
                 <button class="md:hidden block"  onclick="OpenSlidebar()"><i class="bx bx-menu-alt-left text-white text-4xl mr-5" id="sidebaricon"></i></button>

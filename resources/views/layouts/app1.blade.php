@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{csrf_token()}}">
-    <link rel="stylesheet" href="{{asset('public/css/app.css')}}">
-    <link rel="stylesheet" href="{{asset('public/css/dash.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('public/css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('public/css/dash.css')}}"> --}}
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('css/dash.css')}}">
       @vite('resources/css/app.css')
     {{-- <link rel="stylesheet" href="{{asset('public/css/dash.css')}}"> --}}
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

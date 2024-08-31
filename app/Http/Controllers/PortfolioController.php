@@ -149,7 +149,7 @@ class PortfolioController extends Controller
         $template->visibility = 'public';
         $template->save();
 
-        return redirect(route('homeui'));
+        return redirect(route('homeui'))->with(['msg' => 'Now Your Portfolio is Online Check!', 'status' => 'Success Buddy!', 'theme' => '0']);
     }
 
     public function Updatedata(Request $request)
@@ -161,7 +161,7 @@ class PortfolioController extends Controller
             'ap_role' => 'required',
             'ap_desc' => 'required',
             'skill.*' => 'required',
-            'percentage' => 'required',
+            'percentage' => 'required|max:100',
             'hp_name' => 'required',
             'hp_desc' => 'required',
             'linkname' => 'required',
@@ -288,7 +288,7 @@ class PortfolioController extends Controller
         $contact_page->save();
 
 
-        return redirect(route('homeui'));
+        return redirect(route('homeui'))->with(['msg' => 'Now Your Portfolio is Updated please Check!', 'status' => 'Success Buddy!', 'theme' => '0']);
     }
 
     public function DeleteUser(Request $request)

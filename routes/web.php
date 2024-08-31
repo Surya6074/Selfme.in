@@ -9,13 +9,13 @@ use Illuminate\Support\Facades\Route;
 // Get Routes
 
 //Auth Get
-Route::get('/login', [UiController::class, 'loginui'])->name('loginui');
-Route::get('/register', [UiController::class, 'registerui'])->name('registerui');
+Route::get('/login', [UiController::class, 'loginui'])->name('loginui')->middleware('isUserLog');
+Route::get('/register', [UiController::class, 'registerui'])->name('registerui')->middleware('isUserLog');
 Route::get('/logout', [Authcontroller::class, 'Logout'])->name('logout');
 
 // Auth POST Login
-Route::post('/user-log', [Authcontroller::class, 'Login'])->name('Login');
-Route::post('/user-reg', [Authcontroller::class, 'Register'])->name('Register');
+Route::post('/user-log', [Authcontroller::class, 'Login'])->name('Login')->middleware('isUserLog');
+Route::post('/user-reg', [Authcontroller::class, 'Register'])->name('Register')->middleware('isUserLog');
 
 
 //public Route

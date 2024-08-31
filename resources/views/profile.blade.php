@@ -24,7 +24,7 @@ Home Page - SelfMe
         </div>
     </div>
     @include('components.sidebar')
-    <section class="w-full min-h-min overflow-y-scroll p-4 pt-8">
+    <section class="w-full min-h-min overflow-y-scroll p-4 pt-8  md:ml-[310px]">
         <div class="flex justify-between items-center px-5 py-3 bg-neutral-900 rounded-xl">
             <div class="flex itemes-center">
                 <button class="md:hidden block"  onclick="OpenSlidebar()"><i class="bx bx-menu-alt-left text-white text-4xl mr-5" id="sidebaricon"></i></button>

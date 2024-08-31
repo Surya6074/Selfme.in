@@ -3,6 +3,9 @@
 Login Page - Selfme
 @endsection
 @section('content')
+@if (session('msg'))
+    <x-alert status="{{session('status')}}" msg="{{session('msg')}}" theme="{{session('theme')}}"/>
+@endif
 <div class="h-full w-full flex md:flex-row flex-col-reverse bg-neutral-800">
     <div class="lg:w-1/2 w-full h-screen flex justify-center items-center form-page">
         <form action="{{route('Login')}}" method="POST" class="flex flex-col lg:w-2/4 w-5/6">
